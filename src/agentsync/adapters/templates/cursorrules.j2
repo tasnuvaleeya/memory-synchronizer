@@ -1,0 +1,13 @@
+{% from "_section.md.j2" import section %}
+# Project Rules — {{ project_name }}
+
+{% if project_description %}
+{{ project_description }}
+
+{% endif %}
+These rules are synchronised from `agent/` by `agentsync`. Do not edit by hand.
+
+{% for entry in entries %}
+{{ section(entry) }}
+
+{% endfor %}

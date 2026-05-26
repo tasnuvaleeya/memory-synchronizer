@@ -29,6 +29,7 @@ dependencies = [
     "rich>=13.0.0",
     "jsonschema>=4.21.0",
     "pathspec>=0.12.0",
+    "jinja2>=3.1.0",
 ]
 
 [project.optional-dependencies]
@@ -53,6 +54,7 @@ packages = ["src/agentsync"]
 [tool.hatch.build.targets.wheel.force-include]
 "src/agentsync/templates" = "agentsync/templates"
 "src/agentsync/schemas" = "agentsync/schemas"
+"src/agentsync/adapters/templates" = "agentsync/adapters/templates"
 
 [tool.ruff]
 line-length = 100

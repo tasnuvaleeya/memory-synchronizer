@@ -1,0 +1,7 @@
+---
+description: {{ entry.frontmatter.description if entry.frontmatter else entry.name }}
+globs: ["**/*"]
+alwaysApply: true
+---
+
+{{ entry.body.strip() }}

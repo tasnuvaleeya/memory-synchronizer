@@ -1,0 +1,7 @@
+{% macro section(entry) -%}
+## {{ entry.frontmatter.description if entry.frontmatter else entry.name }}
+
+> Source: `agent/{{ entry.rel_path }}`{% if entry.tags %} · tags: {{ entry.tags | join(", ") }}{% endif %}
+
+{{ entry.body.strip() }}
+{%- endmacro -%}

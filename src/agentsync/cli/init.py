@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import Annotated
 
 import typer
+import yaml
 from rich.console import Console
 
 from agentsync.cli._exit import ExitCode
@@ -109,6 +110,17 @@ def init_command(
     if misplaced_ignore.is_file() and not repo_ignore.exists():
         shutil.move(str(misplaced_ignore), str(repo_ignore))
         moved_to_root.add(Path(".agentsyncignore"))
+
+    # Rewrite the starter manifest with the targets the user actually asked for,
+    # so `agentsync sync` honours --targets out of the box.
+    manifest_path = paths.agent_dir / "manifest.yaml"
+    if manifest_path.is_file():
+        manifest_data = yaml.safe_load(manifest_path.read_text(encoding="utf-8")) or {}
+        manifest_data["targets"] = [t.value for t in selected_targets]
+        manifest_path.write_text(
+            yaml.safe_dump(manifest_data, sort_keys=False, allow_unicode=True),
+            encoding="utf-8",
+        )
 
     config = LocalConfig(default_targets=list(selected_targets))
     save_local_config(paths.config_file, config)
