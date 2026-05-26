@@ -1,0 +1,7 @@
+# Add patterns (gitignore-style) for files that agentsync should skip when
+# scanning the repo. Defaults already cover node_modules/, .git/, dist/,
+# build/, __pycache__/, virtualenvs, and .agentsync/cache/.
+
+# Example:
+# vendor/
+# *.generated.ts

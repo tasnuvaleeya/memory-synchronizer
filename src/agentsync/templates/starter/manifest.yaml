@@ -1,0 +1,51 @@
+version: 1
+project:
+  name: my-project
+  description: Replace this with a one-line description of the repo.
+targets:
+  - claude
+  - agents-md
+  - cursor
+files:
+  - path: architecture.md
+    source: hybrid
+    priority: 10
+    applies_to: ["*"]
+    tags: [architecture]
+  - path: coding-rules.md
+    source: authored
+    priority: 20
+    applies_to: ["*"]
+    tags: [conventions]
+  - path: stack.md
+    source: generated
+    priority: 30
+    applies_to: ["*"]
+    tags: [stack]
+  - path: domain-knowledge.md
+    source: authored
+    priority: 40
+    applies_to: ["*"]
+    tags: [domain]
+  - path: workflows/testing.md
+    source: authored
+    priority: 50
+    applies_to: ["*"]
+    tags: [workflow, testing]
+  - path: workflows/debugging.md
+    source: authored
+    priority: 50
+    applies_to: ["*"]
+    tags: [workflow, debugging]
+  - path: workflows/deployment.md
+    source: authored
+    priority: 50
+    applies_to: ["*"]
+    tags: [workflow, deployment]
+generation:
+  scanner: tree-sitter
+  exclude:
+    - node_modules
+    - dist
+    - build
+    - .venv

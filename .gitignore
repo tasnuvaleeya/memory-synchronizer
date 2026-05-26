@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Virtualenvs
+.venv/
+venv/
+
+# Build
+dist/
+build/
+
+# Editor
+.idea/
+.vscode/
+
+# agentsync local cache (when used on a real repo)
+.agentsync/cache/
