@@ -1,0 +1,14 @@
+src/
+tests/
+scripts/
+features/
+.github/
+.claude/
+.gitignore
+.npmignore
+tsconfig.json
+tsup.config.ts
+vitest.config.ts
+eslint.config.js
+coverage/
+*.tsbuildinfo

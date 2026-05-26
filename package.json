@@ -1,0 +1,75 @@
+{
+  "name": "@agentsync/cli",
+  "version": "0.0.1",
+  "description": "Shared, repo-local memory layer that synchronizes context across AI coding agents.",
+  "license": "MIT",
+  "author": "tasnuva-aif",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "bin": {
+    "agentsync": "./dist/cli/index.js"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "templates",
+    "docs/schema",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup && npm run schema:export",
+    "dev": "tsup --watch",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "schema:export": "tsx scripts/export-schemas.ts"
+  },
+  "keywords": [
+    "agentsync",
+    "ai",
+    "claude",
+    "cursor",
+    "codex",
+    "copilot",
+    "developer-tools",
+    "memory"
+  ],
+  "dependencies": {
+    "commander": "^12.1.0",
+    "fs-extra": "^11.2.0",
+    "globby": "^14.0.2",
+    "js-yaml": "^4.1.0",
+    "log-symbols": "^7.0.0",
+    "ora": "^8.1.1",
+    "picocolors": "^1.1.1",
+    "zod": "^3.23.8",
+    "zod-to-json-schema": "^3.23.5"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^20.16.5",
+    "@typescript-eslint/eslint-plugin": "^8.18.0",
+    "@typescript-eslint/parser": "^8.18.0",
+    "@vitest/coverage-v8": "^2.1.8",
+    "eslint": "^9.17.0",
+    "tsup": "^8.3.5",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.18.0",
+    "vitest": "^2.1.8"
+  }
+}

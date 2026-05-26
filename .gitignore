@@ -1,24 +1,19 @@
-# Python
-__pycache__/
-*.py[cod]
-*.egg-info/
-.pytest_cache/
-.ruff_cache/
-.coverage
-.coverage.*
-htmlcov/
+# Node
+node_modules/
+npm-debug.log*
 
-# Virtualenvs
-.venv/
-venv/
-
-# Build
+# Build output
 dist/
-build/
+*.tsbuildinfo
 
-# Editor
+# Test / coverage
+coverage/
+.vitest-cache/
+
+# Editor / OS
 .idea/
 .vscode/
+.DS_Store
 
-# agentsync local cache (when used on a real repo)
+# Local runtime cache (used when agentsync runs against a real repo)
 .agentsync/cache/
