@@ -10,6 +10,9 @@ import { initCommand } from "./init.js";
 import { validateCommand } from "./validate.js";
 import { showCommand } from "./show.js";
 import { versionCommand } from "./version.js";
+import { syncCommand } from "./sync.js";
+import { diffCommand } from "./diff.js";
+import { installHookCommand, type HookType } from "./installHook.js";
 
 interface GlobalOpts {
   cwd?: string;
@@ -20,9 +23,9 @@ interface GlobalOpts {
 
 function makeLogger(global: GlobalOpts): Logger {
   return new Logger({
-    quiet: global.quiet,
-    verbose: global.verbose,
-    color: global.color,
+    ...(global.quiet !== undefined && { quiet: global.quiet }),
+    ...(global.verbose !== undefined && { verbose: global.verbose }),
+    ...(global.color !== undefined && { color: global.color }),
   });
 }
 
@@ -82,6 +85,50 @@ export function buildProgram(): Command {
       const global = cmd.optsWithGlobals<GlobalOpts>();
       const logger = makeLogger(global);
       await runCommand(() => versionCommand(cmdOpts, logger), logger, global);
+    });
+
+  program
+    .command("sync")
+    .description("generate per-agent files from /agent source files")
+    .option("--check", "exit with code 2 if any files would change (CI mode)")
+    .option("--adapter <names...>", "limit sync to specific adapter(s)")
+    .option("--dry-run", "show what would be written without writing")
+    .option("--force", "overwrite files even if manually edited")
+    .option("--json", "machine-readable output")
+    .action(async (cmdOpts, cmd: Command) => {
+      const global = cmd.optsWithGlobals<GlobalOpts>();
+      const logger = makeLogger(global);
+      await runCommand(() => syncCommand(global.cwd, cmdOpts, logger), logger, global);
+    });
+
+  program
+    .command("diff [adapter]")
+    .description("preview what agentsync sync would change")
+    .option("--json", "machine-readable output")
+    .action(async (adapterArg: string | undefined, cmdOpts, cmd: Command) => {
+      const global = cmd.optsWithGlobals<GlobalOpts>();
+      const logger = makeLogger(global);
+      await runCommand(
+        () => diffCommand(global.cwd, adapterArg, cmdOpts, logger),
+        logger,
+        global,
+      );
+    });
+
+  program
+    .command("install-hook [type]")
+    .description("install a git pre-commit hook that runs agentsync sync --check")
+    .option("--json", "machine-readable output")
+    .action(async (hookType: string | undefined, cmdOpts, cmd: Command) => {
+      const global = cmd.optsWithGlobals<GlobalOpts>();
+      const logger = makeLogger(global);
+      const resolvedType: HookType =
+        hookType === "husky" ? "husky" : "native";
+      await runCommand(
+        () => installHookCommand(global.cwd, resolvedType, cmdOpts, logger),
+        logger,
+        global,
+      );
     });
 
   return program;
