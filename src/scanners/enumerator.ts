@@ -37,6 +37,16 @@ export const DEFAULT_IGNORES: string[] = [
   // idempotency (each run would mutate its inputs).
   "agent/repo-map.json",
   "agent/stack.md",
+  // Adapter outputs produced by `agentsync sync`. Excluding them keeps the
+  // scan → sync → scan fixpoint stable: file count and stack.md body don't
+  // shift after the first sync.
+  "CLAUDE.md",
+  "AGENTS.md",
+  ".cursorrules",
+  ".cursor/rules/**",
+  ".clinerules",
+  ".windsurfrules",
+  ".github/copilot-instructions.md",
 ];
 
 /**

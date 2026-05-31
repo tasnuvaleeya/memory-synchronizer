@@ -1,0 +1,2240 @@
+{
+  "version": 1,
+  "summary": {
+    "totalFiles": 132,
+    "totalLines": 12477,
+    "languages": [
+      {
+        "language": "TypeScript",
+        "files": 87,
+        "lines": 6260
+      },
+      {
+        "language": "YAML",
+        "files": 9,
+        "lines": 4575
+      },
+      {
+        "language": "JSON",
+        "files": 14,
+        "lines": 857
+      },
+      {
+        "language": "Markdown",
+        "files": 16,
+        "lines": 738
+      },
+      {
+        "language": "JavaScript",
+        "files": 1,
+        "lines": 26
+      }
+    ]
+  },
+  "tree": {
+    "name": "memory-synchronizer",
+    "path": "",
+    "type": "dir",
+    "children": [
+      {
+        "name": ".agentsync",
+        "path": ".agentsync",
+        "type": "dir",
+        "children": [
+          {
+            "name": "config.yaml",
+            "path": ".agentsync/config.yaml",
+            "type": "file",
+            "lineCount": 10,
+            "language": "YAML",
+            "role": "source"
+          }
+        ]
+      },
+      {
+        "name": ".claude",
+        "path": ".claude",
+        "type": "dir",
+        "children": [
+          {
+            "name": "settings.local.json",
+            "path": ".claude/settings.local.json",
+            "type": "file",
+            "lineCount": 23,
+            "language": "JSON",
+            "role": "source"
+          }
+        ]
+      },
+      {
+        "name": ".github",
+        "path": ".github",
+        "type": "dir",
+        "children": [
+          {
+            "name": "workflows",
+            "path": ".github/workflows",
+            "type": "dir",
+            "children": [
+              {
+                "name": "agentsync.yml",
+                "path": ".github/workflows/agentsync.yml",
+                "type": "file",
+                "lineCount": 46,
+                "language": "YAML",
+                "role": "config"
+              },
+              {
+                "name": "ci.yml",
+                "path": ".github/workflows/ci.yml",
+                "type": "file",
+                "lineCount": 45,
+                "language": "YAML",
+                "role": "config"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "agent",
+        "path": "agent",
+        "type": "dir",
+        "children": [
+          {
+            "name": "workflows",
+            "path": "agent/workflows",
+            "type": "dir",
+            "children": [
+              {
+                "name": "debugging.md",
+                "path": "agent/workflows/debugging.md",
+                "type": "file",
+                "lineCount": 66,
+                "language": "Markdown",
+                "role": "doc"
+              },
+              {
+                "name": "deployment.md",
+                "path": "agent/workflows/deployment.md",
+                "type": "file",
+                "lineCount": 58,
+                "language": "Markdown",
+                "role": "doc"
+              },
+              {
+                "name": "testing.md",
+                "path": "agent/workflows/testing.md",
+                "type": "file",
+                "lineCount": 51,
+                "language": "Markdown",
+                "role": "doc"
+              }
+            ]
+          },
+          {
+            "name": ".agentsyncignore",
+            "path": "agent/.agentsyncignore",
+            "type": "file",
+            "lineCount": 0,
+            "language": null,
+            "role": "source"
+          },
+          {
+            "name": "architecture.md",
+            "path": "agent/architecture.md",
+            "type": "file",
+            "lineCount": 53,
+            "language": "Markdown",
+            "role": "doc"
+          },
+          {
+            "name": "coding-rules.md",
+            "path": "agent/coding-rules.md",
+            "type": "file",
+            "lineCount": 56,
+            "language": "Markdown",
+            "role": "doc"
+          },
+          {
+            "name": "domain-knowledge.md",
+            "path": "agent/domain-knowledge.md",
+            "type": "file",
+            "lineCount": 52,
+            "language": "Markdown",
+            "role": "doc"
+          },
+          {
+            "name": "manifest.yaml",
+            "path": "agent/manifest.yaml",
+            "type": "file",
+            "lineCount": 52,
+            "language": "YAML",
+            "role": "source"
+          }
+        ]
+      },
+      {
+        "name": "docs",
+        "path": "docs",
+        "type": "dir",
+        "children": [
+          {
+            "name": "schema",
+            "path": "docs/schema",
+            "type": "dir",
+            "children": [
+              {
+                "name": "v1",
+                "path": "docs/schema/v1",
+                "type": "dir",
+                "children": [
+                  {
+                    "name": "config.json",
+                    "path": "docs/schema/v1/config.json",
+                    "type": "file",
+                    "lineCount": 77,
+                    "language": "JSON",
+                    "role": "source"
+                  },
+                  {
+                    "name": "frontmatter.json",
+                    "path": "docs/schema/v1/frontmatter.json",
+                    "type": "file",
+                    "lineCount": 57,
+                    "language": "JSON",
+                    "role": "source"
+                  },
+                  {
+                    "name": "manifest.json",
+                    "path": "docs/schema/v1/manifest.json",
+                    "type": "file",
+                    "lineCount": 114,
+                    "language": "JSON",
+                    "role": "source"
+                  },
+                  {
+                    "name": "memory-file.json",
+                    "path": "docs/schema/v1/memory-file.json",
+                    "type": "file",
+                    "lineCount": 81,
+                    "language": "JSON",
+                    "role": "source"
+                  },
+                  {
+                    "name": "policy.json",
+                    "path": "docs/schema/v1/policy.json",
+                    "type": "file",
+                    "lineCount": 106,
+                    "language": "JSON",
+                    "role": "source"
+                  },
+                  {
+                    "name": "repo-map.json",
+                    "path": "docs/schema/v1/repo-map.json",
+                    "type": "file",
+                    "lineCount": 154,
+                    "language": "JSON",
+                    "role": "source"
+                  },
+                  {
+                    "name": "stack.json",
+                    "path": "docs/schema/v1/stack.json",
+                    "type": "file",
+                    "lineCount": 49,
+                    "language": "JSON",
+                    "role": "source"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "mcp.md",
+            "path": "docs/mcp.md",
+            "type": "file",
+            "lineCount": 89,
+            "language": "Markdown",
+            "role": "doc"
+          }
+        ]
+      },
+      {
+        "name": "packages",
+        "path": "packages",
+        "type": "dir",
+        "children": [
+          {
+            "name": "action",
+            "path": "packages/action",
+            "type": "dir",
+            "children": [
+              {
+                "name": "src",
+                "path": "packages/action/src",
+                "type": "dir",
+                "children": [
+                  {
+                    "name": "index.ts",
+                    "path": "packages/action/src/index.ts",
+                    "type": "file",
+                    "lineCount": 123,
+                    "language": "TypeScript",
+                    "role": "source"
+                  }
+                ]
+              },
+              {
+                "name": "tests",
+                "path": "packages/action/tests",
+                "type": "dir",
+                "children": [
+                  {
+                    "name": "action.test.ts",
+                    "path": "packages/action/tests/action.test.ts",
+                    "type": "file",
+                    "lineCount": 59,
+                    "language": "TypeScript",
+                    "role": "test"
+                  }
+                ]
+              },
+              {
+                "name": "action.yml",
+                "path": "packages/action/action.yml",
+                "type": "file",
+                "lineCount": 36,
+                "language": "YAML",
+                "role": "source"
+              },
+              {
+                "name": "package.json",
+                "path": "packages/action/package.json",
+                "type": "file",
+                "lineCount": 19,
+                "language": "JSON",
+                "role": "config"
+              },
+              {
+                "name": "pnpm-lock.yaml",
+                "path": "packages/action/pnpm-lock.yaml",
+                "type": "file",
+                "lineCount": 92,
+                "language": "YAML",
+                "role": "source"
+              },
+              {
+                "name": "tsconfig.json",
+                "path": "packages/action/tsconfig.json",
+                "type": "file",
+                "lineCount": 16,
+                "language": "JSON",
+                "role": "config"
+              }
+            ]
+          },
+          {
+            "name": "adapter-sdk",
+            "path": "packages/adapter-sdk",
+            "type": "dir",
+            "children": [
+              {
+                "name": "src",
+                "path": "packages/adapter-sdk/src",
+                "type": "dir",
+                "children": [
+                  {
+                    "name": "frontmatter.ts",
+                    "path": "packages/adapter-sdk/src/frontmatter.ts",
+                    "type": "file",
+                    "lineCount": 17,
+                    "language": "TypeScript",
+                    "role": "source"
+                  },
+                  {
+                    "name": "helpers.ts",
+                    "path": "packages/adapter-sdk/src/helpers.ts",
+                    "type": "file",
+                    "lineCount": 69,
+                    "language": "TypeScript",
+                    "role": "source"
+                  },
+                  {
+                    "name": "index.ts",
+                    "path": "packages/adapter-sdk/src/index.ts",
+                    "type": "file",
+                    "lineCount": 28,
+                    "language": "TypeScript",
+                    "role": "source"
+                  },
+                  {
+                    "name": "provenance.ts",
+                    "path": "packages/adapter-sdk/src/provenance.ts",
+                    "type": "file",
+                    "lineCount": 55,
+                    "language": "TypeScript",
+                    "role": "source"
+                  },
+                  {
+                    "name": "types.ts",
+                    "path": "packages/adapter-sdk/src/types.ts",
+                    "type": "file",
+                    "lineCount": 60,
+                    "language": "TypeScript",
+                    "role": "source"
+                  }
+                ]
+              },
+              {
+                "name": "tests",
+                "path": "packages/adapter-sdk/tests",
+                "type": "dir",
+                "children": [
+                  {
+                    "name": "adapter-contract.test.ts",
+                    "path": "packages/adapter-sdk/tests/adapter-contract.test.ts",
+                    "type": "file",
+                    "lineCount": 107,
+                    "language": "TypeScript",
+                    "role": "test"
+                  }
+                ]
+              },
+              {
+                "name": "README.md",
+                "path": "packages/adapter-sdk/README.md",
+                "type": "file",
+                "lineCount": 64,
+                "language": "Markdown",
+                "role": "doc"
+              },
+              {
+                "name": "package.json",
+                "path": "packages/adapter-sdk/package.json",
+                "type": "file",
+                "lineCount": 35,
+                "language": "JSON",
+                "role": "config"
+              },
+              {
+                "name": "tsconfig.json",
+                "path": "packages/adapter-sdk/tsconfig.json",
+                "type": "file",
+                "lineCount": 18,
+                "language": "JSON",
+                "role": "config"
+              },
+              {
+                "name": "tsup.config.ts",
+                "path": "packages/adapter-sdk/tsup.config.ts",
+                "type": "file",
+                "lineCount": 12,
+                "language": "TypeScript",
+                "role": "config"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "scripts",
+        "path": "scripts",
+        "type": "dir",
+        "children": [
+          {
+            "name": "export-schemas.ts",
+            "path": "scripts/export-schemas.ts",
+            "type": "file",
+            "lineCount": 45,
+            "language": "TypeScript",
+            "role": "source"
+          }
+        ]
+      },
+      {
+        "name": "src",
+        "path": "src",
+        "type": "dir",
+        "children": [
+          {
+            "name": "adapters",
+            "path": "src/adapters",
+            "type": "dir",
+            "children": [
+              {
+                "name": "_render.ts",
+                "path": "src/adapters/_render.ts",
+                "type": "file",
+                "lineCount": 54,
+                "language": "TypeScript",
+                "role": "source"
+              },
+              {
+                "name": "agentsMd.ts",
+                "path": "src/adapters/agentsMd.ts",
+                "type": "file",
+                "lineCount": 29,
+                "language": "TypeScript",
+                "role": "source"
+              },
+              {
+                "name": "base.ts",
+                "path": "src/adapters/base.ts",
+                "type": "file",
+                "lineCount": 11,
+                "language": "TypeScript",
+                "role": "source"
+              },
+              {
+                "name": "claude.ts",
+                "path": "src/adapters/claude.ts",
+                "type": "file",
+                "lineCount": 29,
+                "language": "TypeScript",
+                "role": "source"
+              },
+              {
+                "name": "cline.ts",
+                "path": "src/adapters/cline.ts",
+                "type": "file",
+                "lineCount": 29,
+                "language": "TypeScript",
+                "role": "source"
+              },
+              {
+                "name": "copilot.ts",
+                "path": "src/adapters/copilot.ts",
+                "type": "file",
+                "lineCount": 29,
+                "language": "TypeScript",
+                "role": "source"
+              },
+              {
+                "name": "cursor.ts",
+                "path": "src/adapters/cursor.ts",
+                "type": "file",
+                "lineCount": 81,
+                "language": "TypeScript",
+                "role": "source"
+              },
+              {
+                "name": "registry.ts",
+                "path": "src/adapters/registry.ts",
+                "type": "file",
+                "lineCount": 34,
+                "language": "TypeScript",
+                "role": "source"
+              },
+              {
+                "name": "windsurf.ts",
+                "path": "src/adapters/windsurf.ts",
+                "type": "file",
+                "lineCount": 29,
+                "language": "TypeScript",
+                "role": "source"
+              }
+            ]
+          },
+          {
+            "name": "cli",
+            "path": "src/cli",
+            "type": "dir",
+            "children": [
+              {
+                "name": "diff.ts",
+                "path": "src/cli/diff.ts",
+                "type": "file",
+                "lineCount": 178,
+                "language": "TypeScript",
+                "role": "source"
+              },
+              {
+                "name": "export.ts",
+                "path": "src/cli/export.ts",
+                "type": "file",
+                "lineCount": 74,
+                "language": "TypeScript",
+                "role": "source"
+              },
+              {
+                "name": "import.ts",
+                "path": "src/cli/import.ts",
+                "type": "file",
+                "lineCount": 147,
+                "language": "TypeScript",
+                "role": "source"
+              },
+              {
+                "name": "index.ts",
+                "path": "src/cli/index.ts",
+                "type": "file",
+                "lineCount": 249,
+                "language": "TypeScript",
+                "role": "source"
+              },
+              {
+                "name": "init.ts",
+                "path": "src/cli/init.ts",
+                "type": "file",
+                "lineCount": 177,
+                "language": "TypeScript",
+                "role": "source"
+              },
+              {
+                "name": "installHook.ts",
+                "path": "src/cli/installHook.ts",
+                "type": "file",
+                "lineCount": 115,
+                "language": "TypeScript",
+                "role": "source"
+              },
+              {
+                "name": "lint.ts",
+                "path": "src/cli/lint.ts",
+                "type": "file",
+                "lineCount": 89,
+                "language": "TypeScript",
+                "role": "source"
+              },
+              {
+                "name": "mcp.ts",
+                "path": "src/cli/mcp.ts",
+                "type": "file",
+                "lineCount": 35,
+                "language": "TypeScript",
+                "role": "source"
+              },
+              {
+                "name": "scan.ts",
+                "path": "src/cli/scan.ts",
+                "type": "file",
+                "lineCount": 177,
+                "language": "TypeScript",
+                "role": "source"
+              },
+              {
+                "name": "show.ts",
+                "path": "src/cli/show.ts",
+                "type": "file",
+                "lineCount": 63,
+                "language": "TypeScript",
+                "role": "source"
+              },
+              {
+                "name": "stats.ts",
+                "path": "src/cli/stats.ts",
+                "type": "file",
+                "lineCount": 155,
+                "language": "TypeScript",
+                "role": "source"
+              },
+              {
+                "name": "sync.ts",
+                "path": "src/cli/sync.ts",
+                "type": "file",
+                "lineCount": 181,
+                "language": "TypeScript",
+                "role": "source"
+              },
+              {
+                "name": "validate.ts",
+                "path": "src/cli/validate.ts",
+                "type": "file",
+                "lineCount": 163,
+                "language": "TypeScript",
+                "role": "source"
+              },
+              {
+                "name": "version.ts",
+                "path": "src/cli/version.ts",
+                "type": "file",
+                "lineCount": 44,
+                "language": "TypeScript",
+                "role": "source"
+              }
+            ]
+          },
+          {
+            "name": "core",
+            "path": "src/core",
+            "type": "dir",
+            "children": [
+              {
+                "name": "config.ts",
+                "path": "src/core/config.ts",
+                "type": "file",
+                "lineCount": 21,
+                "language": "TypeScript",
+                "role": "source"
+              },
+              {
+                "name": "drift.ts",
+                "path": "src/core/drift.ts",
+                "type": "file",
+                "lineCount": 72,
+                "language": "TypeScript",
+                "role": "source"
+              },
+              {
+                "name": "errors.ts",
+                "path": "src/core/errors.ts",
+                "type": "file",
+                "lineCount": 32,
+                "language": "TypeScript",
+                "role": "source"
+              },
+              {
+                "name": "frontmatter.ts",
+                "path": "src/core/frontmatter.ts",
+                "type": "file",
+                "lineCount": 64,
+                "language": "TypeScript",
+                "role": "source"
+              },
+              {
+                "name": "git.ts",
+                "path": "src/core/git.ts",
+                "type": "file",
+                "lineCount": 38,
+                "language": "TypeScript",
+                "role": "source"
+              },
+              {
+                "name": "ignore.ts",
+                "path": "src/core/ignore.ts",
+                "type": "file",
+                "lineCount": 25,
+                "language": "TypeScript",
+                "role": "source"
+              },
+              {
+                "name": "load.ts",
+                "path": "src/core/load.ts",
+                "type": "file",
+                "lineCount": 102,
+                "language": "TypeScript",
+                "role": "source"
+              },
+              {
+                "name": "logger.ts",
+                "path": "src/core/logger.ts",
+                "type": "file",
+                "lineCount": 53,
+                "language": "TypeScript",
+                "role": "source"
+              },
+              {
+                "name": "manifest.ts",
+                "path": "src/core/manifest.ts",
+                "type": "file",
+                "lineCount": 42,
+                "language": "TypeScript",
+                "role": "source"
+              },
+              {
+                "name": "memory.ts",
+                "path": "src/core/memory.ts",
+                "type": "file",
+                "lineCount": 9,
+                "language": "TypeScript",
+                "role": "source"
+              },
+              {
+                "name": "paths.ts",
+                "path": "src/core/paths.ts",
+                "type": "file",
+                "lineCount": 70,
+                "language": "TypeScript",
+                "role": "source"
+              },
+              {
+                "name": "policy.ts",
+                "path": "src/core/policy.ts",
+                "type": "file",
+                "lineCount": 89,
+                "language": "TypeScript",
+                "role": "source"
+              },
+              {
+                "name": "provenance.ts",
+                "path": "src/core/provenance.ts",
+                "type": "file",
+                "lineCount": 10,
+                "language": "TypeScript",
+                "role": "source"
+              }
+            ]
+          },
+          {
+            "name": "generators",
+            "path": "src/generators",
+            "type": "dir",
+            "children": [
+              {
+                "name": "repoMap.ts",
+                "path": "src/generators/repoMap.ts",
+                "type": "file",
+                "lineCount": 20,
+                "language": "TypeScript",
+                "role": "source"
+              },
+              {
+                "name": "stack.ts",
+                "path": "src/generators/stack.ts",
+                "type": "file",
+                "lineCount": 89,
+                "language": "TypeScript",
+                "role": "source"
+              }
+            ]
+          },
+          {
+            "name": "linter",
+            "path": "src/linter",
+            "type": "dir",
+            "children": [
+              {
+                "name": "rules",
+                "path": "src/linter/rules",
+                "type": "dir",
+                "children": [
+                  {
+                    "name": "bannedPhrases.ts",
+                    "path": "src/linter/rules/bannedPhrases.ts",
+                    "type": "file",
+                    "lineCount": 39,
+                    "language": "TypeScript",
+                    "role": "source"
+                  },
+                  {
+                    "name": "freshness.ts",
+                    "path": "src/linter/rules/freshness.ts",
+                    "type": "file",
+                    "lineCount": 27,
+                    "language": "TypeScript",
+                    "role": "source"
+                  },
+                  {
+                    "name": "headingHierarchy.ts",
+                    "path": "src/linter/rules/headingHierarchy.ts",
+                    "type": "file",
+                    "lineCount": 35,
+                    "language": "TypeScript",
+                    "role": "source"
+                  },
+                  {
+                    "name": "index.ts",
+                    "path": "src/linter/rules/index.ts",
+                    "type": "file",
+                    "lineCount": 22,
+                    "language": "TypeScript",
+                    "role": "source"
+                  },
+                  {
+                    "name": "maxLength.ts",
+                    "path": "src/linter/rules/maxLength.ts",
+                    "type": "file",
+                    "lineCount": 26,
+                    "language": "TypeScript",
+                    "role": "source"
+                  },
+                  {
+                    "name": "requiredSections.ts",
+                    "path": "src/linter/rules/requiredSections.ts",
+                    "type": "file",
+                    "lineCount": 33,
+                    "language": "TypeScript",
+                    "role": "source"
+                  }
+                ]
+              },
+              {
+                "name": "engine.ts",
+                "path": "src/linter/engine.ts",
+                "type": "file",
+                "lineCount": 78,
+                "language": "TypeScript",
+                "role": "source"
+              }
+            ]
+          },
+          {
+            "name": "mcp",
+            "path": "src/mcp",
+            "type": "dir",
+            "children": [
+              {
+                "name": "server.ts",
+                "path": "src/mcp/server.ts",
+                "type": "file",
+                "lineCount": 199,
+                "language": "TypeScript",
+                "role": "source"
+              }
+            ]
+          },
+          {
+            "name": "scanners",
+            "path": "src/scanners",
+            "type": "dir",
+            "children": [
+              {
+                "name": "cache.ts",
+                "path": "src/scanners/cache.ts",
+                "type": "file",
+                "lineCount": 41,
+                "language": "TypeScript",
+                "role": "source"
+              },
+              {
+                "name": "enumerator.ts",
+                "path": "src/scanners/enumerator.ts",
+                "type": "file",
+                "lineCount": 75,
+                "language": "TypeScript",
+                "role": "source"
+              },
+              {
+                "name": "languageMap.ts",
+                "path": "src/scanners/languageMap.ts",
+                "type": "file",
+                "lineCount": 98,
+                "language": "TypeScript",
+                "role": "source"
+              },
+              {
+                "name": "lineCounter.ts",
+                "path": "src/scanners/lineCounter.ts",
+                "type": "file",
+                "lineCount": 46,
+                "language": "TypeScript",
+                "role": "source"
+              },
+              {
+                "name": "roleClassifier.ts",
+                "path": "src/scanners/roleClassifier.ts",
+                "type": "file",
+                "lineCount": 40,
+                "language": "TypeScript",
+                "role": "source"
+              },
+              {
+                "name": "scan.ts",
+                "path": "src/scanners/scan.ts",
+                "type": "file",
+                "lineCount": 104,
+                "language": "TypeScript",
+                "role": "source"
+              },
+              {
+                "name": "stackDetector.ts",
+                "path": "src/scanners/stackDetector.ts",
+                "type": "file",
+                "lineCount": 195,
+                "language": "TypeScript",
+                "role": "source"
+              },
+              {
+                "name": "treeBuilder.ts",
+                "path": "src/scanners/treeBuilder.ts",
+                "type": "file",
+                "lineCount": 67,
+                "language": "TypeScript",
+                "role": "source"
+              },
+              {
+                "name": "types.ts",
+                "path": "src/scanners/types.ts",
+                "type": "file",
+                "lineCount": 80,
+                "language": "TypeScript",
+                "role": "source"
+              }
+            ]
+          },
+          {
+            "name": "index.ts",
+            "path": "src/index.ts",
+            "type": "file",
+            "lineCount": 28,
+            "language": "TypeScript",
+            "role": "source"
+          }
+        ]
+      },
+      {
+        "name": "templates",
+        "path": "templates",
+        "type": "dir",
+        "children": [
+          {
+            "name": "starter",
+            "path": "templates/starter",
+            "type": "dir",
+            "children": [
+              {
+                "name": "workflows",
+                "path": "templates/starter/workflows",
+                "type": "dir",
+                "children": [
+                  {
+                    "name": "debugging.md",
+                    "path": "templates/starter/workflows/debugging.md",
+                    "type": "file",
+                    "lineCount": 25,
+                    "language": "Markdown",
+                    "role": "doc"
+                  },
+                  {
+                    "name": "deployment.md",
+                    "path": "templates/starter/workflows/deployment.md",
+                    "type": "file",
+                    "lineCount": 27,
+                    "language": "Markdown",
+                    "role": "doc"
+                  },
+                  {
+                    "name": "testing.md",
+                    "path": "templates/starter/workflows/testing.md",
+                    "type": "file",
+                    "lineCount": 27,
+                    "language": "Markdown",
+                    "role": "doc"
+                  }
+                ]
+              },
+              {
+                "name": ".agentsyncignore",
+                "path": "templates/starter/.agentsyncignore",
+                "type": "file",
+                "lineCount": 0,
+                "language": null,
+                "role": "source"
+              },
+              {
+                "name": "architecture.md",
+                "path": "templates/starter/architecture.md",
+                "type": "file",
+                "lineCount": 32,
+                "language": "Markdown",
+                "role": "doc"
+              },
+              {
+                "name": "coding-rules.md",
+                "path": "templates/starter/coding-rules.md",
+                "type": "file",
+                "lineCount": 26,
+                "language": "Markdown",
+                "role": "doc"
+              },
+              {
+                "name": "domain-knowledge.md",
+                "path": "templates/starter/domain-knowledge.md",
+                "type": "file",
+                "lineCount": 25,
+                "language": "Markdown",
+                "role": "doc"
+              },
+              {
+                "name": "manifest.yaml",
+                "path": "templates/starter/manifest.yaml",
+                "type": "file",
+                "lineCount": 47,
+                "language": "YAML",
+                "role": "source"
+              },
+              {
+                "name": "stack.md",
+                "path": "templates/starter/stack.md",
+                "type": "file",
+                "lineCount": 19,
+                "language": "Markdown",
+                "role": "doc"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "tests",
+        "path": "tests",
+        "type": "dir",
+        "children": [
+          {
+            "name": "scanners",
+            "path": "tests/scanners",
+            "type": "dir",
+            "children": [
+              {
+                "name": "languageMap.test.ts",
+                "path": "tests/scanners/languageMap.test.ts",
+                "type": "file",
+                "lineCount": 58,
+                "language": "TypeScript",
+                "role": "test"
+              },
+              {
+                "name": "lineCounter.test.ts",
+                "path": "tests/scanners/lineCounter.test.ts",
+                "type": "file",
+                "lineCount": 58,
+                "language": "TypeScript",
+                "role": "test"
+              },
+              {
+                "name": "roleClassifier.test.ts",
+                "path": "tests/scanners/roleClassifier.test.ts",
+                "type": "file",
+                "lineCount": 35,
+                "language": "TypeScript",
+                "role": "test"
+              },
+              {
+                "name": "stackDetector.test.ts",
+                "path": "tests/scanners/stackDetector.test.ts",
+                "type": "file",
+                "lineCount": 79,
+                "language": "TypeScript",
+                "role": "test"
+              },
+              {
+                "name": "treeBuilder.test.ts",
+                "path": "tests/scanners/treeBuilder.test.ts",
+                "type": "file",
+                "lineCount": 56,
+                "language": "TypeScript",
+                "role": "test"
+              }
+            ]
+          },
+          {
+            "name": "adapters.test.ts",
+            "path": "tests/adapters.test.ts",
+            "type": "file",
+            "lineCount": 114,
+            "language": "TypeScript",
+            "role": "test"
+          },
+          {
+            "name": "exportImport.test.ts",
+            "path": "tests/exportImport.test.ts",
+            "type": "file",
+            "lineCount": 98,
+            "language": "TypeScript",
+            "role": "test"
+          },
+          {
+            "name": "frontmatter.test.ts",
+            "path": "tests/frontmatter.test.ts",
+            "type": "file",
+            "lineCount": 72,
+            "language": "TypeScript",
+            "role": "test"
+          },
+          {
+            "name": "ignore.test.ts",
+            "path": "tests/ignore.test.ts",
+            "type": "file",
+            "lineCount": 26,
+            "language": "TypeScript",
+            "role": "test"
+          },
+          {
+            "name": "init.test.ts",
+            "path": "tests/init.test.ts",
+            "type": "file",
+            "lineCount": 220,
+            "language": "TypeScript",
+            "role": "test"
+          },
+          {
+            "name": "lint.test.ts",
+            "path": "tests/lint.test.ts",
+            "type": "file",
+            "lineCount": 128,
+            "language": "TypeScript",
+            "role": "test"
+          },
+          {
+            "name": "mcp.test.ts",
+            "path": "tests/mcp.test.ts",
+            "type": "file",
+            "lineCount": 135,
+            "language": "TypeScript",
+            "role": "test"
+          },
+          {
+            "name": "paths.test.ts",
+            "path": "tests/paths.test.ts",
+            "type": "file",
+            "lineCount": 37,
+            "language": "TypeScript",
+            "role": "test"
+          },
+          {
+            "name": "policy.test.ts",
+            "path": "tests/policy.test.ts",
+            "type": "file",
+            "lineCount": 84,
+            "language": "TypeScript",
+            "role": "test"
+          },
+          {
+            "name": "scan.test.ts",
+            "path": "tests/scan.test.ts",
+            "type": "file",
+            "lineCount": 84,
+            "language": "TypeScript",
+            "role": "test"
+          },
+          {
+            "name": "schemas.test.ts",
+            "path": "tests/schemas.test.ts",
+            "type": "file",
+            "lineCount": 73,
+            "language": "TypeScript",
+            "role": "test"
+          },
+          {
+            "name": "show.test.ts",
+            "path": "tests/show.test.ts",
+            "type": "file",
+            "lineCount": 54,
+            "language": "TypeScript",
+            "role": "test"
+          },
+          {
+            "name": "stats.test.ts",
+            "path": "tests/stats.test.ts",
+            "type": "file",
+            "lineCount": 66,
+            "language": "TypeScript",
+            "role": "test"
+          },
+          {
+            "name": "version.test.ts",
+            "path": "tests/version.test.ts",
+            "type": "file",
+            "lineCount": 28,
+            "language": "TypeScript",
+            "role": "test"
+          }
+        ]
+      },
+      {
+        "name": ".gitignore",
+        "path": ".gitignore",
+        "type": "file",
+        "lineCount": 21,
+        "language": null,
+        "role": "config"
+      },
+      {
+        "name": ".npmignore",
+        "path": ".npmignore",
+        "type": "file",
+        "lineCount": 0,
+        "language": null,
+        "role": "source"
+      },
+      {
+        "name": "LICENSE",
+        "path": "LICENSE",
+        "type": "file",
+        "lineCount": 0,
+        "language": null,
+        "role": "doc"
+      },
+      {
+        "name": "README.md",
+        "path": "README.md",
+        "type": "file",
+        "lineCount": 68,
+        "language": "Markdown",
+        "role": "doc"
+      },
+      {
+        "name": "eslint.config.js",
+        "path": "eslint.config.js",
+        "type": "file",
+        "lineCount": 26,
+        "language": "JavaScript",
+        "role": "config"
+      },
+      {
+        "name": "package.json",
+        "path": "package.json",
+        "type": "file",
+        "lineCount": 81,
+        "language": "JSON",
+        "role": "config"
+      },
+      {
+        "name": "pnpm-lock.yaml",
+        "path": "pnpm-lock.yaml",
+        "type": "file",
+        "lineCount": 4244,
+        "language": "YAML",
+        "role": "source"
+      },
+      {
+        "name": "pnpm-workspace.yaml",
+        "path": "pnpm-workspace.yaml",
+        "type": "file",
+        "lineCount": 3,
+        "language": "YAML",
+        "role": "source"
+      },
+      {
+        "name": "tsconfig.json",
+        "path": "tsconfig.json",
+        "type": "file",
+        "lineCount": 27,
+        "language": "JSON",
+        "role": "config"
+      },
+      {
+        "name": "tsup.config.ts",
+        "path": "tsup.config.ts",
+        "type": "file",
+        "lineCount": 24,
+        "language": "TypeScript",
+        "role": "config"
+      },
+      {
+        "name": "vitest.config.ts",
+        "path": "vitest.config.ts",
+        "type": "file",
+        "lineCount": 15,
+        "language": "TypeScript",
+        "role": "config"
+      }
+    ]
+  },
+  "files": [
+    {
+      "path": ".agentsync/config.yaml",
+      "role": "source",
+      "language": "YAML",
+      "lineCount": 10,
+      "sha": "74d1da8fe6aa7398a6326d71d0ca35869ec6242ce6d292da2c5bfeed4a186be4"
+    },
+    {
+      "path": ".claude/settings.local.json",
+      "role": "source",
+      "language": "JSON",
+      "lineCount": 23,
+      "sha": "644c19bb4c54f81cd02e371c4775d20650c50ccb4345dbb3be314c46afec233b"
+    },
+    {
+      "path": ".github/workflows/agentsync.yml",
+      "role": "config",
+      "language": "YAML",
+      "lineCount": 46,
+      "sha": "16ef8a2e62907b12f0b0c1718ed267959a5a403def2c6daadf93c73d27705797"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "role": "config",
+      "language": "YAML",
+      "lineCount": 45,
+      "sha": "4a52d6b2b193d3c59b96e89fe0c58862b005e9d802508ab18d66018a2f54fc24"
+    },
+    {
+      "path": ".gitignore",
+      "role": "config",
+      "language": null,
+      "lineCount": 21,
+      "sha": "02281e7521906c776dcc98f207e64f71ad57f8fc77ab5d93106a903a8783c163"
+    },
+    {
+      "path": ".npmignore",
+      "role": "source",
+      "language": null,
+      "lineCount": 0,
+      "sha": "be2e39f35b67b420f73249d86fa5e770fcf7b527a388cd2919dcd2394d049672"
+    },
+    {
+      "path": "LICENSE",
+      "role": "doc",
+      "language": null,
+      "lineCount": 0,
+      "sha": "291cf928853f3994ae5d8cc23cc6f26e06676ded073969bf4dfc0a3da4f71b6e"
+    },
+    {
+      "path": "README.md",
+      "role": "doc",
+      "language": "Markdown",
+      "lineCount": 68,
+      "sha": "a4f74f33d444dfc331502e0469e84aed75efd9b7d0c9b41d505c2ee1b98ee2b7"
+    },
+    {
+      "path": "agent/.agentsyncignore",
+      "role": "source",
+      "language": null,
+      "lineCount": 0,
+      "sha": "6c28f8f9278587862e9dcafcb25068962d0a985d9241c4774f008ce3278bc45b"
+    },
+    {
+      "path": "agent/architecture.md",
+      "role": "doc",
+      "language": "Markdown",
+      "lineCount": 53,
+      "sha": "e0fd41fb5f8f74fecc48938d8302948b4820763034ddc1df7a8eab5af7fa1981"
+    },
+    {
+      "path": "agent/coding-rules.md",
+      "role": "doc",
+      "language": "Markdown",
+      "lineCount": 56,
+      "sha": "efc59ae5a690298ea007ea20f2725c158bd19f67da601ef0f1ca70c739ab66e7"
+    },
+    {
+      "path": "agent/domain-knowledge.md",
+      "role": "doc",
+      "language": "Markdown",
+      "lineCount": 52,
+      "sha": "b8d1d4b5b0d89b1e7567665390c8ff625ff847623bdec0f0a7fc18567e57b9a4"
+    },
+    {
+      "path": "agent/manifest.yaml",
+      "role": "source",
+      "language": "YAML",
+      "lineCount": 52,
+      "sha": "78fe80e9670da4e8af47859eb774d7403caafe315b6fa97b2b8eda313e382ed1"
+    },
+    {
+      "path": "agent/workflows/debugging.md",
+      "role": "doc",
+      "language": "Markdown",
+      "lineCount": 66,
+      "sha": "a0254f07ced8429eef8390f32bc808d691f6f1e50412d0153e71bbc30717d7b2"
+    },
+    {
+      "path": "agent/workflows/deployment.md",
+      "role": "doc",
+      "language": "Markdown",
+      "lineCount": 58,
+      "sha": "6d896fe7869807c40563186d616e9482374ef9f7466dfe70879ec48de84c7fc4"
+    },
+    {
+      "path": "agent/workflows/testing.md",
+      "role": "doc",
+      "language": "Markdown",
+      "lineCount": 51,
+      "sha": "bf5f425f3137b4c190ba20a7b2082892aeed51be560b128165cf90b1ae1d1b25"
+    },
+    {
+      "path": "docs/mcp.md",
+      "role": "doc",
+      "language": "Markdown",
+      "lineCount": 89,
+      "sha": "d4842ed67f8f820bdd883593780038563798ea40fe9472c7584c41b7c2b965dd"
+    },
+    {
+      "path": "docs/schema/v1/config.json",
+      "role": "source",
+      "language": "JSON",
+      "lineCount": 77,
+      "sha": "ad9aa5a93a1c04861361152a079317aa2b5c62ccc4e430b24aca4fdeb40c11a8"
+    },
+    {
+      "path": "docs/schema/v1/frontmatter.json",
+      "role": "source",
+      "language": "JSON",
+      "lineCount": 57,
+      "sha": "c13eede5c79584265d34519175c16654ed2f186f5d69886e1fd543527f2ef01c"
+    },
+    {
+      "path": "docs/schema/v1/manifest.json",
+      "role": "source",
+      "language": "JSON",
+      "lineCount": 114,
+      "sha": "5ac5bd67cdb85ca33efef79a3e280d906797cbd96e7ca0195fffd2d8d2dc2887"
+    },
+    {
+      "path": "docs/schema/v1/memory-file.json",
+      "role": "source",
+      "language": "JSON",
+      "lineCount": 81,
+      "sha": "5918de0d056bd25b45b5be9ec3d86ca12cc207a8daf14301dfa3f9b9eced05d2"
+    },
+    {
+      "path": "docs/schema/v1/policy.json",
+      "role": "source",
+      "language": "JSON",
+      "lineCount": 106,
+      "sha": "da5ba3a745aac1b57acb81a2f326139a9158e686bb583df9504544d8839611b3"
+    },
+    {
+      "path": "docs/schema/v1/repo-map.json",
+      "role": "source",
+      "language": "JSON",
+      "lineCount": 154,
+      "sha": "3523651a3b3582d2f6c0d2e953cbf2dc48d95db092a2e98ec108fed432b24f86"
+    },
+    {
+      "path": "docs/schema/v1/stack.json",
+      "role": "source",
+      "language": "JSON",
+      "lineCount": 49,
+      "sha": "a7138024f589c62c1573707379376eb9770f7db6f6aaf95a7d5e34c642279be6"
+    },
+    {
+      "path": "eslint.config.js",
+      "role": "config",
+      "language": "JavaScript",
+      "lineCount": 26,
+      "sha": "7ba05352dc0fd2922892f823e44576693c46d6621658a1a4a666179efd62dd26"
+    },
+    {
+      "path": "package.json",
+      "role": "config",
+      "language": "JSON",
+      "lineCount": 81,
+      "sha": "3f5d67a2667c8636012fcb5b95fdba40029b81a06263fdfd66a23bdaf841db69"
+    },
+    {
+      "path": "packages/action/action.yml",
+      "role": "source",
+      "language": "YAML",
+      "lineCount": 36,
+      "sha": "0fe863ea3b194a332b7c810bfd5f1af95be2e636828ceba86f4fe6e1a28df9dd"
+    },
+    {
+      "path": "packages/action/package.json",
+      "role": "config",
+      "language": "JSON",
+      "lineCount": 19,
+      "sha": "fe49c3dde69bfcd05a31838bb0c80e5836addede6154f86c3adf7479ff9e9e38"
+    },
+    {
+      "path": "packages/action/pnpm-lock.yaml",
+      "role": "source",
+      "language": "YAML",
+      "lineCount": 92,
+      "sha": "ec7980f13f8d537e27b49c76b7b843503073c6d2de2d1be26fb9fc803a2513ca"
+    },
+    {
+      "path": "packages/action/src/index.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 123,
+      "sha": "0df683d55749adc4fc6e83bf03c65da560f933fb5a0960b0bdf70db1b7852d31"
+    },
+    {
+      "path": "packages/action/tests/action.test.ts",
+      "role": "test",
+      "language": "TypeScript",
+      "lineCount": 59,
+      "sha": "c115782360ce111dac4993a32fdc01681a244325ac7f19f3e68f9a40106d6e6f"
+    },
+    {
+      "path": "packages/action/tsconfig.json",
+      "role": "config",
+      "language": "JSON",
+      "lineCount": 16,
+      "sha": "e18ba273ed7b8d49983108810fb3e9921b122142778386ba3854533bb18b6175"
+    },
+    {
+      "path": "packages/adapter-sdk/README.md",
+      "role": "doc",
+      "language": "Markdown",
+      "lineCount": 64,
+      "sha": "4fd11b07d561a87cc63001d009cf193788a8ba7b3f77b7d6e98945833aaf3184"
+    },
+    {
+      "path": "packages/adapter-sdk/package.json",
+      "role": "config",
+      "language": "JSON",
+      "lineCount": 35,
+      "sha": "9478a6d160193417a790f5d8bfb5f3e8546c55bc09da6aee01f2ddcf8a214a17"
+    },
+    {
+      "path": "packages/adapter-sdk/src/frontmatter.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 17,
+      "sha": "cd733467886952ae2d6ae3b2a9dc50419fdf6e018f62c5eef06e1cfb48fda395"
+    },
+    {
+      "path": "packages/adapter-sdk/src/helpers.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 69,
+      "sha": "8b9bc93b05ad18a368c2572c4425a04eecd121c21bfb75401a7b5f198e825140"
+    },
+    {
+      "path": "packages/adapter-sdk/src/index.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 28,
+      "sha": "86e07c9b0421407418a270b68d2c2ea4154593e903b2ec712e14ea92de9de419"
+    },
+    {
+      "path": "packages/adapter-sdk/src/provenance.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 55,
+      "sha": "01f35c41c0a4a89f0c636eff4df344bba5a2b20e3ef3d7b8b477a30b926041ad"
+    },
+    {
+      "path": "packages/adapter-sdk/src/types.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 60,
+      "sha": "4ffc58726851e7e345aa1ae2159147679b1fa9df009d5af084953f41ce411074"
+    },
+    {
+      "path": "packages/adapter-sdk/tests/adapter-contract.test.ts",
+      "role": "test",
+      "language": "TypeScript",
+      "lineCount": 107,
+      "sha": "d9c6ff138cab9b90fa12f8bae0895a0066dd0ef2dd78513b89e2c0a8bf7757ad"
+    },
+    {
+      "path": "packages/adapter-sdk/tsconfig.json",
+      "role": "config",
+      "language": "JSON",
+      "lineCount": 18,
+      "sha": "3ed43a542e2fee119f54aa8b724b02b265b0c5cdd5d7397211a9f63f82c52d3f"
+    },
+    {
+      "path": "packages/adapter-sdk/tsup.config.ts",
+      "role": "config",
+      "language": "TypeScript",
+      "lineCount": 12,
+      "sha": "77f54fbec4bd18a5266d17e6f7e2ab17e3312631001e78e4ed580a390f146273"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "role": "source",
+      "language": "YAML",
+      "lineCount": 4244,
+      "sha": "716263078bdcdca347cc873b1e65c9de7f3439df62fb716d3233793c8a617bd9"
+    },
+    {
+      "path": "pnpm-workspace.yaml",
+      "role": "source",
+      "language": "YAML",
+      "lineCount": 3,
+      "sha": "7493e39f3b945e0ca6d68b8e23eeee6026a43038f5f2a7684b3ad8e9683b88c5"
+    },
+    {
+      "path": "scripts/export-schemas.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 45,
+      "sha": "27f69d5b08187a782f3c8bce97b3817af35694a9befd5d5c0965065c3f3ff84d"
+    },
+    {
+      "path": "src/adapters/_render.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 54,
+      "sha": "31b39a5a49c47575a58593eb2dd443d1a6913c635a8e4bf72a36d1ed5b2e9a1f"
+    },
+    {
+      "path": "src/adapters/agentsMd.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 29,
+      "sha": "2953c5c8c3c002d568d097f5a6aedae03e968b94377ecb174d97cc4bdcaba836"
+    },
+    {
+      "path": "src/adapters/base.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 11,
+      "sha": "1ce6ab86358d70c004068348cb20672b144fb85a841d727a08e4c666ebdb88cc"
+    },
+    {
+      "path": "src/adapters/claude.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 29,
+      "sha": "660ce851377c5b8d4564d2e09a90dd29b5cc5409bd368998b70465c6fe049b4d"
+    },
+    {
+      "path": "src/adapters/cline.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 29,
+      "sha": "4c83add40097adf5e44182b061a23328630d1202250e626e509acc393b07470d"
+    },
+    {
+      "path": "src/adapters/copilot.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 29,
+      "sha": "0b1c89b843e93e5c2eefcccf64bf748b1237f1ea115e6f5d3df49774aa16892c"
+    },
+    {
+      "path": "src/adapters/cursor.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 81,
+      "sha": "04be6627c60a3acb96bff54aa3f6dadebb950c9e1aa93c97c5b110d9572f4ddb"
+    },
+    {
+      "path": "src/adapters/registry.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 34,
+      "sha": "cf3ad74492b4b3d4b8d0793b3b258e8c0dffdad115896d835c4b59d3d463436d"
+    },
+    {
+      "path": "src/adapters/windsurf.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 29,
+      "sha": "e2a9e248b8a3b280c5ae554f29556799a1d666ab86f00b028136fa293c098880"
+    },
+    {
+      "path": "src/cli/diff.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 178,
+      "sha": "e55f99562e490b2990fec252e70c20e87db11fdbbeb7d50dfcd9e6c57483ae19"
+    },
+    {
+      "path": "src/cli/export.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 74,
+      "sha": "f34f8309b490e54291a9eae495375c4850aa114925b4b7ef615576a955a8f6f9"
+    },
+    {
+      "path": "src/cli/import.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 147,
+      "sha": "0e0f09124aaefec17cd996344cb6e0eb836598b4ddcfa29ad71ec989aee6a047"
+    },
+    {
+      "path": "src/cli/index.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 249,
+      "sha": "8e6e5f5401a07038d0b6427e6cfda044f98557fc5aeccb844f9553c9524e8483"
+    },
+    {
+      "path": "src/cli/init.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 177,
+      "sha": "974d4cb6f4f4896baa889d9c135abab8d382afabaee5fcbd7ea5c55abb8748b1"
+    },
+    {
+      "path": "src/cli/installHook.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 115,
+      "sha": "c2cbab7c70ed00cf0cf7815da2f8dfbdf247baa368a8852202debf879cc9eec2"
+    },
+    {
+      "path": "src/cli/lint.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 89,
+      "sha": "1f002b8962c3573c282c0e004346799e54f12c7d9addd37f728ad3711bdee703"
+    },
+    {
+      "path": "src/cli/mcp.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 35,
+      "sha": "0d91a8d9f633a4cfe908d787ff33b97f6830fa13914224ea68a5a1717c491e9d"
+    },
+    {
+      "path": "src/cli/scan.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 177,
+      "sha": "802f87b06d28a2433ab130c93e291e612c1e230fcbaca853535da8200bfc2f7f"
+    },
+    {
+      "path": "src/cli/show.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 63,
+      "sha": "8dc12b5414e20c17b9acead3deb92ec49aae15b0df1e3be7425d0865a61c8224"
+    },
+    {
+      "path": "src/cli/stats.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 155,
+      "sha": "4c8f3b019f8658c350a47c13ef3a3d7dd2c170aa1db258f2633e22c437d5d8aa"
+    },
+    {
+      "path": "src/cli/sync.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 181,
+      "sha": "b4146c52cbb84d865d45c525442812e0f68e7bb0af398913f642fabd61b34e76"
+    },
+    {
+      "path": "src/cli/validate.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 163,
+      "sha": "adb5cd9e31558d7957f29a8b990ee5c35a9b0987b929b9ac00006489f8ca1f4b"
+    },
+    {
+      "path": "src/cli/version.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 44,
+      "sha": "5b2af2949112b875901e726057e5bae63f868ab11402120402ed48632c51be69"
+    },
+    {
+      "path": "src/core/config.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 21,
+      "sha": "0d12107f6cb2b7ae7a323377975c8f354af34c7310507778beeec2854e01df26"
+    },
+    {
+      "path": "src/core/drift.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 72,
+      "sha": "334f8372bd22b38bb4a5c93688ea8533f510a277b4dfb52b72c88921ccdeb218"
+    },
+    {
+      "path": "src/core/errors.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 32,
+      "sha": "4867cebc5850fe5bdf36d899cf1005d968ce3ac53e516d231c290a66ff8e6fae"
+    },
+    {
+      "path": "src/core/frontmatter.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 64,
+      "sha": "bfe511af15735d2eaaf748bf711587580dc59c0c7a7094d0a5e1fc0579a2a5f6"
+    },
+    {
+      "path": "src/core/git.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 38,
+      "sha": "bca2b8bde67620185397746d6a5feebcaa6d48b46f14bd0e4fbc350fe4ec16f6"
+    },
+    {
+      "path": "src/core/ignore.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 25,
+      "sha": "725203eebebe98b223526d7a14504638907274ab03af7a9d3a9d6736be9dc00f"
+    },
+    {
+      "path": "src/core/load.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 102,
+      "sha": "20bc190dc36bc139da0c1f0668465b129038df9e29be907ba976a89065d5fd7e"
+    },
+    {
+      "path": "src/core/logger.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 53,
+      "sha": "be88d0f5b675cc49e2f6eccb4b989401a40002912c907037c30184f03db4b5da"
+    },
+    {
+      "path": "src/core/manifest.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 42,
+      "sha": "4fa1d44f2a1f79b7ed86e9b5d1ce7ed963d6377fffae6533a6d858ffcc20d5ea"
+    },
+    {
+      "path": "src/core/memory.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 9,
+      "sha": "352db5ac86ce98a6179b6b6e926b2dc4efdc68bc0c915fed1997077f8ddeea80"
+    },
+    {
+      "path": "src/core/paths.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 70,
+      "sha": "786b861505cae39ab878b4f3e8c6febd2b8faf16a1c354f38c6b76063f4cfca9"
+    },
+    {
+      "path": "src/core/policy.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 89,
+      "sha": "8953cf2586c85adc3accf1c760c50a1878aaa052e8a452d582d0e0725214262d"
+    },
+    {
+      "path": "src/core/provenance.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 10,
+      "sha": "03d1fd54585524a0660aea0c0243f13ade06681545be7e06ca2d35b50f195dcf"
+    },
+    {
+      "path": "src/generators/repoMap.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 20,
+      "sha": "e08d10cafdeb7920c2a7cde7475758fa6ec723430dc2a8f4efb046d8eae66705"
+    },
+    {
+      "path": "src/generators/stack.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 89,
+      "sha": "575a640807e1282e8bb55af2eaa7173342ee733b390f4c68048d8ec9e0093ae3"
+    },
+    {
+      "path": "src/index.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 28,
+      "sha": "c40c6ec5891106dc2173ce2274f1b814cdc0f9297e44d13d8ee4fe0e8eeb5b1d"
+    },
+    {
+      "path": "src/linter/engine.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 78,
+      "sha": "9036007b78ebb15864fb75f8fe5e73909a67806b52cfcc8924ba42d279db69ae"
+    },
+    {
+      "path": "src/linter/rules/bannedPhrases.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 39,
+      "sha": "7d958833fc3085e17d24931775180b70692415968816e5b528eb408de3438cdc"
+    },
+    {
+      "path": "src/linter/rules/freshness.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 27,
+      "sha": "fe9ff67f2eb2b3dcbeda95d8862407ced79e55c3649ffc4a861ed5546986cccd"
+    },
+    {
+      "path": "src/linter/rules/headingHierarchy.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 35,
+      "sha": "6a1a73b1c28f5c9a6444a887704d81e8268eea845511b8799d4337f0eec0b493"
+    },
+    {
+      "path": "src/linter/rules/index.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 22,
+      "sha": "fa99ab94e8bccb74310026d5ce8e93bed70dbdc98b7a4205842ed0577de3c2ba"
+    },
+    {
+      "path": "src/linter/rules/maxLength.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 26,
+      "sha": "f0d263786da44e46d6a418d131c313a08bca12c5038b2366bd31c49497d23047"
+    },
+    {
+      "path": "src/linter/rules/requiredSections.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 33,
+      "sha": "080a608ef0fd0047303549839099e0bf0783ef51a263c655c839e311b5e64a5a"
+    },
+    {
+      "path": "src/mcp/server.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 199,
+      "sha": "022ad3726645129ba3a5cc4677916e7c377d8f09a8f89c2f7dd3271f0bac4ede"
+    },
+    {
+      "path": "src/scanners/cache.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 41,
+      "sha": "c3c515a121a51b0c0f446b49054f2851c78821b679bf4dad22102818c5d7b0d3"
+    },
+    {
+      "path": "src/scanners/enumerator.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 75,
+      "sha": "ff1b83bfd3bee61a7e7cd99028f5ec9f15f81350a1daf71d4263b29f6f16786a"
+    },
+    {
+      "path": "src/scanners/languageMap.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 98,
+      "sha": "3f2cefa87bcdb3a9528dbfd2b155d8d1e1e830817abf97805aadcaca4a3d66e8"
+    },
+    {
+      "path": "src/scanners/lineCounter.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 46,
+      "sha": "24cf207285faa10a6388a9bc6801a74c37bb6a2de260831b8d37db1fdfe07e8f"
+    },
+    {
+      "path": "src/scanners/roleClassifier.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 40,
+      "sha": "198a680c6de982b81d76b97ceb31aca971f8603089f9c8cee105598d688b6780"
+    },
+    {
+      "path": "src/scanners/scan.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 104,
+      "sha": "66afbdfacc73c67ca72e0ab483a7b61d79081e18d15d2eee0d6a6a186fc38c7f"
+    },
+    {
+      "path": "src/scanners/stackDetector.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 195,
+      "sha": "6e64ea0581c9a269c9a320f9d7ec9c6054e462d462e245d945fafe202eedbe5d"
+    },
+    {
+      "path": "src/scanners/treeBuilder.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 67,
+      "sha": "5498f585971304f30dc1bf785e8d302c3369737af9977cf4bbdec0c72a0f48f9"
+    },
+    {
+      "path": "src/scanners/types.ts",
+      "role": "source",
+      "language": "TypeScript",
+      "lineCount": 80,
+      "sha": "810621b9a148e51c0c42c48372875e3ade7de2cbf708ce0137962e314e3b00c0"
+    },
+    {
+      "path": "templates/starter/.agentsyncignore",
+      "role": "source",
+      "language": null,
+      "lineCount": 0,
+      "sha": "6c28f8f9278587862e9dcafcb25068962d0a985d9241c4774f008ce3278bc45b"
+    },
+    {
+      "path": "templates/starter/architecture.md",
+      "role": "doc",
+      "language": "Markdown",
+      "lineCount": 32,
+      "sha": "21a904a3096b4881d931222f3b3765db58433c69f51a23cf570ed2b4f26a66bb"
+    },
+    {
+      "path": "templates/starter/coding-rules.md",
+      "role": "doc",
+      "language": "Markdown",
+      "lineCount": 26,
+      "sha": "37131923510660d515063eee55d63290e4ab55b2feaf5fa430115d833b178356"
+    },
+    {
+      "path": "templates/starter/domain-knowledge.md",
+      "role": "doc",
+      "language": "Markdown",
+      "lineCount": 25,
+      "sha": "e624f0b212c95ec84fb11bc4d06185a4cb2c5f378882cd72bb1a701f97a0d42b"
+    },
+    {
+      "path": "templates/starter/manifest.yaml",
+      "role": "source",
+      "language": "YAML",
+      "lineCount": 47,
+      "sha": "cb0d046fa23f0b0dbb793f0650b59ba8d340c2d2ca4688ba30f4942ffe5c0a36"
+    },
+    {
+      "path": "templates/starter/stack.md",
+      "role": "doc",
+      "language": "Markdown",
+      "lineCount": 19,
+      "sha": "b1f4f24dd5b9fdc14c7341f253d24161a9eef468e7f636691c2a4de41fea088a"
+    },
+    {
+      "path": "templates/starter/workflows/debugging.md",
+      "role": "doc",
+      "language": "Markdown",
+      "lineCount": 25,
+      "sha": "166574fde5b842515dc80972db1378add11832963ebc586ad7b4f44286b7f6da"
+    },
+    {
+      "path": "templates/starter/workflows/deployment.md",
+      "role": "doc",
+      "language": "Markdown",
+      "lineCount": 27,
+      "sha": "b0374c4bb3a6e2e621a3a82d84d8533b635879a92ebfee1497b224c45591c7dd"
+    },
+    {
+      "path": "templates/starter/workflows/testing.md",
+      "role": "doc",
+      "language": "Markdown",
+      "lineCount": 27,
+      "sha": "a952090360117d303a4a590e2e85750cd90b972f4625618c02ab9f84d9201be8"
+    },
+    {
+      "path": "tests/adapters.test.ts",
+      "role": "test",
+      "language": "TypeScript",
+      "lineCount": 114,
+      "sha": "e8cb8283d6f2bac560141e1a6eeab3d9e7e79befc3c09338076ee1601a42d008"
+    },
+    {
+      "path": "tests/exportImport.test.ts",
+      "role": "test",
+      "language": "TypeScript",
+      "lineCount": 98,
+      "sha": "8220f86050a6c974d168cbf0e9e73b1f971ca8dca8648b225462534e5f6f025b"
+    },
+    {
+      "path": "tests/frontmatter.test.ts",
+      "role": "test",
+      "language": "TypeScript",
+      "lineCount": 72,
+      "sha": "90bc7bf1768ed7fa16d20b27cf552664c84b3ee22ac5ee53fa57d0b85f722ad9"
+    },
+    {
+      "path": "tests/ignore.test.ts",
+      "role": "test",
+      "language": "TypeScript",
+      "lineCount": 26,
+      "sha": "1caf67cb34d1f0e080e4b556f21ed96965c9ef9c1e8dc1562a4b552c836a5229"
+    },
+    {
+      "path": "tests/init.test.ts",
+      "role": "test",
+      "language": "TypeScript",
+      "lineCount": 220,
+      "sha": "69c16bc8727e6cd9e24ab6e23994d1f3e9fa788ec275092d57153e4404ea289d"
+    },
+    {
+      "path": "tests/lint.test.ts",
+      "role": "test",
+      "language": "TypeScript",
+      "lineCount": 128,
+      "sha": "a3ef6981347456d74744b35b43e9094290df8defc8c58a2d3d4f1ebf64a48570"
+    },
+    {
+      "path": "tests/mcp.test.ts",
+      "role": "test",
+      "language": "TypeScript",
+      "lineCount": 135,
+      "sha": "f23c2406b323c686f08a481124eff212c814ad38cc30314e872a2da70979468c"
+    },
+    {
+      "path": "tests/paths.test.ts",
+      "role": "test",
+      "language": "TypeScript",
+      "lineCount": 37,
+      "sha": "95371d34b9fdc2cd2f962fb784cd310229482e6b2c5ec7eaa1fed23595f1b2dd"
+    },
+    {
+      "path": "tests/policy.test.ts",
+      "role": "test",
+      "language": "TypeScript",
+      "lineCount": 84,
+      "sha": "7310acefacc122eab171524597717769916cb53da381c2dc983cf038600ec6a2"
+    },
+    {
+      "path": "tests/scan.test.ts",
+      "role": "test",
+      "language": "TypeScript",
+      "lineCount": 84,
+      "sha": "9154667f31bc461c3d7cff693eb3949afea337ea7173fab7a6d7a3de0fc5798b"
+    },
+    {
+      "path": "tests/scanners/languageMap.test.ts",
+      "role": "test",
+      "language": "TypeScript",
+      "lineCount": 58,
+      "sha": "4aad26cbee6cf22f520af14d637f43d765e30b3aa25636a5abf325c58ce7cb3e"
+    },
+    {
+      "path": "tests/scanners/lineCounter.test.ts",
+      "role": "test",
+      "language": "TypeScript",
+      "lineCount": 58,
+      "sha": "9b20aef81bf49feefd7dc819d641590c660fdc52c5c318d2c9f590ef79b7aa7a"
+    },
+    {
+      "path": "tests/scanners/roleClassifier.test.ts",
+      "role": "test",
+      "language": "TypeScript",
+      "lineCount": 35,
+      "sha": "d834e567ef3e83e5ebb0212ac22f7185343d4030be20d68ad63ddd0c589bf79d"
+    },
+    {
+      "path": "tests/scanners/stackDetector.test.ts",
+      "role": "test",
+      "language": "TypeScript",
+      "lineCount": 79,
+      "sha": "f2a442588684ab935941c9bc2415cb37003f261633412d061e8f9c225bb62821"
+    },
+    {
+      "path": "tests/scanners/treeBuilder.test.ts",
+      "role": "test",
+      "language": "TypeScript",
+      "lineCount": 56,
+      "sha": "4d8db8e153ffdc4127af85b03a88380357ba2fe4420eebfe56747ca27c244a48"
+    },
+    {
+      "path": "tests/schemas.test.ts",
+      "role": "test",
+      "language": "TypeScript",
+      "lineCount": 73,
+      "sha": "60eda2c055e6be8b0a10a04f4f92bf2b4310e50535be00b1206b335bc9e1e673"
+    },
+    {
+      "path": "tests/show.test.ts",
+      "role": "test",
+      "language": "TypeScript",
+      "lineCount": 54,
+      "sha": "2d40e6bba9374b4576d05faadb68e11a6cc70797ba8c8501106d5de6608b76de"
+    },
+    {
+      "path": "tests/stats.test.ts",
+      "role": "test",
+      "language": "TypeScript",
+      "lineCount": 66,
+      "sha": "31f1d604576b523e5a2232521baa16c23a74ea36c41459c8dc985a62cb292522"
+    },
+    {
+      "path": "tests/version.test.ts",
+      "role": "test",
+      "language": "TypeScript",
+      "lineCount": 28,
+      "sha": "c60eadd71690d549fe76122233e91beeb726d239bf77151a4e3d009027ec4f48"
+    },
+    {
+      "path": "tsconfig.json",
+      "role": "config",
+      "language": "JSON",
+      "lineCount": 27,
+      "sha": "9ccf8da9643f0dca3d79e90be5007533afced05a8981d1c4a8f6e505c88a1466"
+    },
+    {
+      "path": "tsup.config.ts",
+      "role": "config",
+      "language": "TypeScript",
+      "lineCount": 24,
+      "sha": "86e426704d6944f608658eddb172dedd9238563f242105c7f78d7fb276dcbf5f"
+    },
+    {
+      "path": "vitest.config.ts",
+      "role": "config",
+      "language": "TypeScript",
+      "lineCount": 15,
+      "sha": "c8561112b680bd9c12bc161c0c7d55ac0b8342cbf4fe469fd3a32609563ec795"
+    }
+  ]
+}

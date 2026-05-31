@@ -1,0 +1,52 @@
+version: 1
+project:
+  name: cli
+  description: Repo-local agent memory for cli.
+targets:
+  - claude
+  - agents-md
+  - cursor
+  - cline
+  - windsurf
+  - copilot
+files:
+  - path: architecture.md
+    source: hybrid
+    priority: 10
+    applies_to: ["*"]
+  - path: coding-rules.md
+    source: authored
+    priority: 20
+    applies_to: ["*"]
+  - path: stack.md
+    source: generated
+    priority: 30
+    applies_to: ["*"]
+  - path: repo-map.json
+    source: generated
+    priority: 35
+    applies_to: [claude]
+  - path: domain-knowledge.md
+    source: authored
+    priority: 40
+    applies_to: ["*"]
+  - path: workflows/testing.md
+    source: authored
+    priority: 60
+    applies_to: ["*"]
+  - path: workflows/deployment.md
+    source: authored
+    priority: 60
+    applies_to: ["*"]
+  - path: workflows/debugging.md
+    source: authored
+    priority: 60
+    applies_to: ["*"]
+generation:
+  scanner: shape
+  exclude:
+    - node_modules
+    - dist
+    - .next
+    - build
+    - coverage
