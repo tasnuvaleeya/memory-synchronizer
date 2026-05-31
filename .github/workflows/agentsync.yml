@@ -43,6 +43,18 @@ jobs:
       - name: Verify sync is up-to-date
         run: node dist/cli/index.js sync --check
 
+      - name: DEBUG show scan drift
+        run: |
+          node dist/cli/index.js scan
+          echo "::group::diff of scan artifacts vs committed"
+          git --no-pager diff agent/stack.md agent/repo-map.json | head -200 || true
+          echo "::endgroup::"
+          echo "::group::all files git sees as modified"
+          git status --short
+          echo "::endgroup::"
+          # Restore committed state so the next step is a real --check
+          git checkout -- agent/stack.md agent/repo-map.json
+
       - name: Verify scan artifacts are fresh
         run: node dist/cli/index.js scan --check
 
