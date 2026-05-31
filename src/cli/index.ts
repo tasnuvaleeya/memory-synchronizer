@@ -18,6 +18,7 @@ import { lintCommand } from "./lint.js";
 import { statsCommand } from "./stats.js";
 import { exportCommand } from "./export.js";
 import { importCommand } from "./import.js";
+import { mcpCommand } from "./mcp.js";
 
 interface GlobalOpts {
   cwd?: string;
@@ -184,6 +185,16 @@ export function buildProgram(): Command {
         logger,
         global,
       );
+    });
+
+  program
+    .command("mcp")
+    .description("run an MCP server exposing agent/ as Model Context Protocol resources (stdio)")
+    .option("--json", "machine-readable startup output (no effect on the MCP protocol itself)")
+    .action(async (cmdOpts, cmd: Command) => {
+      const global = cmd.optsWithGlobals<GlobalOpts>();
+      const logger = makeLogger(global);
+      await runCommand(() => mcpCommand(global.cwd, cmdOpts, logger), logger, global);
     });
 
   program

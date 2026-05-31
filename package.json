@@ -49,6 +49,8 @@
     "memory"
   ],
   "dependencies": {
+    "@agentsync/adapter-sdk": "workspace:*",
+    "@modelcontextprotocol/sdk": "^1.29.0",
     "commander": "^12.1.0",
     "fs-extra": "^11.2.0",
     "globby": "^14.0.2",

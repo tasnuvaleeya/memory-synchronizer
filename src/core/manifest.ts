@@ -1,19 +1,13 @@
 import { z } from "zod";
+import { SourceType, FrontmatterSchema, type Frontmatter } from "@agentsync/adapter-sdk";
 
-export const SourceType = z.enum(["authored", "generated", "hybrid"]);
-export type SourceType = z.infer<typeof SourceType>;
+// Re-export the SDK-canonical authoring types so internal imports of this
+// module keep working without a churn-y mass rename.
+export { SourceType, FrontmatterSchema, type Frontmatter };
 
-export const FrontmatterSchema = z
-  .object({
-    name: z.string().min(1),
-    description: z.string().min(1),
-    source: SourceType.default("authored"),
-    priority: z.number().int().min(0).max(100).default(50),
-    applies_to: z.array(z.string().min(1)).default(["*"]),
-    tags: z.array(z.string().min(1)).default([]),
-  })
-  .strict();
-export type Frontmatter = z.infer<typeof FrontmatterSchema>;
+// ManifestFileEntry / ManifestSchema describe the on-disk `agent/manifest.yaml`
+// format. They are CLI-internal — not part of the public adapter SDK surface —
+// because adapter authors only need the MemorySet/Frontmatter types.
 
 export const ManifestFileEntry = z
   .object({
