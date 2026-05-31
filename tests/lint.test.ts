@@ -41,7 +41,7 @@ function mkFile(overrides: Partial<MemoryFile> & { body: string; path?: string }
 }
 
 beforeEach(async () => {
-  root = await mkdtemp(path.join(tmpdir(), "agentsync-lint-"));
+  root = await mkdtemp(path.join(tmpdir(), "agentctx-lint-"));
   await initCommand(root, {}, quiet);
 });
 
@@ -119,7 +119,7 @@ describe("lint command", () => {
 
   it("exits with error when a required section is missing", async () => {
     await writeFile(
-      path.join(root, "agentsync.policy.yaml"),
+      path.join(root, "agentctx.policy.yaml"),
       `version: 1\nlint:\n  requiredSections:\n    coding-rules.md: ["## Nonexistent Section"]\n`,
       "utf8",
     );

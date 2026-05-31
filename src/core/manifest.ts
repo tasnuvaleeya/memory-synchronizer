@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { SourceType, FrontmatterSchema, type Frontmatter } from "@agentsync/adapter-sdk";
+import { SourceType, FrontmatterSchema, type Frontmatter } from "@agentctx/adapter-sdk";
 
 // Re-export the SDK-canonical authoring types so internal imports of this
 // module keep working without a churn-y mass rename.

@@ -1,5 +1,5 @@
 // The canonical adapter types and pure helpers now live in
-// @agentsync/adapter-sdk so third-party adapters can semver-pin against them.
+// @agentctx/adapter-sdk so third-party adapters can semver-pin against them.
 // This file is kept as a thin re-export so existing internal imports
 // continue to work without churn.
 export {
@@ -8,4 +8,4 @@ export {
   type RenderContext,
   applyTokenBudget,
   computeSourceSha,
-} from "@agentsync/adapter-sdk";
+} from "@agentctx/adapter-sdk";

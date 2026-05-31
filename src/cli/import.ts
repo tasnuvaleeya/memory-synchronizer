@@ -81,7 +81,7 @@ async function importTarball(source: string, root: string, dest: string): Promis
 
   // Extract to a temp dir first, then move into place. This avoids partial
   // writes on tarball error.
-  const stage = await mkdtemp(path.join(tmpdir(), "agentsync-import-"));
+  const stage = await mkdtemp(path.join(tmpdir(), "agentctx-import-"));
   try {
     await tarExtract({ file: absSrc, cwd: stage });
 
@@ -100,7 +100,7 @@ async function importGit(
   dest: string,
   _root: string,
 ): Promise<void> {
-  const stage = await mkdtemp(path.join(tmpdir(), "agentsync-clone-"));
+  const stage = await mkdtemp(path.join(tmpdir(), "agentctx-clone-"));
   try {
     const git = simpleGit();
     const cloneArgs: string[] = ["--depth", "1"];

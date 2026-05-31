@@ -1,4 +1,4 @@
-name: agentsync
+name: agentctx
 
 on:
   pull_request:
@@ -11,7 +11,7 @@ on:
       - ".clinerules"
       - ".windsurfrules"
       - ".github/copilot-instructions.md"
-      - ".github/workflows/agentsync.yml"
+      - ".github/workflows/agentctx.yml"
   push:
     branches: [main]
 
@@ -35,7 +35,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build SDK
-        run: pnpm --filter @agentsync/adapter-sdk run build
+        run: pnpm --filter @agentctx/adapter-sdk run build
 
       - name: Build CLI
         run: pnpm run build

@@ -1,9 +1,22 @@
 {
-  "name": "@agentsync/adapter-sdk",
+  "name": "@agentctx/adapter-sdk",
   "version": "0.1.0",
-  "description": "Public types and helpers for building agentsync adapters and consumers.",
+  "description": "Public types and helpers for building agentctx adapters and consumers.",
   "license": "MIT",
+  "author": "tasnuva-aif",
+  "homepage": "https://github.com/tasnuvaleeya/memory-synchronizer/tree/main/packages/adapter-sdk#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tasnuvaleeya/memory-synchronizer.git",
+    "directory": "packages/adapter-sdk"
+  },
+  "bugs": {
+    "url": "https://github.com/tasnuvaleeya/memory-synchronizer/issues"
+  },
   "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",

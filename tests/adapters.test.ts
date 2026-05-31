@@ -13,7 +13,7 @@ let root: string;
 const quiet = new Logger({ quiet: true });
 
 beforeEach(async () => {
-  root = await mkdtemp(path.join(tmpdir(), "agentsync-adapters-"));
+  root = await mkdtemp(path.join(tmpdir(), "agentctx-adapters-"));
   await initCommand(root, { targets: "claude,agents-md,cursor,cline,windsurf,copilot" }, quiet);
 });
 
@@ -27,7 +27,7 @@ describe("sync command", () => {
     const file = path.join(root, "CLAUDE.md");
     expect(existsSync(file)).toBe(true);
     const contents = await readFile(file, "utf8");
-    expect(contents).toContain("<!-- agentsync:generated -->");
+    expect(contents).toContain("<!-- agentctx:generated -->");
     expect(contents).toContain("Agent Context (Claude)");
   });
 
@@ -36,14 +36,14 @@ describe("sync command", () => {
     const file = path.join(root, "AGENTS.md");
     expect(existsSync(file)).toBe(true);
     const contents = await readFile(file, "utf8");
-    expect(contents).toContain("<!-- agentsync:generated -->");
+    expect(contents).toContain("<!-- agentctx:generated -->");
     expect(contents).toContain("Agent Context");
   });
 
-  it("generates .cursorrules and .cursor/rules/agentsync.mdc", async () => {
+  it("generates .cursorrules and .cursor/rules/agentctx.mdc", async () => {
     await syncCommand(root, { adapter: ["cursor"] }, quiet);
     expect(existsSync(path.join(root, ".cursorrules"))).toBe(true);
-    expect(existsSync(path.join(root, ".cursor", "rules", "agentsync.mdc"))).toBe(true);
+    expect(existsSync(path.join(root, ".cursor", "rules", "agentctx.mdc"))).toBe(true);
   });
 
   it("generates .clinerules", async () => {
@@ -103,7 +103,7 @@ describe("provenance", () => {
     await syncCommand(root, { adapter: ["claude"] }, quiet);
     const raw = await readFile(path.join(root, "CLAUDE.md"), "utf8");
     const stripped = stripProvenance(raw);
-    expect(stripped).not.toContain("<!-- agentsync:generated -->");
+    expect(stripped).not.toContain("<!-- agentctx:generated -->");
     expect(stripped).not.toContain("<!-- DO NOT EDIT");
   });
 

@@ -22,7 +22,7 @@ describe("classifyRole", () => {
     ["README.md", "doc"],
     ["docs/setup.md", "doc"],
     ["LICENSE", "doc"],
-    ["bin/agentsync.js", "entry"],
+    ["bin/agentctx.js", "entry"],
     ["src/main.ts", "entry"],
     ["src/components/Button.tsx", "source"],
   ];

@@ -1,6 +1,6 @@
 /**
  * Static extension → language map. Phase-1 deliberately small: only widely-used
- * source languages. Users can override via `.agentsync/config.yaml`'s
+ * source languages. Users can override via `.agentctx/config.yaml`'s
  * `languageMap` field (extension → display name).
  */
 const DEFAULT_MAP: Record<string, string> = {

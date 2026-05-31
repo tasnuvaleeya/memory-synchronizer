@@ -1,16 +1,16 @@
-# @agentsync/adapter-sdk
+# @agentctx/adapter-sdk
 
-Public types and helpers for building [agentsync](https://github.com/tasnuvaleeya/memory-synchronizer) adapters and SDK consumers.
+Public types and helpers for building [agentctx](https://github.com/tasnuvaleeya/memory-synchronizer) adapters and SDK consumers.
 
 ## Install
 
 ```sh
-npm install @agentsync/adapter-sdk
+npm install @agentctx/adapter-sdk
 ```
 
 ## Use
 
-Write a custom adapter for a tool agentsync doesn't ship out of the box:
+Write a custom adapter for a tool agentctx doesn't ship out of the box:
 
 ```ts
 import {
@@ -20,7 +20,7 @@ import {
   computeSourceSha,
   injectProvenance,
   contentChecksum,
-} from "@agentsync/adapter-sdk";
+} from "@agentctx/adapter-sdk";
 
 export const aiderAdapter: Adapter = {
   name: "aider",

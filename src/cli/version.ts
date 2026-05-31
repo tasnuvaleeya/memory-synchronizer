@@ -6,7 +6,7 @@ import { InternalError } from "../core/errors.js";
 
 /**
  * Resolve the version from the installed package.json. We walk up from the
- * caller's directory until we find a `package.json` with `name === "@agentsync/cli"`,
+ * caller's directory until we find a `package.json` with `name === "agentctx"`,
  * so a vendored or transient package elsewhere on the path can't mask us.
  */
 async function readVersion(): Promise<string> {
@@ -17,7 +17,7 @@ async function readVersion(): Promise<string> {
     try {
       const raw = await readFile(candidate, "utf8");
       const pkg = JSON.parse(raw) as { name?: string; version?: string };
-      if (pkg.name === "@agentsync/cli" && typeof pkg.version === "string") {
+      if (pkg.name === "agentctx" && typeof pkg.version === "string") {
         return pkg.version;
       }
     } catch {
@@ -27,7 +27,7 @@ async function readVersion(): Promise<string> {
     if (parent === dir) break;
     dir = parent;
   }
-  throw new InternalError("Unable to resolve agentsync version from package.json");
+  throw new InternalError("Unable to resolve agentctx version from package.json");
 }
 
 export interface VersionOptions {

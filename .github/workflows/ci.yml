@@ -32,7 +32,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build SDK
-        run: pnpm --filter @agentsync/adapter-sdk run build
+        run: pnpm --filter @agentctx/adapter-sdk run build
 
       - name: Typecheck
         run: pnpm run typecheck

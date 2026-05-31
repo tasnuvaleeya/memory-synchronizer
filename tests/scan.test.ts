@@ -12,7 +12,7 @@ let root: string;
 const quiet = new Logger({ quiet: true });
 
 beforeEach(async () => {
-  root = await mkdtemp(path.join(tmpdir(), "agentsync-scan-"));
+  root = await mkdtemp(path.join(tmpdir(), "agentctx-scan-"));
   await initCommand(root, {}, quiet);
   // Seed a small TS source file so the scanner has something to count.
   await mkdir(path.join(root, "src"), { recursive: true });
@@ -51,7 +51,7 @@ describe("scan command", () => {
   it("stack.md mentions detected frameworks", async () => {
     await scanCommand(root, {}, quiet);
     const md = await readFile(path.join(root, "agent", "stack.md"), "utf8");
-    expect(md).toContain("<!-- agentsync:generated -->");
+    expect(md).toContain("<!-- agentctx:generated -->");
     expect(md).toContain("TypeScript");
     expect(md).toContain("Hono");
   });
@@ -77,8 +77,8 @@ describe("scan command", () => {
     await expect(scanCommand(root, { check: true }, quiet)).rejects.toThrow(DriftError);
   });
 
-  it("writes a cache file under .agentsync/cache/scan.json", async () => {
+  it("writes a cache file under .agentctx/cache/scan.json", async () => {
     await scanCommand(root, {}, quiet);
-    expect(existsSync(path.join(root, ".agentsync", "cache", "scan.json"))).toBe(true);
+    expect(existsSync(path.join(root, ".agentctx", "cache", "scan.json"))).toBe(true);
   });
 });

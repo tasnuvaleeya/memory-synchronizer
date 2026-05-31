@@ -1,4 +1,4 @@
-# agentsync
+# agentctx
 
 > A shared, repo-local memory layer that synchronizes context across AI coding tools.
 
@@ -9,7 +9,7 @@ Deterministic. Local-first. LLM-free in the default path.
 ## Documentation
 
 - **[User manual](./docs/manual.md)** — complete reference: concepts, every command, configuration, team policy, CI integration, troubleshooting.
-- **[MCP integration guide](./docs/mcp.md)** — wire `agentsync` into Claude Desktop, Claude Code, or any MCP client.
+- **[MCP integration guide](./docs/mcp.md)** — wire `agentctx` into Claude Desktop, Claude Code, or any MCP client.
 - **[Adapter SDK](./packages/adapter-sdk/README.md)** — write your own adapter for any new AI tool.
 - **[JSON Schemas](./docs/schema/v1/)** — machine-readable schemas for `manifest.yaml`, `Frontmatter`, `Config`, `Policy`, `RepoMap`, `Stack`, and `MemoryFile`.
 
@@ -17,10 +17,10 @@ Deterministic. Local-first. LLM-free in the default path.
 
 ```bash
 cd your-repo
-agentsync init        # scaffold agent/ with starter templates
-agentsync sync        # generate CLAUDE.md, AGENTS.md, .cursorrules, …
-agentsync scan        # auto-detect tech stack into agent/stack.md
-agentsync lint        # check your memory files
+agentctx init        # scaffold agent/ with starter templates
+agentctx sync        # generate CLAUDE.md, AGENTS.md, .cursorrules, …
+agentctx scan        # auto-detect tech stack into agent/stack.md
+agentctx lint        # check your memory files
 ```
 
 That's the loop. Full walkthrough in the [manual](./docs/manual.md).
@@ -29,19 +29,19 @@ That's the loop. Full walkthrough in the [manual](./docs/manual.md).
 
 | Command | Purpose |
 |---|---|
-| `agentsync init` | Scaffold a fresh `agent/` directory |
-| `agentsync validate` | Validate manifest, frontmatter, links |
-| `agentsync show <file>` | Pretty-print a memory file |
-| `agentsync sync` | Regenerate per-tool context files |
-| `agentsync diff [adapter]` | Preview what `sync` would change |
-| `agentsync scan` | Walk the repo, build `repo-map.json` + `stack.md` |
-| `agentsync lint` | Lint memory files against built-in rules |
-| `agentsync stats` | Per-adapter token counts + drift status |
-| `agentsync export <path>` | Bundle `agent/` into a portable `.tar.gz` |
-| `agentsync import <source>` | Pull a starter `agent/` from a path, tarball, or git URL |
-| `agentsync install-hook` | Install a git pre-commit hook |
-| `agentsync mcp` | Run a read-only MCP server exposing `agent/` |
-| `agentsync version` | Print version |
+| `agentctx init` | Scaffold a fresh `agent/` directory |
+| `agentctx validate` | Validate manifest, frontmatter, links |
+| `agentctx show <file>` | Pretty-print a memory file |
+| `agentctx sync` | Regenerate per-tool context files |
+| `agentctx diff [adapter]` | Preview what `sync` would change |
+| `agentctx scan` | Walk the repo, build `repo-map.json` + `stack.md` |
+| `agentctx lint` | Lint memory files against built-in rules |
+| `agentctx stats` | Per-adapter token counts + drift status |
+| `agentctx export <path>` | Bundle `agent/` into a portable `.tar.gz` |
+| `agentctx import <source>` | Pull a starter `agent/` from a path, tarball, or git URL |
+| `agentctx install-hook` | Install a git pre-commit hook |
+| `agentctx mcp` | Run a read-only MCP server exposing `agent/` |
+| `agentctx version` | Print version |
 
 Every command supports `--json` for scripting. Exit codes: `0` OK, `1` user error, `2` drift detected (CI signal), `3` internal error.
 
@@ -52,7 +52,7 @@ Every command supports `--json` for scripting. Exit codes: `0` OK, `1` user erro
 
 ## Install (dev)
 
-Until `@agentsync/cli` is published on the public npm registry:
+Until `agentctx` is published on the public npm registry:
 
 ```bash
 git clone https://github.com/tasnuvaleeya/memory-synchronizer
@@ -60,23 +60,23 @@ cd memory-synchronizer
 pnpm install
 pnpm run build
 npm link
-agentsync --help
+agentctx --help
 ```
 
 ## Built-in adapters
 
-`agentsync sync` produces one or more of the following files based on your manifest's `targets`:
+`agentctx sync` produces one or more of the following files based on your manifest's `targets`:
 
 | Adapter | Output |
 |---|---|
 | `claude` | `CLAUDE.md` |
 | `agents-md` | `AGENTS.md` |
-| `cursor` | `.cursorrules` + `.cursor/rules/agentsync.mdc` |
+| `cursor` | `.cursorrules` + `.cursor/rules/agentctx.mdc` |
 | `cline` | `.clinerules` |
 | `windsurf` | `.windsurfrules` |
 | `copilot` | `.github/copilot-instructions.md` |
 
-Write your own for any new tool via [`@agentsync/adapter-sdk`](./packages/adapter-sdk/README.md).
+Write your own for any new tool via [`@agentctx/adapter-sdk`](./packages/adapter-sdk/README.md).
 
 ## Scripts
 
@@ -103,7 +103,7 @@ src/
 packages/
 ├── adapter-sdk/     # public SDK for third-party adapters
 └── action/          # GitHub Action wrapper
-templates/starter/   # scaffold copied by `agentsync init`
+templates/starter/   # scaffold copied by `agentctx init`
 docs/                # manual, MCP guide, JSON Schemas
 tests/               # Vitest suites
 ```

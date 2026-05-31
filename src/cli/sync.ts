@@ -54,7 +54,7 @@ export async function syncCommand(
 
   if (!existsSync(dir)) {
     throw new UserError(
-      `No \`agent/\` directory found. Run \`agentsync init\` first.`,
+      `No \`agent/\` directory found. Run \`agentctx init\` first.`,
     );
   }
 
@@ -79,7 +79,7 @@ export async function syncCommand(
   const adapters = await resolveAdapters(adapterNames);
   if (adapters.length === 0) {
     throw new UserError(
-      `No adapters resolved for: ${adapterNames.join(", ")}. Check manifest.targets and .agentsync/config.yaml.`,
+      `No adapters resolved for: ${adapterNames.join(", ")}. Check manifest.targets and .agentctx/config.yaml.`,
     );
   }
 
@@ -115,7 +115,7 @@ export async function syncCommand(
         result.drifted.push(generated.path);
         if (!opts.check) {
           logger.warn(
-            `${generated.path}: manually edited — run \`agentsync diff ${adapter.name}\` to inspect, then use \`--force\` to overwrite.`,
+            `${generated.path}: manually edited — run \`agentctx diff ${adapter.name}\` to inspect, then use \`--force\` to overwrite.`,
           );
         }
         continue;
@@ -175,7 +175,7 @@ export async function syncCommand(
 
   if (result.drifted.length > 0) {
     throw new DriftError(
-      `Drift detected in ${result.drifted.length} file(s). Run \`agentsync diff\` to inspect.`,
+      `Drift detected in ${result.drifted.length} file(s). Run \`agentctx diff\` to inspect.`,
     );
   }
 }

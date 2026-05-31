@@ -26,7 +26,7 @@ async function pair(cwd: string): Promise<Client> {
 }
 
 beforeEach(async () => {
-  root = await mkdtemp(path.join(tmpdir(), "agentsync-mcp-"));
+  root = await mkdtemp(path.join(tmpdir(), "agentctx-mcp-"));
   await initCommand(root, {}, quiet);
 });
 
@@ -40,10 +40,10 @@ describe("mcp server", () => {
     try {
       const { resources } = await client.listResources();
       const uris = resources.map((r) => r.uri);
-      expect(uris).toContain("agentsync://manifest");
-      expect(uris).toContain("agentsync://memory/list");
-      expect(uris).toContain("agentsync://memory/coding-rules.md");
-      expect(uris.some((u) => u.startsWith("agentsync://adapters/claude"))).toBe(true);
+      expect(uris).toContain("agentctx://manifest");
+      expect(uris).toContain("agentctx://memory/list");
+      expect(uris).toContain("agentctx://memory/coding-rules.md");
+      expect(uris.some((u) => u.startsWith("agentctx://adapters/claude"))).toBe(true);
     } finally {
       await client.close();
     }
@@ -52,7 +52,7 @@ describe("mcp server", () => {
   it("reads the manifest as YAML", async () => {
     const client = await pair(root);
     try {
-      const res = await client.readResource({ uri: "agentsync://manifest" });
+      const res = await client.readResource({ uri: "agentctx://manifest" });
       expect(res.contents[0]?.mimeType).toBe("application/yaml");
       expect(res.contents[0]?.text as string).toContain("version: 1");
     } finally {
@@ -64,7 +64,7 @@ describe("mcp server", () => {
     const client = await pair(root);
     try {
       const res = await client.readResource({
-        uri: "agentsync://memory/coding-rules.md",
+        uri: "agentctx://memory/coding-rules.md",
       });
       expect(res.contents[0]?.mimeType).toBe("text/markdown");
       expect(res.contents[0]?.text as string).toContain("name: coding-rules");
@@ -76,7 +76,7 @@ describe("mcp server", () => {
   it("memory/list returns JSON with frontmatter for each file", async () => {
     const client = await pair(root);
     try {
-      const res = await client.readResource({ uri: "agentsync://memory/list" });
+      const res = await client.readResource({ uri: "agentctx://memory/list" });
       expect(res.contents[0]?.mimeType).toBe("application/json");
       const list = JSON.parse(res.contents[0]!.text as string) as Array<{
         path: string;
@@ -92,8 +92,8 @@ describe("mcp server", () => {
   it("renders adapter output on demand", async () => {
     const client = await pair(root);
     try {
-      const res = await client.readResource({ uri: "agentsync://adapters/claude" });
-      expect(res.contents[0]?.text as string).toContain("<!-- agentsync:generated -->");
+      const res = await client.readResource({ uri: "agentctx://adapters/claude" });
+      expect(res.contents[0]?.text as string).toContain("<!-- agentctx:generated -->");
     } finally {
       await client.close();
     }
@@ -104,7 +104,7 @@ describe("mcp server", () => {
     try {
       const before = await client.listResources();
       const beforeUris = before.resources.map((r) => r.uri);
-      expect(beforeUris).not.toContain("agentsync://scan/repo-map");
+      expect(beforeUris).not.toContain("agentctx://scan/repo-map");
     } finally {
       await client.close();
     }
@@ -115,8 +115,8 @@ describe("mcp server", () => {
     try {
       const after = await client.listResources();
       const afterUris = after.resources.map((r) => r.uri);
-      expect(afterUris).toContain("agentsync://scan/repo-map");
-      expect(afterUris).toContain("agentsync://scan/stack");
+      expect(afterUris).toContain("agentctx://scan/repo-map");
+      expect(afterUris).toContain("agentctx://scan/stack");
     } finally {
       await client.close();
     }
@@ -126,7 +126,7 @@ describe("mcp server", () => {
     await syncCommand(root, { adapter: ["claude"] }, quiet);
     const client = await pair(root);
     try {
-      const res = await client.readResource({ uri: "agentsync://adapters/claude" });
+      const res = await client.readResource({ uri: "agentctx://adapters/claude" });
       expect(res.contents[0]?.text as string).toContain("CLAUDE.md");
     } finally {
       await client.close();

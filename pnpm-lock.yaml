@@ -8,7 +8,7 @@ importers:
 
   .:
     dependencies:
-      '@agentsync/adapter-sdk':
+      '@agentctx/adapter-sdk':
         specifier: workspace:*
         version: link:packages/adapter-sdk
       '@modelcontextprotocol/sdk':

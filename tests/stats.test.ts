@@ -21,7 +21,7 @@ class Capturing extends Logger {
 }
 
 beforeEach(async () => {
-  root = await mkdtemp(path.join(tmpdir(), "agentsync-stats-"));
+  root = await mkdtemp(path.join(tmpdir(), "agentctx-stats-"));
   await initCommand(root, {}, quiet);
 });
 

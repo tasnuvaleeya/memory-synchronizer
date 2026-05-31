@@ -1,6 +1,6 @@
 ---
 name: testing-workflow
-description: How agentsync is tested.
+description: How agentctx is tested.
 source: authored
 priority: 60
 applies_to: ["*"]
@@ -12,7 +12,7 @@ tags: [workflow, testing]
 ## Test runners
 
 - **Main package:** `vitest` via `pnpm run test` (watch mode) or `pnpm run test:run` (single pass).
-- **`packages/adapter-sdk`:** also `vitest`, runs in the sub-package via `pnpm --filter @agentsync/adapter-sdk run test`.
+- **`packages/adapter-sdk`:** also `vitest`, runs in the sub-package via `pnpm --filter @agentctx/adapter-sdk run test`.
 - **`packages/action`:** has a unit test but isn't wired into the root vitest config (separate sub-package; tests run when we publish the action).
 
 ## Test layout
@@ -45,7 +45,7 @@ tags: [workflow, testing]
 pnpm run typecheck      # strict TypeScript across packages
 pnpm run test:run       # vitest single-pass
 pnpm run build          # tsup + schema export
-pnpm --filter @agentsync/adapter-sdk run build  # build the SDK
+pnpm --filter @agentctx/adapter-sdk run build  # build the SDK
 ```
 
-Before opening a PR: `agentsync sync --check && agentsync lint && agentsync scan --check` should all exit 0. CI runs the same via the bundled GitHub Action (`.github/workflows/agentsync.yml`).
+Before opening a PR: `agentctx sync --check && agentctx lint && agentctx scan --check` should all exit 0. CI runs the same via the bundled GitHub Action (`.github/workflows/agentctx.yml`).

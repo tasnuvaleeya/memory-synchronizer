@@ -1,7 +1,7 @@
 import yaml from "js-yaml";
 import { FrontmatterSchema, type Frontmatter } from "./manifest.js";
 import { UserError } from "./errors.js";
-import { stripProvenance } from "@agentsync/adapter-sdk";
+import { stripProvenance } from "@agentctx/adapter-sdk";
 
 const FRONTMATTER_RE = /^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/;
 

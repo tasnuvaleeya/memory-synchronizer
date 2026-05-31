@@ -24,7 +24,7 @@ describe("paths", () => {
   });
 
   it("writeFileLF normalizes CRLF and creates parent dirs", async () => {
-    const dir = await mkdtemp(path.join(tmpdir(), "agentsync-"));
+    const dir = await mkdtemp(path.join(tmpdir(), "agentctx-"));
     try {
       const out = path.join(dir, "nested", "deeper", "file.txt");
       await writeFileLF(out, "alpha\r\nbeta\r\n");

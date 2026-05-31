@@ -12,23 +12,23 @@ import {
 import { loadManifest, loadMemorySet, loadConfig } from "../core/load.js";
 import { agentDir, manifestPath } from "../core/paths.js";
 import { resolveAdapters, listBuiltInAdapters } from "../adapters/registry.js";
-import type { RenderContext } from "@agentsync/adapter-sdk";
+import type { RenderContext } from "@agentctx/adapter-sdk";
 
 interface ServerOpts {
   cwd: string;
   serverVersion: string;
 }
 
-const MANIFEST_URI = "agentsync://manifest";
-const MEMORY_LIST_URI = "agentsync://memory/list";
-const SCAN_REPO_MAP_URI = "agentsync://scan/repo-map";
-const SCAN_STACK_URI = "agentsync://scan/stack";
+const MANIFEST_URI = "agentctx://manifest";
+const MEMORY_LIST_URI = "agentctx://memory/list";
+const SCAN_REPO_MAP_URI = "agentctx://scan/repo-map";
+const SCAN_STACK_URI = "agentctx://scan/stack";
 
 export function buildServer(opts: ServerOpts): Server {
   const { cwd, serverVersion } = opts;
 
   const server = new Server(
-    { name: "agentsync", version: serverVersion },
+    { name: "agentctx", version: serverVersion },
     { capabilities: { resources: {} } },
   );
 
@@ -62,7 +62,7 @@ export function buildServer(opts: ServerOpts): Server {
       });
       for (const f of memory.files) {
         resources.push({
-          uri: `agentsync://memory/${f.path}`,
+          uri: `agentctx://memory/${f.path}`,
           name: `memory/${f.path}`,
           description: f.frontmatter.description,
           mimeType: "text/markdown",
@@ -81,7 +81,7 @@ export function buildServer(opts: ServerOpts): Server {
       );
       for (const name of adapterNames) {
         resources.push({
-          uri: `agentsync://adapters/${name}`,
+          uri: `agentctx://adapters/${name}`,
           name: `adapters/${name}`,
           description: `Rendered output of the ${name} adapter.`,
           mimeType: "text/markdown",
@@ -137,7 +137,7 @@ export function buildServer(opts: ServerOpts): Server {
       };
     }
 
-    const memMatch = /^agentsync:\/\/memory\/(.+)$/.exec(uri);
+    const memMatch = /^agentctx:\/\/memory\/(.+)$/.exec(uri);
     if (memMatch) {
       const rel = memMatch[1]!;
       const memory = await loadMemorySet(cwd);
@@ -148,7 +148,7 @@ export function buildServer(opts: ServerOpts): Server {
       return { contents: [{ uri, mimeType: "text/markdown", text }] };
     }
 
-    const adapterMatch = /^agentsync:\/\/adapters\/(.+)$/.exec(uri);
+    const adapterMatch = /^agentctx:\/\/adapters\/(.+)$/.exec(uri);
     if (adapterMatch) {
       const name = adapterMatch[1]!;
       const [manifest, memory, config] = await Promise.all([

@@ -13,7 +13,7 @@ let root: string;
 const quiet = new Logger({ quiet: true });
 
 beforeEach(async () => {
-  root = await mkdtemp(path.join(tmpdir(), "agentsync-ei-"));
+  root = await mkdtemp(path.join(tmpdir(), "agentctx-ei-"));
   await initCommand(root, {}, quiet);
 });
 
@@ -50,7 +50,7 @@ describe("import command", () => {
     const orig = (await readdir(path.join(root, "agent"), { recursive: true })).sort();
 
     // Set up a clean target
-    const dest = await mkdtemp(path.join(tmpdir(), "agentsync-ei-dest-"));
+    const dest = await mkdtemp(path.join(tmpdir(), "agentctx-ei-dest-"));
     try {
       await importCommand(dest, archive, {}, quiet);
       const imported = (
@@ -68,10 +68,10 @@ describe("import command", () => {
   });
 
   it("imports a local directory", async () => {
-    const src = await mkdtemp(path.join(tmpdir(), "agentsync-ei-src-"));
+    const src = await mkdtemp(path.join(tmpdir(), "agentctx-ei-src-"));
     await initCommand(src, {}, quiet);
 
-    const dest = await mkdtemp(path.join(tmpdir(), "agentsync-ei-dest-"));
+    const dest = await mkdtemp(path.join(tmpdir(), "agentctx-ei-dest-"));
     try {
       await importCommand(dest, path.join(src, "agent"), {}, quiet);
       expect(existsSync(path.join(dest, "agent", "coding-rules.md"))).toBe(true);

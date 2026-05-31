@@ -104,7 +104,7 @@ export async function initCommand(
     logger.warn(`  ~ ${AGENT_DIR}/${p} (skipped, already exists)`);
   }
   logger.info("");
-  logger.info("Next: edit `agent/coding-rules.md`, then run `agentsync validate`.");
+  logger.info("Next: edit `agent/coding-rules.md`, then run `agentctx validate`.");
 }
 
 function parseTargets(raw: string | undefined): string[] | undefined {
@@ -161,7 +161,7 @@ async function writeDefaultConfig(root: string): Promise<void> {
   const dest = path.join(root, CONFIG_DIR, CONFIG_FILENAME);
   if (existsSync(dest)) return;
   const body = [
-    "# agentsync local config",
+    "# agentctx local config",
     "# See https://github.com/tasnuva-aif/memory-synchronizer for schema docs.",
     "defaultAdapters:",
     "  - claude",

@@ -13,11 +13,11 @@ export interface InstallHookOptions {
 }
 
 const NATIVE_HOOK_SCRIPT = `#!/bin/sh
-# Installed by agentsync install-hook
-agentsync sync --check
+# Installed by agentctx install-hook
+agentctx sync --check
 `;
 
-const HUSKY_HOOK_SCRIPT = `agentsync sync --check
+const HUSKY_HOOK_SCRIPT = `agentctx sync --check
 `;
 
 export async function installHookCommand(
@@ -51,7 +51,7 @@ async function installNativeHook(
 
   if (existsSync(hookPath)) {
     const existing = await readFile(hookPath, "utf8");
-    if (existing.includes("agentsync sync --check")) {
+    if (existing.includes("agentctx sync --check")) {
       if (opts.json) {
         logger.print(JSON.stringify({ ok: true, hookPath, action: "already-installed" }, null, 2));
       } else {
@@ -85,13 +85,13 @@ async function installHuskyHook(
 
   if (!existsSync(huskyDir)) {
     throw new UserError(
-      `Husky is not initialized. Run \`npx husky init\` first, then re-run \`agentsync install-hook husky\`.`,
+      `Husky is not initialized. Run \`npx husky init\` first, then re-run \`agentctx install-hook husky\`.`,
     );
   }
 
   if (existsSync(hookPath)) {
     const existing = await readFile(hookPath, "utf8");
-    if (existing.includes("agentsync sync --check")) {
+    if (existing.includes("agentctx sync --check")) {
       if (opts.json) {
         logger.print(JSON.stringify({ ok: true, hookPath, action: "already-installed" }, null, 2));
       } else {
@@ -110,6 +110,6 @@ async function installHuskyHook(
     logger.print(JSON.stringify({ ok: true, hookPath, action: "installed" }, null, 2));
   } else {
     logger.success(`Installed Husky pre-commit hook at ${hookPath}`);
-    logger.info(`Make sure \`agentsync\` is in your PATH or use \`npx agentsync sync --check\`.`);
+    logger.info(`Make sure \`agentctx\` is in your PATH or use \`npx agentctx sync --check\`.`);
   }
 }

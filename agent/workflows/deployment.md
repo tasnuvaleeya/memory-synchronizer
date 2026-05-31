@@ -1,6 +1,6 @@
 ---
 name: deployment-workflow
-description: How agentsync gets built and (eventually) published.
+description: How agentctx gets built and (eventually) published.
 source: authored
 priority: 60
 applies_to: ["*"]
@@ -14,7 +14,7 @@ tags: [workflow, deployment]
 ```sh
 pnpm install                                         # workspace + sub-package deps
 pnpm run build                                       # main CLI: tsup + schema export
-pnpm --filter @agentsync/adapter-sdk run build       # SDK: tsup dual ESM/CJS
+pnpm --filter @agentctx/adapter-sdk run build       # SDK: tsup dual ESM/CJS
 cd packages/action && pnpm install && pnpm run build # GitHub Action: ncc bundle
 ```
 
@@ -30,15 +30,15 @@ Artifacts:
 
 The plan is to publish two npm packages:
 
-- **`@agentsync/cli`** — main package, ships the `agentsync` binary
-- **`@agentsync/adapter-sdk`** — separately versioned, semver-pinned by third-party adapter authors
+- **`agentctx`** — main package, ships the `agentctx` binary
+- **`@agentctx/adapter-sdk`** — separately versioned, semver-pinned by third-party adapter authors
 
 Until publishing flows are set up, local builds work via the workspace link.
 
 ## Release checklist (for when we go to npm)
 
 1. All tests green except the known pre-existing `init.test.ts` determinism issue
-2. `agentsync scan --check && agentsync sync --check && agentsync lint` exit 0 against this repo
+2. `agentctx scan --check && agentctx sync --check && agentctx lint` exit 0 against this repo
 3. Bump version in `package.json` AND `packages/adapter-sdk/package.json` (these versions are independent)
 4. `pnpm pack` in each package; smoke-test the resulting tarballs in a scratch dir
 5. `npm publish --access public` for each
@@ -47,9 +47,9 @@ Until publishing flows are set up, local builds work via the workspace link.
 
 ## GitHub Action
 
-`packages/action/action.yml` declares a Node 20 composite action. It invokes `npx -y @agentsync/cli sync --check,lint` in the consumer repo and surfaces lint findings as PR annotations via `@actions/core`.
+`packages/action/action.yml` declares a Node 20 composite action. It invokes `npx -y agentctx sync --check,lint` in the consumer repo and surfaces lint findings as PR annotations via `@actions/core`.
 
-To consume in this very repo, see `.github/workflows/agentsync.yml`.
+To consume in this very repo, see `.github/workflows/agentctx.yml`.
 
 ## Versioning rules
 

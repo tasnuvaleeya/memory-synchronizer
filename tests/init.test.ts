@@ -9,7 +9,7 @@ import { sha256 } from "../src/core/paths.js";
 import { UserError } from "../src/core/errors.js";
 
 async function mkTmp(): Promise<string> {
-  return mkdtemp(path.join(tmpdir(), "agentsync-init-"));
+  return mkdtemp(path.join(tmpdir(), "agentctx-init-"));
 }
 
 async function walk(root: string): Promise<string[]> {
@@ -50,8 +50,8 @@ describe("init command", () => {
       await initCommand(root, {}, quiet);
       const files = await walk(root);
       expect(files).toEqual([
-        ".agentsync/config.yaml",
-        "agent/.agentsyncignore",
+        ".agentctx/config.yaml",
+        "agent/.agentctxignore",
         "agent/architecture.md",
         "agent/coding-rules.md",
         "agent/domain-knowledge.md",
@@ -181,7 +181,7 @@ describe("init command", () => {
     const root = await mkTmp();
     try {
       await initCommand(root, {}, quiet);
-      const cfg = await readFile(path.join(root, ".agentsync", "config.yaml"), "utf8");
+      const cfg = await readFile(path.join(root, ".agentctx", "config.yaml"), "utf8");
       expect(cfg).toContain("defaultAdapters:");
       expect(cfg).toContain("- claude");
       expect(cfg).toMatch(/\n$/); // LF-terminated
@@ -198,8 +198,8 @@ describe("init command", () => {
       for (const f of files) {
         const raw = await readFile(path.join(root, f), "utf8");
         const lastChar = raw.slice(-1);
-        // Allow .agentsyncignore (template) to be either; the rest must be LF-terminated.
-        if (lastChar !== "\n" && !f.endsWith(".agentsyncignore")) {
+        // Allow .agentctxignore (template) to be either; the rest must be LF-terminated.
+        if (lastChar !== "\n" && !f.endsWith(".agentctxignore")) {
           throw new Error(`${f} is not LF-terminated`);
         }
       }

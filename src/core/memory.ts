@@ -1,4 +1,4 @@
-// MemoryFile/MemorySet now canonical in @agentsync/adapter-sdk so
+// MemoryFile/MemorySet now canonical in @agentctx/adapter-sdk so
 // adapter authors can semver-pin. This file re-exports them so internal
 // CLI imports continue to work unchanged.
 export {
@@ -6,4 +6,4 @@ export {
   MemorySetSchema,
   type MemoryFile,
   type MemorySet,
-} from "@agentsync/adapter-sdk";
+} from "@agentctx/adapter-sdk";

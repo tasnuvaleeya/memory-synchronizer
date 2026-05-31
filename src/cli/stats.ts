@@ -37,7 +37,7 @@ export async function statsCommand(
   const root = resolveCwd(cwd);
   const dir = agentDir(root);
   if (!existsSync(dir)) {
-    throw new UserError(`No \`agent/\` directory found. Run \`agentsync init\` first.`);
+    throw new UserError(`No \`agent/\` directory found. Run \`agentctx init\` first.`);
   }
 
   const [manifest, memory, config] = await Promise.all([
@@ -136,7 +136,7 @@ export async function statsCommand(
   }
 
   // Human output
-  logger.print(colors.bold(`agentsync stats — ${manifest.project.name}`));
+  logger.print(colors.bold(`agentctx stats — ${manifest.project.name}`));
   logger.print("");
   logger.print(colors.bold("Memory files:"));
   for (const f of files) {

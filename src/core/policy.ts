@@ -39,12 +39,12 @@ export type Policy = z.infer<typeof PolicySchema>;
 
 export const DEFAULT_POLICY: Policy = PolicySchema.parse({ version: 1 });
 
-const POLICY_FILENAME = "agentsync.policy.yaml";
+const POLICY_FILENAME = "agentctx.policy.yaml";
 
 /**
  * Load a policy file. Resolution order:
  *   1. explicit path passed via `--policy <path>`
- *   2. agentsync.policy.yaml at repo root
+ *   2. agentctx.policy.yaml at repo root
  *   3. defaults (empty policy)
  *
  * Throws UserError if an explicit path was given but missing/invalid.

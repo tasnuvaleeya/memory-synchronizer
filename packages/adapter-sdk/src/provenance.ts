@@ -6,9 +6,9 @@ export interface ProvenanceFields {
   generatedAt: string;
 }
 
-const HEADER_START = "<!-- agentsync:generated -->";
+const HEADER_START = "<!-- agentctx:generated -->";
 const PROVENANCE_BLOCK_RE =
-  /^<!-- agentsync:generated -->\n(?:<!--[^>]*-->\n)*<!--\s*DO NOT EDIT[^>]*-->\n?/;
+  /^<!-- agentctx:generated -->\n(?:<!--[^>]*-->\n)*<!--\s*DO NOT EDIT[^>]*-->\n?/;
 
 function sha256(input: string | Buffer): string {
   return createHash("sha256").update(input).digest("hex");
@@ -16,11 +16,11 @@ function sha256(input: string | Buffer): string {
 
 export function buildProvenanceHeader(fields: ProvenanceFields): string {
   return [
-    "<!-- agentsync:generated -->",
+    "<!-- agentctx:generated -->",
     `<!-- source-sha: ${fields.sourceSha} -->`,
     `<!-- generator: ${fields.generator} -->`,
     `<!-- generated-at: ${fields.generatedAt} -->`,
-    "<!-- DO NOT EDIT — run `agentsync sync` instead -->",
+    "<!-- DO NOT EDIT — run `agentctx sync` instead -->",
     "",
   ].join("\n");
 }

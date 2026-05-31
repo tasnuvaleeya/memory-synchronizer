@@ -5,7 +5,7 @@ import { compareStrings, ignorePath, toPosix } from "../core/paths.js";
 
 /**
  * Phase-1 default ignore patterns. The user's `.gitignore` and
- * `agent/.agentsyncignore` are layered on top of this list.
+ * `agent/.agentctxignore` are layered on top of this list.
  */
 export const DEFAULT_IGNORES: string[] = [
   "node_modules",
@@ -32,7 +32,8 @@ export const DEFAULT_IGNORES: string[] = [
   "**/.turbo/**",
   ".cache",
   "**/.cache/**",
-  ".agentsync/cache/**",
+  ".agentctx/cache/**",
+  ".agentctx/last-sync.json",
   // Per-developer AI tool state that isn't typically checked into git.
   // Including it makes scan output diverge between contributors and CI.
   ".claude/**",
@@ -42,7 +43,7 @@ export const DEFAULT_IGNORES: string[] = [
   // idempotency (each run would mutate its inputs).
   "agent/repo-map.json",
   "agent/stack.md",
-  // Adapter outputs produced by `agentsync sync`. Excluding them keeps the
+  // Adapter outputs produced by `agentctx sync`. Excluding them keeps the
   // scan → sync → scan fixpoint stable: file count and stack.md body don't
   // shift after the first sync.
   "CLAUDE.md",
@@ -80,7 +81,7 @@ export const DEFAULT_IGNORES: string[] = [
  */
 export async function enumerateFiles(cwd: string): Promise<string[]> {
   const ignoreFiles: string[] = [];
-  // agent/.agentsyncignore — only include if it exists (globby errors otherwise)
+  // agent/.agentctxignore — only include if it exists (globby errors otherwise)
   const aif = ignorePath(cwd);
   if (existsSync(aif)) {
     ignoreFiles.push(path.relative(cwd, aif));
