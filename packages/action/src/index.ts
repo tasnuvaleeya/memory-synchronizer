@@ -34,7 +34,7 @@ async function main(): Promise<void> {
     const args = [...parts];
     if (policy) args.push("--policy", policy);
     args.push("--json");
-    return { args, label: parts[0] ?? "agentsync" };
+    return { args, label: parts[0] ?? "agentctx" };
   });
 
   let drifted = false;
@@ -42,14 +42,14 @@ async function main(): Promise<void> {
   let totalWarnings = 0;
 
   for (const spec of specs) {
-    core.startGroup(`agentsync ${spec.args.join(" ")}`);
+    core.startGroup(`agentctx ${spec.args.join(" ")}`);
     const result = await run(spec.args, cwd);
     process.stdout.write(result.stdout);
     if (result.stderr) process.stderr.write(result.stderr);
 
     if (spec.label === "sync" && result.code === 2) {
       drifted = true;
-      core.error(`agentsync sync --check detected drift. Run \`agentsync sync\` locally.`);
+      core.error(`agentctx sync --check detected drift. Run \`agentctx sync\` locally.`);
     }
 
     if (spec.label === "lint") {
@@ -67,21 +67,21 @@ async function main(): Promise<void> {
   core.setOutput("lint-warnings", String(totalWarnings));
 
   if (drifted) {
-    core.setFailed(`agentsync drift detected`);
+    core.setFailed(`agentctx drift detected`);
     return;
   }
   if (totalErrors > 0) {
-    core.setFailed(`agentsync lint: ${totalErrors} error(s)`);
+    core.setFailed(`agentctx lint: ${totalErrors} error(s)`);
     return;
   }
   if (failOnWarning && totalWarnings > 0) {
-    core.setFailed(`agentsync lint: ${totalWarnings} warning(s) with fail-on-warning enabled`);
+    core.setFailed(`agentctx lint: ${totalWarnings} warning(s) with fail-on-warning enabled`);
   }
 }
 
 function run(args: string[], cwd: string): Promise<RunResult> {
   return new Promise((resolve) => {
-    const proc = spawn("npx", ["-y", "@agentsync/cli", ...args], { cwd });
+    const proc = spawn("npx", ["-y", "agentctx", ...args], { cwd });
     let stdout = "";
     let stderr = "";
     proc.stdout.on("data", (d: Buffer) => (stdout += d.toString()));
@@ -119,5 +119,5 @@ export function annotateLint(findings: LintFinding[], severity: "error" | "warni
 
 main().catch((err: unknown) => {
   const msg = err instanceof Error ? err.message : String(err);
-  core.setFailed(`agentsync action failed: ${msg}`);
+  core.setFailed(`agentctx action failed: ${msg}`);
 });

@@ -51,7 +51,7 @@ export async function showCommand(
 function resolveTargetPath(root: string, filename: string): string | null {
   const direct = path.resolve(root, filename);
   if (existsSync(direct)) return direct;
-  // Allow shorthand: `agentsync show coding-rules.md` should find agent/coding-rules.md
+  // Allow shorthand: `agentctx show coding-rules.md` should find agent/coding-rules.md
   const inAgent = path.join(agentDir(root), filename);
   if (existsSync(inAgent)) return inAgent;
   return null;

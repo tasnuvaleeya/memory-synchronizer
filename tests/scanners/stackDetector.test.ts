@@ -7,7 +7,7 @@ import { detectStack } from "../../src/scanners/stackDetector.js";
 let root: string;
 
 beforeEach(async () => {
-  root = await mkdtemp(path.join(tmpdir(), "agentsync-stack-"));
+  root = await mkdtemp(path.join(tmpdir(), "agentctx-stack-"));
 });
 
 afterEach(async () => {

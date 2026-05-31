@@ -1,15 +1,26 @@
 {
-  "name": "@agentsync/cli",
-  "version": "0.0.1",
-  "description": "Shared, repo-local memory layer that synchronizes context across AI coding agents.",
+  "name": "agentctx",
+  "version": "0.1.0",
+  "description": "Shared, repo-local memory layer that synchronizes context across AI coding agents (Claude, Cursor, Cline, Windsurf, Copilot, AGENTS.md).",
   "license": "MIT",
   "author": "tasnuva-aif",
+  "homepage": "https://github.com/tasnuvaleeya/memory-synchronizer#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tasnuvaleeya/memory-synchronizer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tasnuvaleeya/memory-synchronizer/issues"
+  },
   "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
   "engines": {
     "node": ">=20"
   },
   "bin": {
-    "agentsync": "./dist/cli/index.js"
+    "agentctx": "./dist/cli/index.js"
   },
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -39,7 +50,7 @@
     "action:build": "cd packages/action && pnpm install && pnpm run build"
   },
   "keywords": [
-    "agentsync",
+    "agentctx",
     "ai",
     "claude",
     "cursor",
@@ -49,7 +60,7 @@
     "memory"
   ],
   "dependencies": {
-    "@agentsync/adapter-sdk": "workspace:*",
+    "@agentctx/adapter-sdk": "workspace:*",
     "@modelcontextprotocol/sdk": "^1.29.0",
     "commander": "^12.1.0",
     "fs-extra": "^11.2.0",

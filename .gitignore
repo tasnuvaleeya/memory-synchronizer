@@ -17,5 +17,5 @@ coverage/
 .DS_Store
 
 # Local runtime cache (used when agentsync runs against a real repo)
-.agentsync/cache/
-.agentsync/last-sync.json
+.agentctx/cache/
+.agentctx/last-sync.json

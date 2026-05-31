@@ -8,7 +8,7 @@ import { UserError } from "../src/core/errors.js";
 let root: string;
 
 beforeEach(async () => {
-  root = await mkdtemp(path.join(tmpdir(), "agentsync-policy-"));
+  root = await mkdtemp(path.join(tmpdir(), "agentctx-policy-"));
 });
 
 afterEach(async () => {
@@ -52,9 +52,9 @@ describe("loadPolicy", () => {
     expect(p).toEqual(DEFAULT_POLICY);
   });
 
-  it("loads agentsync.policy.yaml from repo root", async () => {
+  it("loads agentctx.policy.yaml from repo root", async () => {
     await writeFile(
-      path.join(root, "agentsync.policy.yaml"),
+      path.join(root, "agentctx.policy.yaml"),
       "version: 1\nrequiredFiles: [coding-rules.md]\n",
       "utf8",
     );
@@ -75,7 +75,7 @@ describe("loadPolicy", () => {
 
   it("throws UserError on schema-invalid policy", async () => {
     await writeFile(
-      path.join(root, "agentsync.policy.yaml"),
+      path.join(root, "agentctx.policy.yaml"),
       "version: 2\n",
       "utf8",
     );

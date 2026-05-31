@@ -46,7 +46,7 @@ export async function diffCommand(
   const dir = agentDir(root);
 
   if (!existsSync(dir)) {
-    throw new UserError(`No \`agent/\` directory found. Run \`agentsync init\` first.`);
+    throw new UserError(`No \`agent/\` directory found. Run \`agentctx init\` first.`);
   }
 
   const [manifest, memory, config] = await Promise.all([

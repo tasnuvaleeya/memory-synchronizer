@@ -75,7 +75,7 @@ describe("adapter SDK contract", () => {
 
     const out = await myAdapter.render(sampleMemory, sampleCtx);
     expect(out).toHaveLength(1);
-    expect(out[0]!.contents).toContain("<!-- agentsync:generated -->");
+    expect(out[0]!.contents).toContain("<!-- agentctx:generated -->");
     expect(stripProvenance(out[0]!.contents)).toContain("First file body.");
     expect(out[0]!.checksum).toMatch(/^[a-f0-9]{64}$/);
   });

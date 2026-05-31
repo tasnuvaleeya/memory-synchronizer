@@ -1,7 +1,7 @@
 {
-  "name": "@agentsync/action",
+  "name": "@agentctx/action",
   "version": "0.1.0",
-  "description": "GitHub Action that runs agentsync sync --check and lint on PRs, posting annotations.",
+  "description": "GitHub Action that runs agentctx sync --check and lint on PRs, posting annotations.",
   "private": true,
   "type": "module",
   "main": "dist/index.js",

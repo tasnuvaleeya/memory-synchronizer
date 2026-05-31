@@ -27,7 +27,7 @@ export async function exportCommand(
   const root = resolveCwd(cwd);
   const dir = agentDir(root);
   if (!existsSync(dir)) {
-    throw new UserError(`No \`agent/\` directory found. Run \`agentsync init\` first.`);
+    throw new UserError(`No \`agent/\` directory found. Run \`agentctx init\` first.`);
   }
 
   const ignore = await readIgnoreFile(ignorePath(root));

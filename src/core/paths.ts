@@ -5,9 +5,9 @@ import { fileURLToPath } from "node:url";
 
 export const AGENT_DIR = "agent";
 export const MANIFEST_FILENAME = "manifest.yaml";
-export const CONFIG_DIR = ".agentsync";
+export const CONFIG_DIR = ".agentctx";
 export const CONFIG_FILENAME = "config.yaml";
-export const IGNORE_FILENAME = ".agentsyncignore";
+export const IGNORE_FILENAME = ".agentctxignore";
 
 export function resolveCwd(cwd?: string): string {
   return cwd ? path.resolve(cwd) : process.cwd();

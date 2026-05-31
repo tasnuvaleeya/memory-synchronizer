@@ -18,7 +18,7 @@ import { readIgnoreFile } from "./ignore.js";
 import { UserError } from "./errors.js";
 import { type MemoryFile, type MemorySet } from "./memory.js";
 
-/** Load and validate `.agentsync/config.yaml`. Returns defaults if missing. */
+/** Load and validate `.agentctx/config.yaml`. Returns defaults if missing. */
 export async function loadConfig(cwd: string): Promise<Config> {
   const file = configPath(cwd);
   let raw: string;
@@ -48,7 +48,7 @@ export async function loadManifest(cwd: string): Promise<Manifest> {
   } catch (err) {
     if ((err as NodeJS.ErrnoException).code === "ENOENT") {
       throw new UserError(
-        `No manifest found at ${toPosix(path.relative(cwd, file))}. Run \`agentsync init\` to scaffold one.`,
+        `No manifest found at ${toPosix(path.relative(cwd, file))}. Run \`agentctx init\` to scaffold one.`,
       );
     }
     throw err;
@@ -66,7 +66,7 @@ export async function loadManifest(cwd: string): Promise<Manifest> {
 
 /**
  * Enumerate markdown files inside `agent/`, parse + validate each one's
- * frontmatter, and return the assembled MemorySet. Honors `.agentsyncignore`.
+ * frontmatter, and return the assembled MemorySet. Honors `.agentctxignore`.
  *
  * On the first parse failure we throw — callers that want to collect all
  * issues should use `validate` command paths instead of this helper.

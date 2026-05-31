@@ -46,7 +46,7 @@ export function applyTokenBudget(
       if (remaining > 200) {
         const truncatedBody =
           file.body.slice(0, remaining) +
-          `\n\n<!-- agentsync: truncated ${file.body.length - remaining} chars from ${file.path} -->`;
+          `\n\n<!-- agentctx: truncated ${file.body.length - remaining} chars from ${file.path} -->`;
         sections.push({ path: file.path, body: truncatedBody });
       }
       used = charBudget;

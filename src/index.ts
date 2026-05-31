@@ -20,7 +20,7 @@ export {
 export { parseFrontmatter, type ParsedMemory } from "./core/frontmatter.js";
 export { loadConfig, loadManifest, loadMemorySet } from "./core/load.js";
 export {
-  AgentsyncError,
+  AgentctxError,
   DriftError,
   InternalError,
   UserError,

@@ -1,6 +1,6 @@
 ---
 name: coding-rules
-description: Project-wide coding conventions for agentsync.
+description: Project-wide coding conventions for agentctx.
 source: authored
 priority: 20
 applies_to: ["*"]
@@ -21,20 +21,20 @@ tags: [conventions, style]
 - **Always use `writeFileLF`** from `src/core/paths.ts`. Never call `fs.writeFile` directly.
 - **Always sort lists with `compareStrings`.** `localeCompare` is forbidden — it produces different orderings under different system locales.
 - **Never include a per-run timestamp inside generated content** unless the consumer strips it before comparison (see `stack.md` provenance handling).
-- **The cache file (`.agentsync/cache/scan.json`) must serialize with sorted keys** so two clean runs produce byte-identical caches.
+- **The cache file (`.agentctx/cache/scan.json`) must serialize with sorted keys** so two clean runs produce byte-identical caches.
 
 ## Error handling
 
 - Use the existing error classes from `src/core/errors.ts`:
   - `UserError` → exit code 1 (the user did something wrong)
   - `DriftError` → exit code 2 (CI signal that content is stale)
-  - `InternalError` → exit code 3 (a bug in `agentsync`)
+  - `InternalError` → exit code 3 (a bug in `agentctx`)
 - Logs go to **stderr**; structured output (JSON for `--json` flag) goes to **stdout**. CLI consumers pipe stdout into `jq` or other tools.
 
 ## Module boundaries
 
 - `core/` never imports from `cli/`. CLI imports core.
-- Adapters import only from `@agentsync/adapter-sdk` — never from CLI internals. If you find yourself reaching into `src/cli/*` from an adapter, that's a signal the helper belongs in the SDK.
+- Adapters import only from `@agentctx/adapter-sdk` — never from CLI internals. If you find yourself reaching into `src/cli/*` from an adapter, that's a signal the helper belongs in the SDK.
 - Scanners, generators, and linter rules are pure (no I/O) wherever possible. Side effects live at the CLI handler layer.
 
 ## Commit conventions

@@ -1,6 +1,6 @@
-name: "agentsync"
+name: "agentctx"
 description: "Check agent-memory drift and lint memory files on every PR."
-author: "agentsync"
+author: "agentctx"
 
 branding:
   icon: "git-pull-request"
@@ -8,14 +8,14 @@ branding:
 
 inputs:
   command:
-    description: "Which agentsync command(s) to run. Comma-separated. Defaults to: sync --check,lint"
+    description: "Which agentctx command(s) to run. Comma-separated. Defaults to: sync --check,lint"
     required: false
     default: "sync --check,lint"
   policy:
-    description: "Path to agentsync.policy.yaml (optional)."
+    description: "Path to agentctx.policy.yaml (optional)."
     required: false
   working-directory:
-    description: "Repo subdirectory to run agentsync in."
+    description: "Repo subdirectory to run agentctx in."
     required: false
     default: "."
   fail-on-warning:

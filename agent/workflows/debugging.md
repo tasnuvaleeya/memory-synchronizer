@@ -1,6 +1,6 @@
 ---
 name: debugging-workflow
-description: How to investigate failures in agentsync.
+description: How to investigate failures in agentctx.
 source: authored
 priority: 60
 applies_to: ["*"]
@@ -11,7 +11,7 @@ tags: [workflow, debugging]
 
 ## Reproduce in a scratch dir first
 
-Most CLI bugs are easiest to reproduce against a fresh `agentsync init` repo:
+Most CLI bugs are easiest to reproduce against a fresh `agentctx init` repo:
 
 ```sh
 cd /tmp && mkdir scratch && cd scratch
@@ -25,7 +25,7 @@ This isolates the failure from any state in the working repo.
 
 ### "Drift detected" but I didn't touch anything
 
-- Look at `.agentsync/last-sync.json`. The `contentChecksum` should match the file's actual checksum after provenance strip.
+- Look at `.agentctx/last-sync.json`. The `contentChecksum` should match the file's actual checksum after provenance strip.
 - Inspect the generated file's provenance header — if `generated-at` was stripped (it should be), the checksum check uses the rest of the content.
 - Likely cause: someone manually saved the generated file from an editor that touched line endings (CRLF) or trailing whitespace. Re-save with LF endings.
 
@@ -33,9 +33,9 @@ This isolates the failure from any state in the working repo.
 
 - The command was run from a directory above the repo root, or `agent/` was renamed. Pass `--cwd <repo>` to override.
 
-### `agentsync scan` shows wrong language for a file
+### `agentctx scan` shows wrong language for a file
 
-- Check `src/scanners/languageMap.ts` for the extension mapping. Or add an override via `.agentsync/config.yaml`:
+- Check `src/scanners/languageMap.ts` for the extension mapping. Or add an override via `.agentctx/config.yaml`:
   ```yaml
   languageMap:
     nim: Nim
@@ -43,13 +43,13 @@ This isolates the failure from any state in the working repo.
 
 ### Imports broken after working on adapters
 
-- Adapter files **must** import from `@agentsync/adapter-sdk`, not from `../base.js` directly. The legacy `../base.js` path is a re-export layer; new adapters should bypass it.
+- Adapter files **must** import from `@agentctx/adapter-sdk`, not from `../base.js` directly. The legacy `../base.js` path is a re-export layer; new adapters should bypass it.
 - Run `pnpm install` to re-establish workspace links if you've moved files between packages.
 
 ### MCP server isn't responding
 
-- `agentsync mcp` is launched by the MCP client. Running it bare in a terminal looks broken — it's waiting on stdin for JSON-RPC.
-- Test with `echo '{"jsonrpc":"2.0","id":1,"method":"resources/list"}' | agentsync mcp`.
+- `agentctx mcp` is launched by the MCP client. Running it bare in a terminal looks broken — it's waiting on stdin for JSON-RPC.
+- Test with `echo '{"jsonrpc":"2.0","id":1,"method":"resources/list"}' | agentctx mcp`.
 
 ## Logging knobs
 

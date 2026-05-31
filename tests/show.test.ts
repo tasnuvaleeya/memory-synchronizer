@@ -11,7 +11,7 @@ let root: string;
 const quiet = new Logger({ quiet: true });
 
 beforeEach(async () => {
-  root = await mkdtemp(path.join(tmpdir(), "agentsync-show-"));
+  root = await mkdtemp(path.join(tmpdir(), "agentctx-show-"));
   await initCommand(root, {}, quiet);
 });
 

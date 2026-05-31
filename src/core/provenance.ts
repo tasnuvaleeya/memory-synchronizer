@@ -1,4 +1,4 @@
-// Provenance helpers are now canonical in @agentsync/adapter-sdk; this
+// Provenance helpers are now canonical in @agentctx/adapter-sdk; this
 // module is a thin re-export so existing internal imports keep working.
 export {
   type ProvenanceFields,
@@ -7,4 +7,4 @@ export {
   stripProvenance,
   parseProvenance,
   contentChecksum,
-} from "@agentsync/adapter-sdk";
+} from "@agentctx/adapter-sdk";

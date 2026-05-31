@@ -1,4 +1,4 @@
-# agentsync local config
+# agentctx local config
 # See https://github.com/tasnuva-aif/memory-synchronizer for schema docs.
 defaultAdapters:
   - claude

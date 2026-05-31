@@ -7,7 +7,7 @@ import { measureFile } from "../../src/scanners/lineCounter.js";
 let dir: string;
 
 beforeEach(async () => {
-  dir = await mkdtemp(path.join(tmpdir(), "agentsync-lc-"));
+  dir = await mkdtemp(path.join(tmpdir(), "agentctx-lc-"));
 });
 
 afterEach(async () => {

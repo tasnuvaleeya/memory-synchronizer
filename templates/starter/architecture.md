@@ -10,7 +10,7 @@ tags: [architecture, overview]
 # Architecture
 
 > This file is `hybrid`: human-authored prose **and** generated sections (see
-> the `<!-- agentsync:begin generated -->` markers once Milestone 3 lands).
+> the `<!-- agentctx:begin generated -->` markers once Milestone 3 lands).
 
 ## System overview
 

@@ -2,7 +2,7 @@ import { existsSync } from "node:fs";
 import path from "node:path";
 import { globby } from "globby";
 import { type Logger, colors } from "../core/logger.js";
-import { UserError, AgentsyncError } from "../core/errors.js";
+import { UserError, AgentctxError } from "../core/errors.js";
 import {
   agentDir,
   compareStrings,
@@ -38,7 +38,7 @@ export async function validateCommand(
 
   if (!existsSync(dir)) {
     throw new UserError(
-      `No \`${toPosix(path.relative(root, dir)) || "agent"}\` directory found. Run \`agentsync init\` first.`,
+      `No \`${toPosix(path.relative(root, dir)) || "agent"}\` directory found. Run \`agentctx init\` first.`,
     );
   }
 
@@ -65,7 +65,7 @@ export async function validateCommand(
       checkLinks(rel, body, dir, findings);
       fileCount += 1;
     } catch (err) {
-      if (err instanceof AgentsyncError) {
+      if (err instanceof AgentctxError) {
         findings.push({ level: "error", path: rel, message: err.message });
       } else {
         throw err;

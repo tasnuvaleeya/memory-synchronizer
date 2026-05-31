@@ -1,23 +1,23 @@
 {
   "version": 1,
   "summary": {
-    "totalFiles": 129,
-    "totalLines": 8169,
+    "totalFiles": 130,
+    "totalLines": 8933,
     "languages": [
       {
         "language": "TypeScript",
         "files": 87,
-        "lines": 6292
+        "lines": 6298
+      },
+      {
+        "language": "Markdown",
+        "files": 17,
+        "lines": 1472
       },
       {
         "language": "JSON",
         "files": 13,
-        "lines": 834
-      },
-      {
-        "language": "Markdown",
-        "files": 16,
-        "lines": 738
+        "lines": 858
       },
       {
         "language": "YAML",
@@ -37,13 +37,13 @@
     "type": "dir",
     "children": [
       {
-        "name": ".agentsync",
-        "path": ".agentsync",
+        "name": ".agentctx",
+        "path": ".agentctx",
         "type": "dir",
         "children": [
           {
             "name": "config.yaml",
-            "path": ".agentsync/config.yaml",
+            "path": ".agentctx/config.yaml",
             "type": "file",
             "lineCount": 10,
             "language": "YAML",
@@ -62,8 +62,8 @@
             "type": "dir",
             "children": [
               {
-                "name": "agentsync.yml",
-                "path": ".github/workflows/agentsync.yml",
+                "name": "agentctx.yml",
+                "path": ".github/workflows/agentctx.yml",
                 "type": "file",
                 "lineCount": 50,
                 "language": "YAML",
@@ -118,8 +118,8 @@
             ]
           },
           {
-            "name": ".agentsyncignore",
-            "path": "agent/.agentsyncignore",
+            "name": ".agentctxignore",
+            "path": "agent/.agentctxignore",
             "type": "file",
             "lineCount": 0,
             "language": null,
@@ -233,6 +233,14 @@
                 ]
               }
             ]
+          },
+          {
+            "name": "manual.md",
+            "path": "docs/manual.md",
+            "type": "file",
+            "lineCount": 689,
+            "language": "Markdown",
+            "role": "doc"
           },
           {
             "name": "mcp.md",
@@ -389,7 +397,7 @@
                 "name": "package.json",
                 "path": "packages/adapter-sdk/package.json",
                 "type": "file",
-                "lineCount": 35,
+                "lineCount": 48,
                 "language": "JSON",
                 "role": "config"
               },
@@ -585,7 +593,7 @@
                 "name": "scan.ts",
                 "path": "src/cli/scan.ts",
                 "type": "file",
-                "lineCount": 177,
+                "lineCount": 182,
                 "language": "TypeScript",
                 "role": "source"
               },
@@ -867,7 +875,7 @@
                 "name": "enumerator.ts",
                 "path": "src/scanners/enumerator.ts",
                 "type": "file",
-                "lineCount": 100,
+                "lineCount": 101,
                 "language": "TypeScript",
                 "role": "source"
               },
@@ -981,8 +989,8 @@
                 ]
               },
               {
-                "name": ".agentsyncignore",
-                "path": "templates/starter/.agentsyncignore",
+                "name": ".agentctxignore",
+                "path": "templates/starter/.agentctxignore",
                 "type": "file",
                 "lineCount": 0,
                 "language": null,
@@ -1226,7 +1234,7 @@
         "name": "README.md",
         "path": "README.md",
         "type": "file",
-        "lineCount": 68,
+        "lineCount": 113,
         "language": "Markdown",
         "role": "doc"
       },
@@ -1242,7 +1250,7 @@
         "name": "package.json",
         "path": "package.json",
         "type": "file",
-        "lineCount": 81,
+        "lineCount": 92,
         "language": "JSON",
         "role": "config"
       },
@@ -1282,32 +1290,32 @@
   },
   "files": [
     {
-      "path": ".agentsync/config.yaml",
+      "path": ".agentctx/config.yaml",
       "role": "source",
       "language": "YAML",
       "lineCount": 10,
-      "sha": "74d1da8fe6aa7398a6326d71d0ca35869ec6242ce6d292da2c5bfeed4a186be4"
+      "sha": "e1089fb47fbb8f1cc11a7657ff74bcc30ad6db6785695f9c39220d5744d9f29d"
     },
     {
-      "path": ".github/workflows/agentsync.yml",
+      "path": ".github/workflows/agentctx.yml",
       "role": "config",
       "language": "YAML",
       "lineCount": 50,
-      "sha": "0665d59602438e19c2ed1a4d16ac3021d4493509e6b6fafd293176548148d3e7"
+      "sha": "b76820ff17e4ecb62829e0c06e4f785a954a1cc041fd4be08d904ccfdacf1fd7"
     },
     {
       "path": ".github/workflows/ci.yml",
       "role": "config",
       "language": "YAML",
       "lineCount": 53,
-      "sha": "17f31bc464bd3d563d98e95e36e8ec3a0228d70bc7ae9994e9e816a1f5f40ee4"
+      "sha": "982d3bd6f68a75d2ca8a85596df1b5c17954bbd8c189da6557db48487f515807"
     },
     {
       "path": ".gitignore",
       "role": "config",
       "language": null,
       "lineCount": 21,
-      "sha": "02281e7521906c776dcc98f207e64f71ad57f8fc77ab5d93106a903a8783c163"
+      "sha": "92b46c9349dde08829a86c2257b7fc952916d47eaa1c990f9ceedd0dc625226b"
     },
     {
       "path": ".npmignore",
@@ -1327,11 +1335,11 @@
       "path": "README.md",
       "role": "doc",
       "language": "Markdown",
-      "lineCount": 68,
-      "sha": "a4f74f33d444dfc331502e0469e84aed75efd9b7d0c9b41d505c2ee1b98ee2b7"
+      "lineCount": 113,
+      "sha": "76faf8cf8fe46e2ab867d5fea17ee2bccc7f2fea9b960d9fb7fa149f6725f96f"
     },
     {
-      "path": "agent/.agentsyncignore",
+      "path": "agent/.agentctxignore",
       "role": "source",
       "language": null,
       "lineCount": 0,
@@ -1342,21 +1350,21 @@
       "role": "doc",
       "language": "Markdown",
       "lineCount": 53,
-      "sha": "e0fd41fb5f8f74fecc48938d8302948b4820763034ddc1df7a8eab5af7fa1981"
+      "sha": "fa00eaa9af088f2bb6c79265400ac438c3102a20beb4f1a1d6abccd4140d1fa6"
     },
     {
       "path": "agent/coding-rules.md",
       "role": "doc",
       "language": "Markdown",
       "lineCount": 56,
-      "sha": "efc59ae5a690298ea007ea20f2725c158bd19f67da601ef0f1ca70c739ab66e7"
+      "sha": "34d1819bbe4f9b5d75853cfe390657c70c32d445c5a39533ed711af055808267"
     },
     {
       "path": "agent/domain-knowledge.md",
       "role": "doc",
       "language": "Markdown",
       "lineCount": 52,
-      "sha": "b8d1d4b5b0d89b1e7567665390c8ff625ff847623bdec0f0a7fc18567e57b9a4"
+      "sha": "95439351f2c22f1eb6c933087bf89be69c30a74edf75bd9eaf67539e94c62329"
     },
     {
       "path": "agent/manifest.yaml",
@@ -1370,28 +1378,35 @@
       "role": "doc",
       "language": "Markdown",
       "lineCount": 66,
-      "sha": "a0254f07ced8429eef8390f32bc808d691f6f1e50412d0153e71bbc30717d7b2"
+      "sha": "51f0d5217a1b3cedf176a06415bb2b44c7cbb61b63b41903a8783e427c778e9f"
     },
     {
       "path": "agent/workflows/deployment.md",
       "role": "doc",
       "language": "Markdown",
       "lineCount": 58,
-      "sha": "6d896fe7869807c40563186d616e9482374ef9f7466dfe70879ec48de84c7fc4"
+      "sha": "0a66147fd967e206ef66da4f21518b57995a30906251a970a3f0cf0cca67e599"
     },
     {
       "path": "agent/workflows/testing.md",
       "role": "doc",
       "language": "Markdown",
       "lineCount": 51,
-      "sha": "bf5f425f3137b4c190ba20a7b2082892aeed51be560b128165cf90b1ae1d1b25"
+      "sha": "6ed9dffb7ccd246a7cd734c1855128cf6e3bba37c68dfc1be0099c3bfca85a45"
+    },
+    {
+      "path": "docs/manual.md",
+      "role": "doc",
+      "language": "Markdown",
+      "lineCount": 689,
+      "sha": "7b0bb9d3b3fecabeb1cf4f6bc043807b16aee36ff29fdd87fcf95ff773428bcf"
     },
     {
       "path": "docs/mcp.md",
       "role": "doc",
       "language": "Markdown",
       "lineCount": 89,
-      "sha": "d4842ed67f8f820bdd883593780038563798ea40fe9472c7584c41b7c2b965dd"
+      "sha": "8c539d80af32bddcaf5273da9e072439e4cc0d7c3d4abe18da17201cdb18c3ff"
     },
     {
       "path": "docs/schema/v1/config.json",
@@ -1453,29 +1468,29 @@
       "path": "package.json",
       "role": "config",
       "language": "JSON",
-      "lineCount": 81,
-      "sha": "3f5d67a2667c8636012fcb5b95fdba40029b81a06263fdfd66a23bdaf841db69"
+      "lineCount": 92,
+      "sha": "b1079e3540fbc1bd2b2e740e32e8c3dbd51ee4c3d98179bcd573c6bc41ed9ca7"
     },
     {
       "path": "packages/action/action.yml",
       "role": "source",
       "language": "YAML",
       "lineCount": 36,
-      "sha": "0fe863ea3b194a332b7c810bfd5f1af95be2e636828ceba86f4fe6e1a28df9dd"
+      "sha": "5ee99cc497ff1aaa3e50d0be81b6e66171293e84beaff1afba9704819cfb0c6a"
     },
     {
       "path": "packages/action/package.json",
       "role": "config",
       "language": "JSON",
       "lineCount": 19,
-      "sha": "fe49c3dde69bfcd05a31838bb0c80e5836addede6154f86c3adf7479ff9e9e38"
+      "sha": "5e7ff2dcf631c71d02f0ae623a02816fd1d7798e8fad9f77956d18f509590205"
     },
     {
       "path": "packages/action/src/index.ts",
       "role": "source",
       "language": "TypeScript",
       "lineCount": 123,
-      "sha": "0df683d55749adc4fc6e83bf03c65da560f933fb5a0960b0bdf70db1b7852d31"
+      "sha": "398c7ea9d72cb500951a00b27c530451163b74a8c25ee8bb48bfa97fed7cc4be"
     },
     {
       "path": "packages/action/tests/action.test.ts",
@@ -1496,14 +1511,14 @@
       "role": "doc",
       "language": "Markdown",
       "lineCount": 64,
-      "sha": "4fd11b07d561a87cc63001d009cf193788a8ba7b3f77b7d6e98945833aaf3184"
+      "sha": "bafb891ea906be49f268d938869014357a6571cb0f9167205da7fce50cddcd4f"
     },
     {
       "path": "packages/adapter-sdk/package.json",
       "role": "config",
       "language": "JSON",
-      "lineCount": 35,
-      "sha": "9478a6d160193417a790f5d8bfb5f3e8546c55bc09da6aee01f2ddcf8a214a17"
+      "lineCount": 48,
+      "sha": "42875b707a61a1ba811acee1e455ebba96cd1b0665be87babfa3c4b1d6781e20"
     },
     {
       "path": "packages/adapter-sdk/src/frontmatter.ts",
@@ -1517,7 +1532,7 @@
       "role": "source",
       "language": "TypeScript",
       "lineCount": 69,
-      "sha": "8b9bc93b05ad18a368c2572c4425a04eecd121c21bfb75401a7b5f198e825140"
+      "sha": "d758cdf04932eda05ed20b43d581273bfd9160ef2d2037a7b22fcdb438d06339"
     },
     {
       "path": "packages/adapter-sdk/src/index.ts",
@@ -1531,7 +1546,7 @@
       "role": "source",
       "language": "TypeScript",
       "lineCount": 55,
-      "sha": "01f35c41c0a4a89f0c636eff4df344bba5a2b20e3ef3d7b8b477a30b926041ad"
+      "sha": "b6acf3d2dc5efc3f4da24cf7324c50ad722962e76e3c71d2fe08214f5e1e636e"
     },
     {
       "path": "packages/adapter-sdk/src/types.ts",
@@ -1545,7 +1560,7 @@
       "role": "test",
       "language": "TypeScript",
       "lineCount": 107,
-      "sha": "d9c6ff138cab9b90fa12f8bae0895a0066dd0ef2dd78513b89e2c0a8bf7757ad"
+      "sha": "12935c6cda2d337c1d0f8545d40b0c0c6ef0e74bf209c99f38fd853116d620a4"
     },
     {
       "path": "packages/adapter-sdk/tsconfig.json",
@@ -1587,42 +1602,42 @@
       "role": "source",
       "language": "TypeScript",
       "lineCount": 29,
-      "sha": "2953c5c8c3c002d568d097f5a6aedae03e968b94377ecb174d97cc4bdcaba836"
+      "sha": "0d2b71ee9c6747519dfd629edcb5613ee80b2400a3928bfc4a03a4d04e792dc0"
     },
     {
       "path": "src/adapters/base.ts",
       "role": "source",
       "language": "TypeScript",
       "lineCount": 11,
-      "sha": "1ce6ab86358d70c004068348cb20672b144fb85a841d727a08e4c666ebdb88cc"
+      "sha": "63e87fced3c0dc25d742a6aa0c662e0d68d0df328363a93a81dc417eb06d3b43"
     },
     {
       "path": "src/adapters/claude.ts",
       "role": "source",
       "language": "TypeScript",
       "lineCount": 29,
-      "sha": "660ce851377c5b8d4564d2e09a90dd29b5cc5409bd368998b70465c6fe049b4d"
+      "sha": "a280be294478946cbf08a6d8bc85d49fd53bd8988530dc990cd2868d62f7d32c"
     },
     {
       "path": "src/adapters/cline.ts",
       "role": "source",
       "language": "TypeScript",
       "lineCount": 29,
-      "sha": "4c83add40097adf5e44182b061a23328630d1202250e626e509acc393b07470d"
+      "sha": "527ff554b890eb25d6a5627f768216f9605116a142ee8556537d29ae1e48777f"
     },
     {
       "path": "src/adapters/copilot.ts",
       "role": "source",
       "language": "TypeScript",
       "lineCount": 29,
-      "sha": "0b1c89b843e93e5c2eefcccf64bf748b1237f1ea115e6f5d3df49774aa16892c"
+      "sha": "be397ddcc47cf7c0d14b0c5d43f8eeeaee5b5dfc9e5d4bf0d6588aec68e665d6"
     },
     {
       "path": "src/adapters/cursor.ts",
       "role": "source",
       "language": "TypeScript",
       "lineCount": 81,
-      "sha": "04be6627c60a3acb96bff54aa3f6dadebb950c9e1aa93c97c5b110d9572f4ddb"
+      "sha": "906bfa1012ecf8659d0920789a428c2d9de3493537ea114ea585de0af5efdf87"
     },
     {
       "path": "src/adapters/registry.ts",
@@ -1636,56 +1651,56 @@
       "role": "source",
       "language": "TypeScript",
       "lineCount": 29,
-      "sha": "e2a9e248b8a3b280c5ae554f29556799a1d666ab86f00b028136fa293c098880"
+      "sha": "6a810be1bdee6663d011e243c9f04682f24d0118cc79a34695112aade7238621"
     },
     {
       "path": "src/cli/diff.ts",
       "role": "source",
       "language": "TypeScript",
       "lineCount": 177,
-      "sha": "1e54c38ad3e19794db36ebb9926d22109225ddff5bc46b3cc8dc963e06b8fae3"
+      "sha": "918785925efcb9c26ac54866ffba86ab37d2c91e0d745ab690cdd2caacdce663"
     },
     {
       "path": "src/cli/export.ts",
       "role": "source",
       "language": "TypeScript",
       "lineCount": 74,
-      "sha": "f34f8309b490e54291a9eae495375c4850aa114925b4b7ef615576a955a8f6f9"
+      "sha": "9e465ec2f0997b0b4830368a438815a4b8dfd5fe06408620b86222355c4f4296"
     },
     {
       "path": "src/cli/import.ts",
       "role": "source",
       "language": "TypeScript",
       "lineCount": 147,
-      "sha": "0e0f09124aaefec17cd996344cb6e0eb836598b4ddcfa29ad71ec989aee6a047"
+      "sha": "845ee47c19c2d6de3691dcd739e3537fc5031b4035efa828bc23b8c4d3963081"
     },
     {
       "path": "src/cli/index.ts",
       "role": "source",
       "language": "TypeScript",
       "lineCount": 249,
-      "sha": "8e6e5f5401a07038d0b6427e6cfda044f98557fc5aeccb844f9553c9524e8483"
+      "sha": "4eb3c7f23b2fdc66302cf4adc53bcd01fe0c584f047045376a912b125220966c"
     },
     {
       "path": "src/cli/init.ts",
       "role": "source",
       "language": "TypeScript",
       "lineCount": 177,
-      "sha": "974d4cb6f4f4896baa889d9c135abab8d382afabaee5fcbd7ea5c55abb8748b1"
+      "sha": "55e18896202ad007a0b71432b55055ecc146173e2e8f6e4fec076fc3bde4bce1"
     },
     {
       "path": "src/cli/installHook.ts",
       "role": "source",
       "language": "TypeScript",
       "lineCount": 115,
-      "sha": "c2cbab7c70ed00cf0cf7815da2f8dfbdf247baa368a8852202debf879cc9eec2"
+      "sha": "11dbb3fb5e4c72621b49727b0ac93428acdcae1eacaecfd4ddf6b50effb9d181"
     },
     {
       "path": "src/cli/lint.ts",
       "role": "source",
       "language": "TypeScript",
       "lineCount": 89,
-      "sha": "1f002b8962c3573c282c0e004346799e54f12c7d9addd37f728ad3711bdee703"
+      "sha": "487df5d94498e89ecd9c049feb5cec93101fd08a0ec8eea7ed69273a4dc7de09"
     },
     {
       "path": "src/cli/mcp.ts",
@@ -1698,43 +1713,43 @@
       "path": "src/cli/scan.ts",
       "role": "source",
       "language": "TypeScript",
-      "lineCount": 177,
-      "sha": "802f87b06d28a2433ab130c93e291e612c1e230fcbaca853535da8200bfc2f7f"
+      "lineCount": 182,
+      "sha": "16bab9a83c043d1b8cbb26fad5c7476ee342cbf2cb6ac5ee46c00a9955a5080a"
     },
     {
       "path": "src/cli/show.ts",
       "role": "source",
       "language": "TypeScript",
       "lineCount": 63,
-      "sha": "8dc12b5414e20c17b9acead3deb92ec49aae15b0df1e3be7425d0865a61c8224"
+      "sha": "250c29fdbd84fd742f6bc2b821f46878413e643fbe88a48faa875a79e512bc8b"
     },
     {
       "path": "src/cli/stats.ts",
       "role": "source",
       "language": "TypeScript",
       "lineCount": 155,
-      "sha": "4c8f3b019f8658c350a47c13ef3a3d7dd2c170aa1db258f2633e22c437d5d8aa"
+      "sha": "ba899ae55d8e490e0a1510f5d62495bda00014d4d106f17e21efdc261e6d0b42"
     },
     {
       "path": "src/cli/sync.ts",
       "role": "source",
       "language": "TypeScript",
       "lineCount": 181,
-      "sha": "b4146c52cbb84d865d45c525442812e0f68e7bb0af398913f642fabd61b34e76"
+      "sha": "76c9491c10ae6c453c3ad02cb0f2135fd165bc524a0f56afc284fc033e7893dd"
     },
     {
       "path": "src/cli/validate.ts",
       "role": "source",
       "language": "TypeScript",
       "lineCount": 163,
-      "sha": "adb5cd9e31558d7957f29a8b990ee5c35a9b0987b929b9ac00006489f8ca1f4b"
+      "sha": "2248b4bdcef4e67cbc42b21ae70ea2fbd592d357057258b7e3969e3f261f94fa"
     },
     {
       "path": "src/cli/version.ts",
       "role": "source",
       "language": "TypeScript",
       "lineCount": 44,
-      "sha": "5b2af2949112b875901e726057e5bae63f868ab11402120402ed48632c51be69"
+      "sha": "fae5620bbf6f06e639f60595cc275b3df089a633ee8d28a5194d425822429752"
     },
     {
       "path": "src/core/config.ts",
@@ -1755,14 +1770,14 @@
       "role": "source",
       "language": "TypeScript",
       "lineCount": 32,
-      "sha": "4867cebc5850fe5bdf36d899cf1005d968ce3ac53e516d231c290a66ff8e6fae"
+      "sha": "d9d9ce0667ab878ac0e396cdb2f67a03e69d21c0809ce93eadc1e6e009e8a86d"
     },
     {
       "path": "src/core/frontmatter.ts",
       "role": "source",
       "language": "TypeScript",
       "lineCount": 64,
-      "sha": "bfe511af15735d2eaaf748bf711587580dc59c0c7a7094d0a5e1fc0579a2a5f6"
+      "sha": "f444c6689bd411c304efd376e42fa1a77a72e8c9e7e0a6de57dc54a0f76c8f3b"
     },
     {
       "path": "src/core/git.ts",
@@ -1783,7 +1798,7 @@
       "role": "source",
       "language": "TypeScript",
       "lineCount": 102,
-      "sha": "20bc190dc36bc139da0c1f0668465b129038df9e29be907ba976a89065d5fd7e"
+      "sha": "79abce89dd214bbf9946720beb8e6209a876a6146fe8f1b8b2f80e63b9069063"
     },
     {
       "path": "src/core/logger.ts",
@@ -1797,35 +1812,35 @@
       "role": "source",
       "language": "TypeScript",
       "lineCount": 42,
-      "sha": "4fa1d44f2a1f79b7ed86e9b5d1ce7ed963d6377fffae6533a6d858ffcc20d5ea"
+      "sha": "ce4d25e5d20dc1f68ef87e776e82f71d40b73ed569350ccb3cc2f50ec605f2b0"
     },
     {
       "path": "src/core/memory.ts",
       "role": "source",
       "language": "TypeScript",
       "lineCount": 9,
-      "sha": "352db5ac86ce98a6179b6b6e926b2dc4efdc68bc0c915fed1997077f8ddeea80"
+      "sha": "922d67ed16838a2f2e466494e51133d27db5a0564a52bf611341f90eca6fba9f"
     },
     {
       "path": "src/core/paths.ts",
       "role": "source",
       "language": "TypeScript",
       "lineCount": 70,
-      "sha": "786b861505cae39ab878b4f3e8c6febd2b8faf16a1c354f38c6b76063f4cfca9"
+      "sha": "64c51b58f06d9615564ff77ea0bee26ae60a52a108d6785b596157db0c8eecad"
     },
     {
       "path": "src/core/policy.ts",
       "role": "source",
       "language": "TypeScript",
       "lineCount": 89,
-      "sha": "8953cf2586c85adc3accf1c760c50a1878aaa052e8a452d582d0e0725214262d"
+      "sha": "241bebd032b82d0a90f934d7c91404f0c12575cf1d09d1d18f4f2b1cdb6308e7"
     },
     {
       "path": "src/core/provenance.ts",
       "role": "source",
       "language": "TypeScript",
       "lineCount": 10,
-      "sha": "03d1fd54585524a0660aea0c0243f13ade06681545be7e06ca2d35b50f195dcf"
+      "sha": "049e6dcdfa8c0e15df02374094d2811732a8564a1911d1d0ab26b28e85fe594d"
     },
     {
       "path": "src/generators/repoMap.ts",
@@ -1839,14 +1854,14 @@
       "role": "source",
       "language": "TypeScript",
       "lineCount": 89,
-      "sha": "575a640807e1282e8bb55af2eaa7173342ee733b390f4c68048d8ec9e0093ae3"
+      "sha": "73242039468084482ee2aebc5274558860149ccb5012afbeb3ed8bcb97bf1682"
     },
     {
       "path": "src/index.ts",
       "role": "source",
       "language": "TypeScript",
       "lineCount": 28,
-      "sha": "c40c6ec5891106dc2173ce2274f1b814cdc0f9297e44d13d8ee4fe0e8eeb5b1d"
+      "sha": "f4768cd2d9d67f2c04daf904ecf86ad47414291f9ab0fea9bed2affd96374e4b"
     },
     {
       "path": "src/linter/engine.ts",
@@ -1902,7 +1917,7 @@
       "role": "source",
       "language": "TypeScript",
       "lineCount": 199,
-      "sha": "022ad3726645129ba3a5cc4677916e7c377d8f09a8f89c2f7dd3271f0bac4ede"
+      "sha": "c097b9828dcdeb5f6aee196599182e08ef9214dc250e49d435bf204366d69470"
     },
     {
       "path": "src/scanners/cache.ts",
@@ -1915,15 +1930,15 @@
       "path": "src/scanners/enumerator.ts",
       "role": "source",
       "language": "TypeScript",
-      "lineCount": 100,
-      "sha": "e2e4fcf7447070342aaa16a9942bbf98bd9cea5a4e6ec274fd89b02cdd5fae82"
+      "lineCount": 101,
+      "sha": "a12a96af37dce53fd3b4c7ec311b76cf234c2abbccc71379aa09fbc5643365f6"
     },
     {
       "path": "src/scanners/languageMap.ts",
       "role": "source",
       "language": "TypeScript",
       "lineCount": 98,
-      "sha": "3f2cefa87bcdb3a9528dbfd2b155d8d1e1e830817abf97805aadcaca4a3d66e8"
+      "sha": "043dfe5d11905d19995ee2f1bd661dc3f2c01c7ade9b00ab30d986658ec64ac5"
     },
     {
       "path": "src/scanners/lineCounter.ts",
@@ -1968,7 +1983,7 @@
       "sha": "810621b9a148e51c0c42c48372875e3ade7de2cbf708ce0137962e314e3b00c0"
     },
     {
-      "path": "templates/starter/.agentsyncignore",
+      "path": "templates/starter/.agentctxignore",
       "role": "source",
       "language": null,
       "lineCount": 0,
@@ -1979,7 +1994,7 @@
       "role": "doc",
       "language": "Markdown",
       "lineCount": 32,
-      "sha": "21a904a3096b4881d931222f3b3765db58433c69f51a23cf570ed2b4f26a66bb"
+      "sha": "d311ecc9bf3445ff8413c428f43b4781f025ce96704de2fc954b83174855b5fc"
     },
     {
       "path": "templates/starter/coding-rules.md",
@@ -2007,7 +2022,7 @@
       "role": "doc",
       "language": "Markdown",
       "lineCount": 19,
-      "sha": "b1f4f24dd5b9fdc14c7341f253d24161a9eef468e7f636691c2a4de41fea088a"
+      "sha": "2c122a4a1d7b9909c536bb03963f37e59c014843964d1c734513ec4459de6768"
     },
     {
       "path": "templates/starter/workflows/debugging.md",
@@ -2035,14 +2050,14 @@
       "role": "test",
       "language": "TypeScript",
       "lineCount": 114,
-      "sha": "e8cb8283d6f2bac560141e1a6eeab3d9e7e79befc3c09338076ee1601a42d008"
+      "sha": "534dccb37d914fb63c0c5eb01e4fed453b1fda3dc8a3b3150a6cda582fd9db40"
     },
     {
       "path": "tests/exportImport.test.ts",
       "role": "test",
       "language": "TypeScript",
       "lineCount": 98,
-      "sha": "8220f86050a6c974d168cbf0e9e73b1f971ca8dca8648b225462534e5f6f025b"
+      "sha": "279c5af02ac4fd4b6cf039270a93d5493a6eef79e6c8b190599e6e0fc2c373e0"
     },
     {
       "path": "tests/frontmatter.test.ts",
@@ -2063,42 +2078,42 @@
       "role": "test",
       "language": "TypeScript",
       "lineCount": 228,
-      "sha": "e6e260f22e900929c1da5f2d47650917b83fcd0e8af9e8d2b91bb0594f7e834e"
+      "sha": "7817efb6ebcb47ff4a31688b594f7e8c6fde1dea04e7fa6ae8f8e17f03a8ec05"
     },
     {
       "path": "tests/lint.test.ts",
       "role": "test",
       "language": "TypeScript",
       "lineCount": 128,
-      "sha": "a3ef6981347456d74744b35b43e9094290df8defc8c58a2d3d4f1ebf64a48570"
+      "sha": "17ee179ceb2964d2aac3bb2fc3ae434fec4b0dd39e1e6794c39fcf5b339859c7"
     },
     {
       "path": "tests/mcp.test.ts",
       "role": "test",
       "language": "TypeScript",
       "lineCount": 135,
-      "sha": "f23c2406b323c686f08a481124eff212c814ad38cc30314e872a2da70979468c"
+      "sha": "2e62ce5b6b02a16f845af1dd193609c147ebe2627c775e2663a36bd31ed5719a"
     },
     {
       "path": "tests/paths.test.ts",
       "role": "test",
       "language": "TypeScript",
       "lineCount": 37,
-      "sha": "95371d34b9fdc2cd2f962fb784cd310229482e6b2c5ec7eaa1fed23595f1b2dd"
+      "sha": "3c986d35dda435b589b7ef2ef5a05793da38c92a3e56cbf1f5722bf3ed110a67"
     },
     {
       "path": "tests/policy.test.ts",
       "role": "test",
       "language": "TypeScript",
       "lineCount": 84,
-      "sha": "7310acefacc122eab171524597717769916cb53da381c2dc983cf038600ec6a2"
+      "sha": "550eb564d848f2652f09e816b31fb8f1cb0ea8d955ae2cd2f3a7f37bed8db29f"
     },
     {
       "path": "tests/scan.test.ts",
       "role": "test",
       "language": "TypeScript",
       "lineCount": 84,
-      "sha": "9154667f31bc461c3d7cff693eb3949afea337ea7173fab7a6d7a3de0fc5798b"
+      "sha": "f155a4395403695c661258fd1ae3cfbb8c40662df2c2bdce04cf8d3928c6b034"
     },
     {
       "path": "tests/scanners/languageMap.test.ts",
@@ -2112,21 +2127,21 @@
       "role": "test",
       "language": "TypeScript",
       "lineCount": 58,
-      "sha": "9b20aef81bf49feefd7dc819d641590c660fdc52c5c318d2c9f590ef79b7aa7a"
+      "sha": "1eec4e373315eef8bf3e0ec2b143315fac3fca4f2b362a8f648d6d10fefe4c08"
     },
     {
       "path": "tests/scanners/roleClassifier.test.ts",
       "role": "test",
       "language": "TypeScript",
       "lineCount": 35,
-      "sha": "d834e567ef3e83e5ebb0212ac22f7185343d4030be20d68ad63ddd0c589bf79d"
+      "sha": "f034d299a5545b5eb039a2d8a3f7f784a2886eac89f0d75ccd5886538e03f5c0"
     },
     {
       "path": "tests/scanners/stackDetector.test.ts",
       "role": "test",
       "language": "TypeScript",
       "lineCount": 79,
-      "sha": "f2a442588684ab935941c9bc2415cb37003f261633412d061e8f9c225bb62821"
+      "sha": "14af041af34c00e2b67d93af69aa1226029e0a0cb9941855e4cbcf12e6aba2d7"
     },
     {
       "path": "tests/scanners/treeBuilder.test.ts",
@@ -2147,14 +2162,14 @@
       "role": "test",
       "language": "TypeScript",
       "lineCount": 54,
-      "sha": "2d40e6bba9374b4576d05faadb68e11a6cc70797ba8c8501106d5de6608b76de"
+      "sha": "0aaef15a401da2ae56bad8de4e614508fbc022778a7ecf4e4256109c47a6d97e"
     },
     {
       "path": "tests/stats.test.ts",
       "role": "test",
       "language": "TypeScript",
       "lineCount": 66,
-      "sha": "31f1d604576b523e5a2232521baa16c23a74ea36c41459c8dc985a62cb292522"
+      "sha": "1cbda7921cbd5429ae0c362a550f7475bbb29ebb6f8f18cf7406b252b08e3be3"
     },
     {
       "path": "tests/version.test.ts",

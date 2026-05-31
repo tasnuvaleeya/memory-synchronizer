@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 import { type Logger } from "../core/logger.js";
 import { UserError, DriftError } from "../core/errors.js";
 import { resolveCwd, agentDir, writeFileLF, toPosix, sha256 } from "../core/paths.js";
+import { stripProvenance } from "../core/provenance.js";
 import { loadManifest, loadConfig } from "../core/load.js";
 import { scan } from "../scanners/scan.js";
 import { renderRepoMap } from "../generators/repoMap.js";
@@ -43,7 +44,7 @@ export async function scanCommand(
   const dir = agentDir(root);
 
   if (!existsSync(dir)) {
-    throw new UserError(`No \`agent/\` directory found. Run \`agentsync init\` first.`);
+    throw new UserError(`No \`agent/\` directory found. Run \`agentctx init\` first.`);
   }
 
   // Manifest is required by convention; config is optional.
@@ -110,7 +111,7 @@ export async function scanCommand(
 
   if (opts.check && cmd.wouldChange.length > 0) {
     throw new DriftError(
-      `Scan artifacts are stale (${cmd.wouldChange.join(", ")}). Run \`agentsync scan\`.`,
+      `Scan artifacts are stale (${cmd.wouldChange.join(", ")}). Run \`agentctx scan\`.`,
     );
   }
 }
@@ -156,8 +157,12 @@ async function reconcileStack(
 ): Promise<void> {
   const existing = existsSync(absPath) ? await readFile(absPath, "utf8") : null;
 
-  const compare = (s: string): string =>
-    s.replace(/<!-- generated-at: [^>]+ -->\n?/, "");
+  // stack.md is both a memory input (loaded into MemorySet) and a scan output,
+  // so its own sha contributes to the source-sha used in its own provenance
+  // header. That makes the source-sha unstable across iterations. Strip the
+  // ENTIRE provenance block — not just generated-at — so comparison is based
+  // only on the human-meaningful body.
+  const compare = (s: string): string => stripProvenance(s);
 
   const matches = existing !== null && compare(existing) === compare(newContent);
 

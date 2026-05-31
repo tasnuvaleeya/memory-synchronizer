@@ -2,7 +2,7 @@
 import { Command, Option } from "commander";
 import pc from "picocolors";
 import { Logger } from "../core/logger.js";
-import { AgentsyncError } from "../core/errors.js";
+import { AgentctxError } from "../core/errors.js";
 
 // `Command` is used both as a value (e.g. `new Command()`) and as a parameter
 // type in handler signatures, so we import it as a value.
@@ -39,7 +39,7 @@ export function buildProgram(): Command {
   const program = new Command();
 
   program
-    .name("agentsync")
+    .name("agentctx")
     .description(
       "Shared, repo-local memory layer that synchronizes context across AI coding agents.",
     )
@@ -85,7 +85,7 @@ export function buildProgram(): Command {
 
   program
     .command("version")
-    .description("print the installed agentsync version")
+    .description("print the installed agentctx version")
     .option("--json", "machine-readable output")
     .action(async (cmdOpts, cmd: Command) => {
       const global = cmd.optsWithGlobals<GlobalOpts>();
@@ -109,7 +109,7 @@ export function buildProgram(): Command {
 
   program
     .command("diff [adapter]")
-    .description("preview what agentsync sync would change")
+    .description("preview what agentctx sync would change")
     .option("--json", "machine-readable output")
     .action(async (adapterArg: string | undefined, cmdOpts, cmd: Command) => {
       const global = cmd.optsWithGlobals<GlobalOpts>();
@@ -138,7 +138,7 @@ export function buildProgram(): Command {
     .command("lint")
     .description("lint memory files (heading hierarchy, banned phrases, freshness, etc.)")
     .option("--fix", "apply safe auto-fixes where available")
-    .option("--policy <path>", "explicit policy file (defaults to agentsync.policy.yaml)")
+    .option("--policy <path>", "explicit policy file (defaults to agentctx.policy.yaml)")
     .option("--json", "machine-readable output")
     .action(async (cmdOpts, cmd: Command) => {
       const global = cmd.optsWithGlobals<GlobalOpts>();
@@ -199,7 +199,7 @@ export function buildProgram(): Command {
 
   program
     .command("install-hook [type]")
-    .description("install a git pre-commit hook that runs agentsync sync --check")
+    .description("install a git pre-commit hook that runs agentctx sync --check")
     .option("--json", "machine-readable output")
     .action(async (hookType: string | undefined, cmdOpts, cmd: Command) => {
       const global = cmd.optsWithGlobals<GlobalOpts>();
@@ -224,7 +224,7 @@ async function runCommand(
   try {
     await fn();
   } catch (err) {
-    if (err instanceof AgentsyncError) {
+    if (err instanceof AgentctxError) {
       logger.error(err.message);
       process.exit(err.exitCode);
     }
@@ -237,7 +237,7 @@ async function runCommand(
   }
 }
 
-// This module is only loaded as the CLI entry (`bin/agentsync`); the library
+// This module is only loaded as the CLI entry (`bin/agentctx`); the library
 // surface lives at `src/index.ts` and does not import this file. So we always
 // parse argv when this file is executed.
 buildProgram()
