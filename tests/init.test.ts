@@ -70,6 +70,14 @@ describe("init command", () => {
     const a = await mkTmp();
     const b = await mkTmp();
     try {
+      // Pin projectName so the {{projectName}} template substitution is the
+      // same in both runs — without this, init derives the name from the
+      // mkdtemp suffix and the two outputs are legitimately different.
+      const { writeFile } = await import("node:fs/promises");
+      const pkg = JSON.stringify({ name: "fixture", version: "0.0.0" });
+      await writeFile(path.join(a, "package.json"), pkg, "utf8");
+      await writeFile(path.join(b, "package.json"), pkg, "utf8");
+
       await initCommand(a, {}, quiet);
       await initCommand(b, {}, quiet);
       const ah = await fileShas(a);

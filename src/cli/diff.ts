@@ -8,7 +8,6 @@ import { loadManifest, loadMemorySet, loadConfig } from "../core/load.js";
 import { resolveAdapters, listBuiltInAdapters } from "../adapters/registry.js";
 import { loadLastSync } from "../core/drift.js";
 import { stripProvenance, contentChecksum } from "../core/provenance.js";
-import { computeSourceSha } from "../adapters/base.js";
 import type { RenderContext } from "../adapters/base.js";
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
