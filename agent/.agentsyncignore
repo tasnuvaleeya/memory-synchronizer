@@ -1,0 +1,7 @@
+# gitignore-style patterns. Files matched here are skipped by agentsync's
+# discovery (validate, show, future sync). Add scratch notes, drafts, or
+# external content that you don't want syncing.
+
+# Examples:
+# scratch/
+# *.draft.md

@@ -18,3 +18,4 @@ coverage/
 
 # Local runtime cache (used when agentsync runs against a real repo)
 .agentsync/cache/
+.agentsync/last-sync.json

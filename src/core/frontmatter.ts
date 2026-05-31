@@ -1,6 +1,7 @@
 import yaml from "js-yaml";
 import { FrontmatterSchema, type Frontmatter } from "./manifest.js";
 import { UserError } from "./errors.js";
+import { stripProvenance } from "@agentsync/adapter-sdk";
 
 const FRONTMATTER_RE = /^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/;
 
@@ -31,7 +32,10 @@ function stripBom(s: string): string {
  * Zod validation.
  */
 export function parseFrontmatter(filePath: string, raw: string): ParsedMemory {
-  const source = stripBom(raw);
+  // Generated memory files (e.g. `stack.md`) carry a provenance HTML-comment
+  // header above their YAML frontmatter. Strip it so the same parser works
+  // for both authored and generated files.
+  const source = stripProvenance(stripBom(raw));
   const match = FRONTMATTER_RE.exec(source);
   if (!match) {
     throw new UserError(

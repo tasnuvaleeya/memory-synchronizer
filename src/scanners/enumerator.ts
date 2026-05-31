@@ -33,10 +33,45 @@ export const DEFAULT_IGNORES: string[] = [
   ".cache",
   "**/.cache/**",
   ".agentsync/cache/**",
+  // Per-developer AI tool state that isn't typically checked into git.
+  // Including it makes scan output diverge between contributors and CI.
+  ".claude/**",
+  ".aider*",
+  "**/.aider*",
   // Scan's own outputs — including them would be self-referential and break
   // idempotency (each run would mutate its inputs).
   "agent/repo-map.json",
   "agent/stack.md",
+  // Adapter outputs produced by `agentsync sync`. Excluding them keeps the
+  // scan → sync → scan fixpoint stable: file count and stack.md body don't
+  // shift after the first sync.
+  "CLAUDE.md",
+  "AGENTS.md",
+  ".cursorrules",
+  ".cursor/rules/**",
+  ".clinerules",
+  ".windsurfrules",
+  ".github/copilot-instructions.md",
+  // Machine-maintained lockfiles. They're huge, can shift on install even
+  // with --frozen-lockfile in package-manager edge cases, and don't
+  // represent the "shape" of the codebase the way source files do.
+  // Including them produces gratuitous scan-check drift in CI.
+  "pnpm-lock.yaml",
+  "**/pnpm-lock.yaml",
+  "package-lock.json",
+  "**/package-lock.json",
+  "yarn.lock",
+  "**/yarn.lock",
+  "bun.lockb",
+  "**/bun.lockb",
+  "Cargo.lock",
+  "**/Cargo.lock",
+  "poetry.lock",
+  "**/poetry.lock",
+  "composer.lock",
+  "**/composer.lock",
+  "Gemfile.lock",
+  "**/Gemfile.lock",
 ];
 
 /**
