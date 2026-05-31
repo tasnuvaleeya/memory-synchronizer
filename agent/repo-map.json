@@ -2,17 +2,17 @@
   "version": 1,
   "summary": {
     "totalFiles": 132,
-    "totalLines": 12477,
+    "totalLines": 12503,
     "languages": [
       {
         "language": "TypeScript",
         "files": 87,
-        "lines": 6260
+        "lines": 6267
       },
       {
         "language": "YAML",
         "files": 9,
-        "lines": 4575
+        "lines": 4587
       },
       {
         "language": "JSON",
@@ -27,7 +27,7 @@
       {
         "language": "JavaScript",
         "files": 1,
-        "lines": 26
+        "lines": 33
       }
     ]
   },
@@ -80,7 +80,7 @@
                 "name": "agentsync.yml",
                 "path": ".github/workflows/agentsync.yml",
                 "type": "file",
-                "lineCount": 46,
+                "lineCount": 50,
                 "language": "YAML",
                 "role": "config"
               },
@@ -88,7 +88,7 @@
                 "name": "ci.yml",
                 "path": ".github/workflows/ci.yml",
                 "type": "file",
-                "lineCount": 45,
+                "lineCount": 53,
                 "language": "YAML",
                 "role": "config"
               }
@@ -544,7 +544,7 @@
                 "name": "diff.ts",
                 "path": "src/cli/diff.ts",
                 "type": "file",
-                "lineCount": 178,
+                "lineCount": 177,
                 "language": "TypeScript",
                 "role": "source"
               },
@@ -1143,7 +1143,7 @@
             "name": "init.test.ts",
             "path": "tests/init.test.ts",
             "type": "file",
-            "lineCount": 220,
+            "lineCount": 228,
             "language": "TypeScript",
             "role": "test"
           },
@@ -1257,7 +1257,7 @@
         "name": "eslint.config.js",
         "path": "eslint.config.js",
         "type": "file",
-        "lineCount": 26,
+        "lineCount": 33,
         "language": "JavaScript",
         "role": "config"
       },
@@ -1330,15 +1330,15 @@
       "path": ".github/workflows/agentsync.yml",
       "role": "config",
       "language": "YAML",
-      "lineCount": 46,
-      "sha": "16ef8a2e62907b12f0b0c1718ed267959a5a403def2c6daadf93c73d27705797"
+      "lineCount": 50,
+      "sha": "0665d59602438e19c2ed1a4d16ac3021d4493509e6b6fafd293176548148d3e7"
     },
     {
       "path": ".github/workflows/ci.yml",
       "role": "config",
       "language": "YAML",
-      "lineCount": 45,
-      "sha": "4a52d6b2b193d3c59b96e89fe0c58862b005e9d802508ab18d66018a2f54fc24"
+      "lineCount": 53,
+      "sha": "17f31bc464bd3d563d98e95e36e8ec3a0228d70bc7ae9994e9e816a1f5f40ee4"
     },
     {
       "path": ".gitignore",
@@ -1484,8 +1484,8 @@
       "path": "eslint.config.js",
       "role": "config",
       "language": "JavaScript",
-      "lineCount": 26,
-      "sha": "7ba05352dc0fd2922892f823e44576693c46d6621658a1a4a666179efd62dd26"
+      "lineCount": 33,
+      "sha": "a23edf133b5190f4dd88197e9215331903eb713b3d89682ba1d3fcd0126020b7"
     },
     {
       "path": "package.json",
@@ -1694,8 +1694,8 @@
       "path": "src/cli/diff.ts",
       "role": "source",
       "language": "TypeScript",
-      "lineCount": 178,
-      "sha": "e55f99562e490b2990fec252e70c20e87db11fdbbeb7d50dfcd9e6c57483ae19"
+      "lineCount": 177,
+      "sha": "1e54c38ad3e19794db36ebb9926d22109225ddff5bc46b3cc8dc963e06b8fae3"
     },
     {
       "path": "src/cli/export.ts",
@@ -2114,8 +2114,8 @@
       "path": "tests/init.test.ts",
       "role": "test",
       "language": "TypeScript",
-      "lineCount": 220,
-      "sha": "69c16bc8727e6cd9e24ab6e23994d1f3e9fa788ec275092d57153e4404ea289d"
+      "lineCount": 228,
+      "sha": "e6e260f22e900929c1da5f2d47650917b83fcd0e8af9e8d2b91bb0594f7e834e"
     },
     {
       "path": "tests/lint.test.ts",

@@ -1,7 +1,7 @@
 <!-- agentsync:generated -->
-<!-- source-sha: 7b920f60443579377d9322709130bab5f54d15f9becc86caffbe03d41336c1fe -->
+<!-- source-sha: f227201c5611bb441f0fca320d6c87ce2de33d82c0f96dfcb4a691649b9aa82f -->
 <!-- generator: windsurf-adapter@0.1.0 -->
-<!-- generated-at: 2026-05-31T12:58:34.450Z -->
+<!-- generated-at: 2026-05-31T14:27:40.284Z -->
 <!-- DO NOT EDIT — run `agentsync sync` instead -->
 # cli — Windsurf Rules
 
@@ -128,13 +128,13 @@ Same input → byte-identical output across runs and OSes. Mechanisms:
 ## Code shape
 
 - **Total files**: 132
-- **Total lines**: 12477
+- **Total lines**: 12503
 
-- **TypeScript**: 6260 lines across 87 files
-- **YAML**: 4575 lines across 9 files
+- **TypeScript**: 6267 lines across 87 files
+- **YAML**: 4587 lines across 9 files
 - **JSON**: 857 lines across 14 files
 - **Markdown**: 738 lines across 16 files
-- **JavaScript**: 26 lines across 1 file
+- **JavaScript**: 33 lines across 1 file
 
 # Domain knowledge
 
