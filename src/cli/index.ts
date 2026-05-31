@@ -14,6 +14,10 @@ import { syncCommand } from "./sync.js";
 import { diffCommand } from "./diff.js";
 import { installHookCommand, type HookType } from "./installHook.js";
 import { scanCommand } from "./scan.js";
+import { lintCommand } from "./lint.js";
+import { statsCommand } from "./stats.js";
+import { exportCommand } from "./export.js";
+import { importCommand } from "./import.js";
 
 interface GlobalOpts {
   cwd?: string;
@@ -127,6 +131,59 @@ export function buildProgram(): Command {
       const global = cmd.optsWithGlobals<GlobalOpts>();
       const logger = makeLogger(global);
       await runCommand(() => scanCommand(global.cwd, cmdOpts, logger), logger, global);
+    });
+
+  program
+    .command("lint")
+    .description("lint memory files (heading hierarchy, banned phrases, freshness, etc.)")
+    .option("--fix", "apply safe auto-fixes where available")
+    .option("--policy <path>", "explicit policy file (defaults to agentsync.policy.yaml)")
+    .option("--json", "machine-readable output")
+    .action(async (cmdOpts, cmd: Command) => {
+      const global = cmd.optsWithGlobals<GlobalOpts>();
+      const logger = makeLogger(global);
+      await runCommand(() => lintCommand(global.cwd, cmdOpts, logger), logger, global);
+    });
+
+  program
+    .command("stats")
+    .description("show per-adapter token counts, file counts, and drift status")
+    .option("--json", "machine-readable output")
+    .action(async (cmdOpts, cmd: Command) => {
+      const global = cmd.optsWithGlobals<GlobalOpts>();
+      const logger = makeLogger(global);
+      await runCommand(() => statsCommand(global.cwd, cmdOpts, logger), logger, global);
+    });
+
+  program
+    .command("export <path>")
+    .description("bundle agent/ into a portable .tar.gz")
+    .option("--json", "machine-readable output")
+    .action(async (destPath: string, cmdOpts, cmd: Command) => {
+      const global = cmd.optsWithGlobals<GlobalOpts>();
+      const logger = makeLogger(global);
+      await runCommand(
+        () => exportCommand(global.cwd, destPath, cmdOpts, logger),
+        logger,
+        global,
+      );
+    });
+
+  program
+    .command("import <source>")
+    .description("pull a starter agent/ from a local path, .tar.gz, or git URL")
+    .option("--into <path>", "destination directory (default: agent/)")
+    .option("--branch <ref>", "branch or tag to clone (git sources only)")
+    .option("--force", "overwrite an existing non-empty destination")
+    .option("--json", "machine-readable output")
+    .action(async (source: string, cmdOpts, cmd: Command) => {
+      const global = cmd.optsWithGlobals<GlobalOpts>();
+      const logger = makeLogger(global);
+      await runCommand(
+        () => importCommand(global.cwd, source, cmdOpts, logger),
+        logger,
+        global,
+      );
     });
 
   program

@@ -5,6 +5,7 @@ import { ConfigSchema } from "../src/core/config.js";
 import { FrontmatterSchema, ManifestSchema } from "../src/core/manifest.js";
 import { MemoryFileSchema } from "../src/core/memory.js";
 import { RepoMapSchema, StackSchema } from "../src/scanners/types.js";
+import { PolicySchema } from "../src/core/policy.js";
 
 const OUT_DIR = path.resolve("docs/schema/v1");
 
@@ -22,6 +23,7 @@ const targets: Target[] = [
   { name: "MemoryFile", file: "memory-file.json", schema: MemoryFileSchema },
   { name: "RepoMap", file: "repo-map.json", schema: RepoMapSchema },
   { name: "Stack", file: "stack.json", schema: StackSchema },
+  { name: "Policy", file: "policy.json", schema: PolicySchema },
 ];
 
 async function main(): Promise<void> {

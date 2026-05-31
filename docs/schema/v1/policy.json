@@ -1,0 +1,106 @@
+{
+  "$ref": "#/definitions/Policy",
+  "definitions": {
+    "Policy": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "number",
+          "const": 1
+        },
+        "requiredFiles": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "default": []
+        },
+        "requiredAdapters": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "default": []
+        },
+        "lint": {
+          "type": "object",
+          "properties": {
+            "rules": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "properties": {
+                  "level": {
+                    "type": "string",
+                    "enum": [
+                      "off",
+                      "warn",
+                      "error"
+                    ]
+                  },
+                  "extra": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "maxAgeDays": {
+                    "type": "integer",
+                    "exclusiveMinimum": 0
+                  },
+                  "maxBodyChars": {
+                    "type": "integer",
+                    "exclusiveMinimum": 0
+                  }
+                },
+                "additionalProperties": false
+              },
+              "propertyNames": {
+                "minLength": 1
+              },
+              "default": {}
+            },
+            "requiredSections": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "propertyNames": {
+                "minLength": 1
+              },
+              "default": {}
+            }
+          },
+          "additionalProperties": false,
+          "default": {
+            "rules": {},
+            "requiredSections": {}
+          }
+        },
+        "tokenBudgets": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "exclusiveMinimum": 0
+          },
+          "propertyNames": {
+            "minLength": 1
+          },
+          "default": {}
+        }
+      },
+      "required": [
+        "version"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

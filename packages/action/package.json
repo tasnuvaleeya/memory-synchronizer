@@ -1,0 +1,19 @@
+{
+  "name": "@agentsync/action",
+  "version": "0.1.0",
+  "description": "GitHub Action that runs agentsync sync --check and lint on PRs, posting annotations.",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc --noEmit && ncc build src/index.ts -o dist --minify --target es2022"
+  },
+  "dependencies": {
+    "@actions/core": "^3.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.1",
+    "@vercel/ncc": "^0.38.4",
+    "typescript": "^6.0.3"
+  }
+}

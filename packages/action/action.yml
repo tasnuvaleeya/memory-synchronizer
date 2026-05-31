@@ -1,0 +1,36 @@
+name: "agentsync"
+description: "Check agent-memory drift and lint memory files on every PR."
+author: "agentsync"
+
+branding:
+  icon: "git-pull-request"
+  color: "purple"
+
+inputs:
+  command:
+    description: "Which agentsync command(s) to run. Comma-separated. Defaults to: sync --check,lint"
+    required: false
+    default: "sync --check,lint"
+  policy:
+    description: "Path to agentsync.policy.yaml (optional)."
+    required: false
+  working-directory:
+    description: "Repo subdirectory to run agentsync in."
+    required: false
+    default: "."
+  fail-on-warning:
+    description: "Treat lint warnings as failures."
+    required: false
+    default: "false"
+
+outputs:
+  drifted:
+    description: "true if sync --check found drift"
+  lint-errors:
+    description: "Number of lint errors"
+  lint-warnings:
+    description: "Number of lint warnings"
+
+runs:
+  using: "node20"
+  main: "dist/index.js"
