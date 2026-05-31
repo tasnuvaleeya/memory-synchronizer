@@ -1,7 +1,7 @@
 <!-- agentsync:generated -->
-<!-- source-sha: 3a7459ca013502766d9d2792772f0b69e1857e5dcba05bb186e9d549d4dc62a3 -->
+<!-- source-sha: ff473e3f83c2900d696199f8dcb31c188f35e21562fb08d6511f846e1e7b8ebe -->
 <!-- generator: copilot-adapter@0.1.0 -->
-<!-- generated-at: 2026-05-31T14:33:23.082Z -->
+<!-- generated-at: 2026-05-31T14:40:28.498Z -->
 <!-- DO NOT EDIT — run `agentsync sync` instead -->
 # cli — GitHub Copilot Instructions
 
@@ -127,11 +127,11 @@ Same input → byte-identical output across runs and OSes. Mechanisms:
 
 ## Code shape
 
-- **Total files**: 130
-- **Total lines**: 8187
+- **Total files**: 129
+- **Total lines**: 8169
 
-- **TypeScript**: 6287 lines across 87 files
-- **JSON**: 857 lines across 14 files
+- **TypeScript**: 6292 lines across 87 files
+- **JSON**: 834 lines across 13 files
 - **Markdown**: 738 lines across 16 files
 - **YAML**: 251 lines across 7 files
 - **JavaScript**: 33 lines across 1 file

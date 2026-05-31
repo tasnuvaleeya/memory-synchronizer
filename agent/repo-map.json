@@ -1,18 +1,18 @@
 {
   "version": 1,
   "summary": {
-    "totalFiles": 130,
-    "totalLines": 8187,
+    "totalFiles": 129,
+    "totalLines": 8169,
     "languages": [
       {
         "language": "TypeScript",
         "files": 87,
-        "lines": 6287
+        "lines": 6292
       },
       {
         "language": "JSON",
-        "files": 14,
-        "lines": 857
+        "files": 13,
+        "lines": 834
       },
       {
         "language": "Markdown",
@@ -47,21 +47,6 @@
             "type": "file",
             "lineCount": 10,
             "language": "YAML",
-            "role": "source"
-          }
-        ]
-      },
-      {
-        "name": ".claude",
-        "path": ".claude",
-        "type": "dir",
-        "children": [
-          {
-            "name": "settings.local.json",
-            "path": ".claude/settings.local.json",
-            "type": "file",
-            "lineCount": 23,
-            "language": "JSON",
             "role": "source"
           }
         ]
@@ -882,7 +867,7 @@
                 "name": "enumerator.ts",
                 "path": "src/scanners/enumerator.ts",
                 "type": "file",
-                "lineCount": 95,
+                "lineCount": 100,
                 "language": "TypeScript",
                 "role": "source"
               },
@@ -1302,13 +1287,6 @@
       "language": "YAML",
       "lineCount": 10,
       "sha": "74d1da8fe6aa7398a6326d71d0ca35869ec6242ce6d292da2c5bfeed4a186be4"
-    },
-    {
-      "path": ".claude/settings.local.json",
-      "role": "source",
-      "language": "JSON",
-      "lineCount": 23,
-      "sha": "644c19bb4c54f81cd02e371c4775d20650c50ccb4345dbb3be314c46afec233b"
     },
     {
       "path": ".github/workflows/agentsync.yml",
@@ -1937,8 +1915,8 @@
       "path": "src/scanners/enumerator.ts",
       "role": "source",
       "language": "TypeScript",
-      "lineCount": 95,
-      "sha": "309e76e4ece33d8174d2ed13f171f779a8da429b0c3d0a6a43651a9b923cc2e6"
+      "lineCount": 100,
+      "sha": "e2e4fcf7447070342aaa16a9942bbf98bd9cea5a4e6ec274fd89b02cdd5fae82"
     },
     {
       "path": "src/scanners/languageMap.ts",

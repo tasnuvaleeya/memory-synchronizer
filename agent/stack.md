@@ -1,7 +1,7 @@
 <!-- agentsync:generated -->
-<!-- source-sha: 27ccdcc41d72cb5a754bc14b557704f07f24554ac0e0ea1a617138f06c9b52d7 -->
+<!-- source-sha: 449e63f35ed304bc6b9ec9226ca52421ab7c287f92987a7557650aebec8967e9 -->
 <!-- generator: stack-generator@0.0.1 -->
-<!-- generated-at: 2026-05-31T14:33:22.877Z -->
+<!-- generated-at: 2026-05-31T14:40:28.263Z -->
 <!-- DO NOT EDIT — run `agentsync sync` instead -->
 ---
 name: stack
@@ -38,11 +38,11 @@ tags: [stack, dependencies]
 
 ## Code shape
 
-- **Total files**: 130
-- **Total lines**: 8187
+- **Total files**: 129
+- **Total lines**: 8169
 
-- **TypeScript**: 6287 lines across 87 files
-- **JSON**: 857 lines across 14 files
+- **TypeScript**: 6292 lines across 87 files
+- **JSON**: 834 lines across 13 files
 - **Markdown**: 738 lines across 16 files
 - **YAML**: 251 lines across 7 files
 - **JavaScript**: 33 lines across 1 file

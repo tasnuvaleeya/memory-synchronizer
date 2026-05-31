@@ -33,6 +33,11 @@ export const DEFAULT_IGNORES: string[] = [
   ".cache",
   "**/.cache/**",
   ".agentsync/cache/**",
+  // Per-developer AI tool state that isn't typically checked into git.
+  // Including it makes scan output diverge between contributors and CI.
+  ".claude/**",
+  ".aider*",
+  "**/.aider*",
   // Scan's own outputs — including them would be self-referential and break
   // idempotency (each run would mutate its inputs).
   "agent/repo-map.json",
