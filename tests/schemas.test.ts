@@ -12,7 +12,7 @@ describe("ManifestSchema", () => {
       files: [{ path: "coding-rules.md", source: "authored" }],
     });
     expect(parsed.version).toBe(1);
-    expect(parsed.generation.scanner).toBe("web-tree-sitter");
+    expect(parsed.generation.scanner).toBe("shape");
     expect(parsed.files[0]?.priority).toBe(50);
   });
 

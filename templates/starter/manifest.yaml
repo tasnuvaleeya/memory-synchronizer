@@ -17,6 +17,10 @@ files:
     source: generated
     priority: 30
     applies_to: ["*"]
+  - path: repo-map.json
+    source: generated
+    priority: 35
+    applies_to: [claude]
   - path: domain-knowledge.md
     source: authored
     priority: 40
@@ -34,7 +38,7 @@ files:
     priority: 60
     applies_to: ["*"]
 generation:
-  scanner: web-tree-sitter
+  scanner: shape
   exclude:
     - node_modules
     - dist

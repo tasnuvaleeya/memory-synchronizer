@@ -13,6 +13,7 @@ import { versionCommand } from "./version.js";
 import { syncCommand } from "./sync.js";
 import { diffCommand } from "./diff.js";
 import { installHookCommand, type HookType } from "./installHook.js";
+import { scanCommand } from "./scan.js";
 
 interface GlobalOpts {
   cwd?: string;
@@ -113,6 +114,19 @@ export function buildProgram(): Command {
         logger,
         global,
       );
+    });
+
+  program
+    .command("scan")
+    .description("walk the repo and regenerate agent/repo-map.json + agent/stack.md")
+    .option("--check", "exit with code 2 if scan artifacts would change (CI mode)")
+    .option("--incremental", "reserved for future watch mode (no-op in Phase 1)")
+    .option("--no-cache", "ignore the on-disk scan cache")
+    .option("--json", "machine-readable output")
+    .action(async (cmdOpts, cmd: Command) => {
+      const global = cmd.optsWithGlobals<GlobalOpts>();
+      const logger = makeLogger(global);
+      await runCommand(() => scanCommand(global.cwd, cmdOpts, logger), logger, global);
     });
 
   program

@@ -1,0 +1,77 @@
+{
+  "$ref": "#/definitions/Config",
+  "definitions": {
+    "Config": {
+      "type": "object",
+      "properties": {
+        "defaultAdapters": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "default": [
+            "claude",
+            "agents-md"
+          ]
+        },
+        "tokenBudgets": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "exclusiveMinimum": 0
+          },
+          "default": {}
+        },
+        "languageMap": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "minLength": 1
+          },
+          "propertyNames": {
+            "minLength": 1
+          },
+          "default": {}
+        },
+        "plugins": {
+          "type": "object",
+          "properties": {
+            "adapters": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "default": []
+            },
+            "scanners": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "default": []
+            },
+            "lintRules": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "default": []
+            }
+          },
+          "additionalProperties": false,
+          "default": {
+            "adapters": [],
+            "scanners": [],
+            "lintRules": []
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

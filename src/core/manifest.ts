@@ -38,11 +38,11 @@ export const ManifestSchema = z
     files: z.array(ManifestFileEntry),
     generation: z
       .object({
-        scanner: z.enum(["web-tree-sitter", "off"]).default("web-tree-sitter"),
+        scanner: z.enum(["web-tree-sitter", "shape", "off"]).default("shape"),
         exclude: z.array(z.string().min(1)).default([]),
       })
       .strict()
-      .default({ scanner: "web-tree-sitter", exclude: [] }),
+      .default({ scanner: "shape", exclude: [] }),
   })
   .strict();
 export type Manifest = z.infer<typeof ManifestSchema>;

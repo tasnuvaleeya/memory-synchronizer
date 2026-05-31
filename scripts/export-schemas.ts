@@ -4,6 +4,7 @@ import { zodToJsonSchema } from "zod-to-json-schema";
 import { ConfigSchema } from "../src/core/config.js";
 import { FrontmatterSchema, ManifestSchema } from "../src/core/manifest.js";
 import { MemoryFileSchema } from "../src/core/memory.js";
+import { RepoMapSchema, StackSchema } from "../src/scanners/types.js";
 
 const OUT_DIR = path.resolve("docs/schema/v1");
 
@@ -19,6 +20,8 @@ const targets: Target[] = [
   { name: "Frontmatter", file: "frontmatter.json", schema: FrontmatterSchema },
   { name: "Config", file: "config.json", schema: ConfigSchema },
   { name: "MemoryFile", file: "memory-file.json", schema: MemoryFileSchema },
+  { name: "RepoMap", file: "repo-map.json", schema: RepoMapSchema },
+  { name: "Stack", file: "stack.json", schema: StackSchema },
 ];
 
 async function main(): Promise<void> {
