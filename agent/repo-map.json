@@ -1,18 +1,13 @@
 {
   "version": 1,
   "summary": {
-    "totalFiles": 132,
-    "totalLines": 12503,
+    "totalFiles": 130,
+    "totalLines": 8187,
     "languages": [
       {
         "language": "TypeScript",
         "files": 87,
-        "lines": 6267
-      },
-      {
-        "language": "YAML",
-        "files": 9,
-        "lines": 4587
+        "lines": 6287
       },
       {
         "language": "JSON",
@@ -23,6 +18,11 @@
         "language": "Markdown",
         "files": 16,
         "lines": 738
+      },
+      {
+        "language": "YAML",
+        "files": 7,
+        "lines": 251
       },
       {
         "language": "JavaScript",
@@ -314,14 +314,6 @@
                 "lineCount": 19,
                 "language": "JSON",
                 "role": "config"
-              },
-              {
-                "name": "pnpm-lock.yaml",
-                "path": "packages/action/pnpm-lock.yaml",
-                "type": "file",
-                "lineCount": 92,
-                "language": "YAML",
-                "role": "source"
               },
               {
                 "name": "tsconfig.json",
@@ -890,7 +882,7 @@
                 "name": "enumerator.ts",
                 "path": "src/scanners/enumerator.ts",
                 "type": "file",
-                "lineCount": 75,
+                "lineCount": 95,
                 "language": "TypeScript",
                 "role": "source"
               },
@@ -1270,14 +1262,6 @@
         "role": "config"
       },
       {
-        "name": "pnpm-lock.yaml",
-        "path": "pnpm-lock.yaml",
-        "type": "file",
-        "lineCount": 4244,
-        "language": "YAML",
-        "role": "source"
-      },
-      {
         "name": "pnpm-workspace.yaml",
         "path": "pnpm-workspace.yaml",
         "type": "file",
@@ -1509,13 +1493,6 @@
       "sha": "fe49c3dde69bfcd05a31838bb0c80e5836addede6154f86c3adf7479ff9e9e38"
     },
     {
-      "path": "packages/action/pnpm-lock.yaml",
-      "role": "source",
-      "language": "YAML",
-      "lineCount": 92,
-      "sha": "ec7980f13f8d537e27b49c76b7b843503073c6d2de2d1be26fb9fc803a2513ca"
-    },
-    {
       "path": "packages/action/src/index.ts",
       "role": "source",
       "language": "TypeScript",
@@ -1605,13 +1582,6 @@
       "language": "TypeScript",
       "lineCount": 12,
       "sha": "77f54fbec4bd18a5266d17e6f7e2ab17e3312631001e78e4ed580a390f146273"
-    },
-    {
-      "path": "pnpm-lock.yaml",
-      "role": "source",
-      "language": "YAML",
-      "lineCount": 4244,
-      "sha": "716263078bdcdca347cc873b1e65c9de7f3439df62fb716d3233793c8a617bd9"
     },
     {
       "path": "pnpm-workspace.yaml",
@@ -1967,8 +1937,8 @@
       "path": "src/scanners/enumerator.ts",
       "role": "source",
       "language": "TypeScript",
-      "lineCount": 75,
-      "sha": "ff1b83bfd3bee61a7e7cd99028f5ec9f15f81350a1daf71d4263b29f6f16786a"
+      "lineCount": 95,
+      "sha": "309e76e4ece33d8174d2ed13f171f779a8da429b0c3d0a6a43651a9b923cc2e6"
     },
     {
       "path": "src/scanners/languageMap.ts",

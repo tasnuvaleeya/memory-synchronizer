@@ -1,7 +1,7 @@
 <!-- agentsync:generated -->
-<!-- source-sha: f227201c5611bb441f0fca320d6c87ce2de33d82c0f96dfcb4a691649b9aa82f -->
+<!-- source-sha: 3a7459ca013502766d9d2792772f0b69e1857e5dcba05bb186e9d549d4dc62a3 -->
 <!-- generator: cline-adapter@0.1.0 -->
-<!-- generated-at: 2026-05-31T14:27:40.284Z -->
+<!-- generated-at: 2026-05-31T14:33:23.082Z -->
 <!-- DO NOT EDIT — run `agentsync sync` instead -->
 # cli — Cline Rules
 
@@ -127,13 +127,13 @@ Same input → byte-identical output across runs and OSes. Mechanisms:
 
 ## Code shape
 
-- **Total files**: 132
-- **Total lines**: 12503
+- **Total files**: 130
+- **Total lines**: 8187
 
-- **TypeScript**: 6267 lines across 87 files
-- **YAML**: 4587 lines across 9 files
+- **TypeScript**: 6287 lines across 87 files
 - **JSON**: 857 lines across 14 files
 - **Markdown**: 738 lines across 16 files
+- **YAML**: 251 lines across 7 files
 - **JavaScript**: 33 lines across 1 file
 
 # Domain knowledge

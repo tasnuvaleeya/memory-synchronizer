@@ -47,6 +47,26 @@ export const DEFAULT_IGNORES: string[] = [
   ".clinerules",
   ".windsurfrules",
   ".github/copilot-instructions.md",
+  // Machine-maintained lockfiles. They're huge, can shift on install even
+  // with --frozen-lockfile in package-manager edge cases, and don't
+  // represent the "shape" of the codebase the way source files do.
+  // Including them produces gratuitous scan-check drift in CI.
+  "pnpm-lock.yaml",
+  "**/pnpm-lock.yaml",
+  "package-lock.json",
+  "**/package-lock.json",
+  "yarn.lock",
+  "**/yarn.lock",
+  "bun.lockb",
+  "**/bun.lockb",
+  "Cargo.lock",
+  "**/Cargo.lock",
+  "poetry.lock",
+  "**/poetry.lock",
+  "composer.lock",
+  "**/composer.lock",
+  "Gemfile.lock",
+  "**/Gemfile.lock",
 ];
 
 /**
