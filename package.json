@@ -1,6 +1,6 @@
 {
   "name": "@agentctx/cli",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Shared, repo-local memory layer that synchronizes context across AI coding agents (Claude, Cursor, Cline, Windsurf, Copilot, AGENTS.md).",
   "license": "MIT",
   "author": "tasnuva-aif",
