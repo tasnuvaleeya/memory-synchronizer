@@ -3,7 +3,6 @@
 > One file, every AI coding agent.
 
 [![npm version](https://img.shields.io/npm/v/@agentctx/cli.svg?color=brightgreen)](https://www.npmjs.com/package/@agentctx/cli)
-[![npm downloads](https://img.shields.io/npm/dm/@agentctx/cli.svg?color=blue)](https://www.npmjs.com/package/@agentctx/cli)
 [![SDK](https://img.shields.io/npm/v/@agentctx/adapter-sdk.svg?label=%40agentctx%2Fadapter-sdk)](https://www.npmjs.com/package/@agentctx/adapter-sdk)
 [![GitHub Action](https://img.shields.io/badge/GitHub%20Action-Marketplace-2ea44f?logo=github)](https://github.com/marketplace/actions/agentctx-sync-check)
 [![CI](https://img.shields.io/github/actions/workflow/status/tasnuvaleeya/memory-synchronizer/ci.yml?branch=main&label=CI)](https://github.com/tasnuvaleeya/memory-synchronizer/actions)
