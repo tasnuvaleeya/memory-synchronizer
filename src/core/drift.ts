@@ -52,15 +52,19 @@ export type DriftStatus =
  * no record → new (first sync)
  */
 export async function checkDrift(
-  outputPath: string,
+  relativePath: string,
+  absolutePath: string,
   lastSync: LastSyncMap,
 ): Promise<DriftStatus> {
-  const record = lastSync[outputPath];
+  // Records in last-sync.json are keyed by repo-relative path (e.g. "AGENTS.md").
+  // The on-disk read needs the absolute path. Keep these distinct so the lookup
+  // doesn't silently miss whenever the cwd isn't the repo root.
+  const record = lastSync[relativePath];
   if (!record) return { kind: "new" };
 
   let onDiskRaw: string;
   try {
-    onDiskRaw = await readFile(outputPath, "utf8");
+    onDiskRaw = await readFile(absolutePath, "utf8");
   } catch {
     return { kind: "new" };
   }
