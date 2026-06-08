@@ -109,7 +109,7 @@ export async function syncCommand(
 
     for (const generated of files) {
       const absPath = path.join(root, generated.path);
-      const drift = await checkDrift(absPath, lastSync);
+      const drift = await checkDrift(generated.path, absPath, lastSync);
 
       if (drift.kind === "drifted" && !opts.force) {
         result.drifted.push(generated.path);
